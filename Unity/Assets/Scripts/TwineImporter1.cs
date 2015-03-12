@@ -19,13 +19,13 @@ public class TwineImporter1
 		ParseTwineData(twineDataList);
     }
 
-    public void ReadTwineData()
+    public void ReadTwineData(string filePath)
 	{
         string temp;
         string[] file;
 		string[] split = {"::"};
 
-		temp = Resources.Load("AnAppropriateDemo", typeof(TextAsset)).ToString();
+		temp = Resources.Load(filePath, typeof(TextAsset)).ToString();
 
 
         try
