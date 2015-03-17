@@ -7,7 +7,7 @@ using System;
 public class TwineImporter : MonoBehaviour {
 	
 	// Use this for initialization
-	List<string> twineDataList = new List<string>();
+	public List<string> twineDataList = new List<string>();
 	TwineData twineData;
 	
 	public TwineImporter()

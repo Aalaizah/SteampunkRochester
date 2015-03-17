@@ -16,6 +16,7 @@ public class Interactable : MonoBehaviour {
 	TwineImporter Twine;
 	public List<string> contentList;
 	string message = "";
+	int currentNode = 0;
 	//string speaker = "";
 	
 	void Start()
@@ -29,8 +30,11 @@ public class Interactable : MonoBehaviour {
 
 	public void Progress()
 	{
-		Twine.TwineData.NextNode ("1");
-		createMessage ();
+		currentNode++;
+		if (currentNode < Twine.twineDataList.Count) {
+			Twine.TwineData.NextNode (currentNode.ToString ());
+			createMessage ();
+		} 
 	}
 
 	void Update()
@@ -64,13 +68,15 @@ public class Interactable : MonoBehaviour {
 	{
 		if(!clicked)
 		{
-			if(!selected)
-			{
-				readTwine = true;
-			}
+
 			clicked = true;
 			spriteRenderer.sprite = activeSprite;
 			selected = !selected;
+			Debug.Log(selected);
+			if(!selected){
+				currentNode = -1;
+
+			}
 		}
 	}
 	
