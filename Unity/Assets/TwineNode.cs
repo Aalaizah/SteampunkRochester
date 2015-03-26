@@ -10,7 +10,7 @@ public class TwineNode
 	List<string> speaker = new List<string>();
 	List<string> linkTitles = new List<string>();
 	List<string> links = new List<string>();
-	string itmReq;
+	string itmReq = "";
 	string nextPassage;
 	
 	public string Passage {get{return passage;} set{passage = value;}}
@@ -172,20 +172,19 @@ public class TwineNode
 					itmReq += data[startItem];
 					startItem++;
 				}
-				Debug.Log(itmReq);
-				startPassage = startItem+1;
+				//Debug.Log(itmReq);
 			}
-			else{
 				startPassage = data.IndexOf ("::") + 3;
-			}
+
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
+			Debug.Log(passage);
 			string tempContent;
 			
 			int endContent = data.IndexOf ("[[");
 			if(endContent != -1)
 			{
-				tempContent = data.Substring(endPassage, endContent - endPassage);
+				tempContent = data.Substring(endPassage, endContent);
 			}
 			else
 			{

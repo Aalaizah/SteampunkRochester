@@ -35,7 +35,8 @@ public class TestManager : MonoBehaviour {
 			}
 			else if(Input.GetMouseButtonDown(0)){
 				//Debug.Log ("you clicked the left mouse button");
-				test.Progress();
+
+				test.Progress(this.testInv);
 			}
 		}
 		if (test.taken)

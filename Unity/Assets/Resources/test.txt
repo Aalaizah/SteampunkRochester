@@ -3,5 +3,13 @@ Narrator: This is a thing. Click to continue.
 [[Test|1]]
 
 :: 1
--- BlackBox
 Narrator: Yep, definitely a thing.
+[[Test|2]]
+
+:: 2
+-- BlackBox
+You already have this Item.
+[[Test|3]]
+
+:: 3
+Narrator: Do you really want two items?

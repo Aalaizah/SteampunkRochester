@@ -14,7 +14,6 @@ public class Interactable : MonoBehaviour {
 	public bool selected;
 	private bool readTwine;
 	TwineImporter Twine;
-	public List<string> contentList;
 	string message = "";
 	string currentNode = "0";
 	public bool taken = false;
@@ -30,14 +29,48 @@ public class Interactable : MonoBehaviour {
 		createMessage();
 	}
 
-	public void Progress()
+	public void Progress(Inventory i)
 	{
-		Twine.TwineData.NextNode(currentNode);
+		/*Twine.TwineData.NextNode(currentNode);
 		createMessage ();
 		if (Twine.TwineData.Current.Link.Count != 0)
 		{
 			currentNode = Twine.TwineData.Current.Link[0];
+		}*/
+		Twine.TwineData.NextNode(currentNode);
+		//Debug.Log (Twine.TwineData.Current.itemsReq);
+		if (!Twine.TwineData.Current.itemsReq.Equals("")) 
+		{
+			Debug.Log("Item Required");
+			if(i.inventory.Count!=0){
+				for (int x=0; x < i.inventory.Count; x++) 
+				{
+					//Debug.Log(Twine.TwineData.Current.itemsReq.Contains(i.inventory[x]));
+					if (Twine.TwineData.Current.itemsReq.Contains(i.inventory[x])) 
+					{
+						createMessage ();
+						if (Twine.TwineData.Current.Link.Count != 0) 
+						{
+							//Debug.Log(Twine.TwineData.Current.Link [0]);
+							currentNode = Twine.TwineData.Current.Link [0];
+						}
+						break;
+					}	
+				}
+				
+			}
+		} 
+		else 
+		{
+			//Debug.Log("No item required!");
+			createMessage ();
+			if (Twine.TwineData.Current.Link.Count != 0) 
+			{
+				//Debug.Log(Twine.TwineData.Current.Link [0]);
+				currentNode = Twine.TwineData.Current.Link [0];
+			}
 		}
+
 	}
 
 	void Update()
