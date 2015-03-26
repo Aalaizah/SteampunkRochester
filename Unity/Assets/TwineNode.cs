@@ -10,6 +10,7 @@ public class TwineNode
 	List<string> speaker = new List<string>();
 	List<string> linkTitles = new List<string>();
 	List<string> links = new List<string>();
+	string itmReq;
 	string nextPassage;
 	
 	public string Passage {get{return passage;} set{passage = value;}}
@@ -17,6 +18,7 @@ public class TwineNode
 	public List<string> Speaker {get{return speaker;} set{speaker = value;}}
 	public List<string> LinkTitle {get{return linkTitles;}}
 	public List<string> Link{get{ return links;}}
+	public string itemsReq{ get { return itmReq; } }
 	
 	public string ContentData
 	{
@@ -85,6 +87,7 @@ public class TwineNode
 			return null;
 		}
 	}
+
 	
 	public string NextPassage {get{return nextPassage;} set{nextPassage = value;}}
 	
@@ -160,7 +163,21 @@ public class TwineNode
 		}
 		if (data.IndexOf ("::") != -1 /*&& data.IndexOf("[[") != -1*/)
 		{
-			int startPassage = data.IndexOf ("::") + 3;
+			int startPassage;
+			if(data.IndexOf("--") !=-1)
+			{
+				int startItem = data.IndexOf("--")+3;
+				while(data[startItem] != '\n')
+				{
+					itmReq += data[startItem];
+					startItem++;
+				}
+				Debug.Log(itmReq);
+				startPassage = startItem+1;
+			}
+			else{
+				startPassage = data.IndexOf ("::") + 3;
+			}
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
 			string tempContent;
@@ -174,6 +191,7 @@ public class TwineNode
 			{
 				tempContent = data.Substring(endPassage);
 			}
+
 			string[] temp = tempContent.Split (split, StringSplitOptions.RemoveEmptyEntries);
 			if (temp.Length >= 2 && (temp.Length%2) == 0)
 			{

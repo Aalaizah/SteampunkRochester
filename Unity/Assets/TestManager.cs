@@ -8,14 +8,17 @@ public class TestManager : MonoBehaviour {
 	TwineImporter Twine;
 	Interactable test; //List ToDo
 	bool wasClicked;
+	Inventory testInv;
 	
 	// Use this for initialization
 	void Start () {
-		GameObject testInteractable = new GameObject ();
+		GameObject testInteractable = new GameObject("BlackBox");
 		testInteractable.AddComponent<SpriteRenderer> ();
 		test = testInteractable.AddComponent<Interactable> ();
 		test.SetName ("test", "test");
+		test.isItem = true;
 		Twine = GameObject.Find ("TwineImporter").GetComponent<TwineImporter> ();
+		testInv = GameObject.Find ("Manager").GetComponent<Inventory> ();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +36,13 @@ public class TestManager : MonoBehaviour {
 			else if(Input.GetMouseButtonDown(0)){
 				//Debug.Log ("you clicked the left mouse button");
 				test.Progress();
+			}
+		}
+		if (test.taken)
+		{
+			if(!testInv.inventory.Contains("BlackBox"))
+			{
+				testInv.inventory.Add("BlackBox");
 			}
 		}
 	}

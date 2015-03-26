@@ -16,7 +16,9 @@ public class Interactable : MonoBehaviour {
 	TwineImporter Twine;
 	public List<string> contentList;
 	string message = "";
-	int currentNode = 0;
+	string currentNode = "0";
+	public bool taken = false;
+	public bool isItem;
 	//string speaker = "";
 	
 	void Start()
@@ -30,11 +32,12 @@ public class Interactable : MonoBehaviour {
 
 	public void Progress()
 	{
-		currentNode++;
-		if (currentNode < Twine.twineDataList.Count) {
-			Twine.TwineData.NextNode (currentNode.ToString ());
-			createMessage ();
-		} 
+		Twine.TwineData.NextNode(currentNode);
+		createMessage ();
+		if (Twine.TwineData.Current.Link.Count != 0)
+		{
+			currentNode = Twine.TwineData.Current.Link[0];
+		}
 	}
 
 	void Update()
@@ -74,7 +77,8 @@ public class Interactable : MonoBehaviour {
 			selected = !selected;
 			Debug.Log(selected);
 			if(!selected){
-				currentNode = -1;
+				currentNode = "0";
+				taken = true;
 
 			}
 		}
