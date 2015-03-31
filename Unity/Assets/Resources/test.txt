@@ -8,7 +8,7 @@ Narrator: Yep, definitely a thing.
 
 :: 2
 -- BlackBox
-You already have this Item.
+Narrator: You already have this Item.
 [[Test|3]]
 
 :: 3

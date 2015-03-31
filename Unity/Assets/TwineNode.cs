@@ -164,9 +164,10 @@ public class TwineNode
 		if (data.IndexOf ("::") != -1 /*&& data.IndexOf("[[") != -1*/)
 		{
 			int startPassage;
+			int startItem = 0;
 			if(data.IndexOf("--") !=-1)
 			{
-				int startItem = data.IndexOf("--")+3;
+				startItem = data.IndexOf("--")+3;
 				while(data[startItem] != '\n')
 				{
 					itmReq += data[startItem];
@@ -174,7 +175,7 @@ public class TwineNode
 				}
 				//Debug.Log(itmReq);
 			}
-				startPassage = data.IndexOf ("::") + 3;
+			startPassage = data.IndexOf ("::") + 3;
 
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
@@ -182,9 +183,14 @@ public class TwineNode
 			string tempContent;
 			
 			int endContent = data.IndexOf ("[[");
-			if(endContent != -1)
+			if(endContent != -1 && startItem !=0)
 			{
-				tempContent = data.Substring(endPassage, endContent);
+				Debug.Log("Theres an item requirement for this node!");
+				tempContent = data.Substring(startItem,endContent-startItem);
+			}
+			else if(endContent != -1)
+			{
+				tempContent = data.Substring(endPassage,endContent-endPassage);
 			}
 			else
 			{
