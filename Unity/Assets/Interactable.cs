@@ -102,7 +102,7 @@ public class Interactable : MonoBehaviour
                     {
                         Twine.TwineData.NextNode(choicesLinksList[i]);
                         Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
-                        StartCoroutine(createMessage());
+                        createMessage();
                         Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
                         choice = false;
                     }
@@ -163,7 +163,7 @@ public class Interactable : MonoBehaviour
 
 
 
-    IEnumerator createMessage()
+    void createMessage()
     {
         message = "";
 
@@ -186,7 +186,7 @@ public class Interactable : MonoBehaviour
         if (Twine.TwineData.Current.LinkTitle.Count == 1)
         {
             choice = false;
-            StartCoroutine(createMessage());
+            //createMessage();
             Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
         }
         else
