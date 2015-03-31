@@ -13,3 +13,16 @@ You already have this Item.
 
 :: 3
 Narrator: Do you really want two items?
+[[Choice1.1|4]] 
+[[Choice1.2|5]]
+
+:: 4
+Narrator: Yes
+[[Test|6]]
+
+:: 5
+Narrator: No
+[[Test|6]]
+
+:: 6
+Narrator: Yes, no. Either way you aren't getting two items. 
