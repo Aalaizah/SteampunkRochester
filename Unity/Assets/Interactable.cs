@@ -38,49 +38,51 @@ public class Interactable : MonoBehaviour
 
     public void Progress(Inventory i)
     {
-        /*Twine.TwineData.NextNode(currentNode);
-        createMessage ();
-        if (Twine.TwineData.Current.Link.Count != 0)
-        {
-            currentNode = Twine.TwineData.Current.Link[0];
-        }*/
-		if (!choice) {
-						Twine.TwineData.NextNode (currentNode);
-						//Debug.Log (Twine.TwineData.Current.itemsReq);
-						if (!Twine.TwineData.Current.itemsReq.Equals ("")) {
-								//Debug.Log("Item Required!");
-								if (i.inventory.Count != 0) {
-										for (int x = 0; x < i.inventory.Count; x++) {
-												//Debug.Log(Twine.TwineData.Current.itemsReq.Contains(i.inventory[x]));
-												if (Twine.TwineData.Current.itemsReq.Contains (i.inventory [x])) {
-														createMessage ();
-														if (Twine.TwineData.Current.Link.Count != 0) {
-																//if(!choice)
-																{
-																		//Debug.Log(Twine.TwineData.Current.Link [0]);
-																		currentNode = Twine.TwineData.Current.Link [0];
-																}
-
-														}
-														break;
-												}
-										}
-
+		if (!choice) 
+		{
+			Twine.TwineData.NextNode (currentNode);
+			//Debug.Log (Twine.TwineData.Current.itemsReq);
+			if (!Twine.TwineData.Current.itemsReq.Equals ("")) 
+			{
+				//Debug.Log("Item Required!");
+				if (i.inventory.Count != 0) 
+				{
+					for (int x = 0; x < i.inventory.Count; x++) 
+					{
+						//Debug.Log(Twine.TwineData.Current.itemsReq.Contains(i.inventory[x]));
+						if (Twine.TwineData.Current.itemsReq.Contains (i.inventory [x])) 
+						{
+							createMessage ();
+							if (Twine.TwineData.Current.Link.Count != 0) 
+							{
+								//if(!choice)
+								{
+									//Debug.Log(Twine.TwineData.Current.Link [0]);
+									currentNode = Twine.TwineData.Current.Link [0];
 								}
-						} else {
-								//Debug.Log("No item required!");
-								createMessage ();
-								if (Twine.TwineData.Current.Link.Count != 0) {
-										//if(!choice)
-										{
-												//Debug.Log(Twine.TwineData.Current.Link [0]);
-												currentNode = Twine.TwineData.Current.Link [0];
-										}
 
-								}
+							}
+							break;
 						}
-				}
+					}
 
+				}
+			} 
+			else 
+			{
+				//Debug.Log("No item required!");
+				createMessage ();
+				if (Twine.TwineData.Current.Link.Count != 0) 
+				{
+					//if(!choice)
+					//{
+					//Debug.Log(Twine.TwineData.Current.Link [0]);
+					currentNode = Twine.TwineData.Current.Link [0];
+					//}
+
+				}
+			}
+		}
     }
 
     void Update()
@@ -104,9 +106,8 @@ public class Interactable : MonoBehaviour
                 for (int i = 0; i < choicesLinksList.Count; i++)
                 {
 
-                    if (GUI.Button(new Rect(Screen.width/2,Screen.height/4*i,
+                    if (GUI.Button(new Rect(Screen.width/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
 						//Screen.width - (Screen.width - 5), 3 * (Screen.height / choicesLinksList.Count) + i * (Screen.height / choicesLinksList.Count / choicesLinksList.Count),
-                                           Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
                     {
 						//Debug.Log(i);
 						//Debug.Log(choicesLinksList[i]);
