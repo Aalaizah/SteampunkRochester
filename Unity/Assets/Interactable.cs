@@ -106,7 +106,7 @@ public class Interactable : MonoBehaviour
                 for (int i = 0; i < choicesLinksList.Count; i++)
                 {
 
-                    if (GUI.Button(new Rect(Screen.width/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
+                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
 						//Screen.width - (Screen.width - 5), 3 * (Screen.height / choicesLinksList.Count) + i * (Screen.height / choicesLinksList.Count / choicesLinksList.Count),
                     {
 						//Debug.Log(i);
@@ -118,6 +118,7 @@ public class Interactable : MonoBehaviour
                         createMessage();
                         //Twine.TwineData.NextNode();
                         choice = false;
+						choicesLinksList.Clear();
                     }
                 }
             }
