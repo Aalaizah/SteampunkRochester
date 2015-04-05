@@ -11,7 +11,9 @@ public class TwineNode
 	List<string> linkTitles = new List<string>();
 	List<string> links = new List<string>();
 	string itmReq = "";
+	string itmGain = "";
 	string nextPassage;
+	bool itmTaken;
 	
 	public string Passage {get{return passage;} set{passage = value;}}
 	public List<string> Content {get{return content;} set{content = value;}}
@@ -19,6 +21,7 @@ public class TwineNode
 	public List<string> LinkTitle {get{return linkTitles;}}
 	public List<string> Link{get{ return links;}}
 	public string itemsReq{ get { return itmReq; } }
+	public string ItemsGain{ get { return itmGain; } }
 	
 	public string ContentData
 	{
@@ -165,15 +168,23 @@ public class TwineNode
 		{
 			int startPassage;
 			int startItem = 0;
-			if(data.IndexOf("--") !=-1)
+			if(data.IndexOf("itemReq--") !=-1)
 			{
-				startItem = data.IndexOf("--")+3;
+				startItem = data.IndexOf("itemReq--")+10;
 				while(data[startItem] != '\n')
 				{
 					itmReq += data[startItem];
 					startItem++;
 				}
 				//Debug.Log(itmReq);
+			}
+			if(data.IndexOf("itemGain--") != -1){
+				startItem = data.IndexOf("itemGain--")+11;
+				while(data[startItem] != '\n')
+				{
+					itmGain += data[startItem];
+					startItem++;
+				}
 			}
 			startPassage = data.IndexOf ("::") + 3;
 
@@ -185,7 +196,7 @@ public class TwineNode
 			int endContent = data.IndexOf ("[[");
 			if(endContent != -1 && startItem !=0)
 			{
-				Debug.Log("Theres an item requirement for this node!");
+				//Debug.Log("Theres an item requirement for this node!");
 				tempContent = data.Substring(startItem,endContent-startItem);
 			}
 			else if(endContent != -1)

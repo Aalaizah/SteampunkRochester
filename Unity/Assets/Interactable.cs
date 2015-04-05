@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour
         createMessage();
     }
 
-    public void Progress(Inventory i)
+    public void Progress()
     {
 		if (!choice) 
 		{
@@ -45,12 +45,12 @@ public class Interactable : MonoBehaviour
 			if (!Twine.TwineData.Current.itemsReq.Equals ("")) 
 			{
 				//Debug.Log("Item Required!");
-				if (i.inventory.Count != 0) 
+				if (Inventory.inventory.Count != 0) 
 				{
-					for (int x = 0; x < i.inventory.Count; x++) 
+					for (int x = 0; x < Inventory.inventory.Count; x++) 
 					{
 						//Debug.Log(Twine.TwineData.Current.itemsReq.Contains(i.inventory[x]));
-						if (Twine.TwineData.Current.itemsReq.Contains (i.inventory [x])) 
+						if (Twine.TwineData.Current.itemsReq.Contains (Inventory.inventory [x])) 
 						{
 							createMessage ();
 							if (Twine.TwineData.Current.Link.Count != 0) 
@@ -87,7 +87,9 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
-
+		if(Twine.TwineData.Current.ItemsGain !=""){
+			Inventory.addItem(Twine.TwineData.Current.ItemsGain);
+		}
     }
 
     void OnGUI()
@@ -95,14 +97,13 @@ public class Interactable : MonoBehaviour
         if (selected)
         {
             GUI.skin.box.wordWrap = true;
-            if (choice == false)
+
+            GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
+
+            if (choice == true)
             {
-                GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
-            }
-            else if (choice == true)
-            {
-				Debug.Log(choicesLinksList.Count);
-				Debug.Log(choicesList.Count);
+				//Debug.Log(choicesLinksList.Count);
+				//Debug.Log(choicesList.Count);
                 for (int i = 0; i < choicesLinksList.Count; i++)
                 {
 
@@ -151,8 +152,6 @@ public class Interactable : MonoBehaviour
             if (!selected)
             {
                 currentNode = "0";
-                taken = true;
-
             }
         }
     }

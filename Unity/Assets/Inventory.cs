@@ -2,15 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Inventory : MonoBehaviour {
-	public List<string> inventory;
-	// Use this for initialization
-	void Start () {
-		inventory = new List<string>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+public static class Inventory{
+	public static List<string> inventory = new List<string>();
 
+	public static void addItem(string item){
+		if(!inventory.Contains(item)){
+			inventory.Add(item);
+		}
 	}
 }
