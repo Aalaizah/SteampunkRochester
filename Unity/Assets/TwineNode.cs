@@ -12,6 +12,9 @@ public class TwineNode
 	List<string> links = new List<string>();
 	string itmReq = "";
 	string itmGain = "";
+	string emotnUp = "";
+	string emotnDwn = "";
+	string emotnReq = "";
 	string nextPassage;
 	bool itmTaken;
 	
@@ -22,6 +25,9 @@ public class TwineNode
 	public List<string> Link{get{ return links;}}
 	public string itemsReq{ get { return itmReq; } }
 	public string ItemsGain{ get { return itmGain; } }
+	public string EmotnUp{ get {return emotnUp;}}
+	public string EmotnDwn{ get {return emotnDwn;}}
+	public string EmotnReq{get{return emotnReq;}}
 	
 	public string ContentData
 	{
