@@ -1,0 +1,137 @@
+﻿:: StoryTitle
+Mason, at Park
+
+
+:: 0
+Senton: Hello again.
+[[Hello|Hi]]
+[[I have some questions|AskQuestions]]
+
+
+:: Hi
+Aleksei: Good day.
+[[Continue|AnswerHi]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: AnswerHi
+Senton: How may I be of service to you?
+[[I have some questions|AskQuestions]]
+
+
+:: AskQuestions
+Aleksei: Would you mind if I asked you some questions?
+[[Continue|DoQuestions]]
+
+
+:: DoQuestions
+Senton: What would you like to know?
+[[Glowing Water?|AskGlowingWater]]
+[[Church Wine?(if found this)|AskWine]]
+[[Church of Light?|AskCoLAgain]]
+[[Your Job?|AskJob]]
+[[Your Past?|AskPast]]
+[[No more questions|DoneQuestions]]
+
+
+:: AskGlowingWater
+Aleksei: What do you believe in regards to the glowing water?
+[[Continue|AnswerGlowingWater]]
+
+
+:: AskWine
+Aleksei: What can you tell me about the alcohol you have for church gatherings?
+[[Continue|AnswerWine]]
+
+
+:: AskCoLAgain
+Aleksei: Can you tell me again about the Church of Light and what you believe?
+[[Continue|AnswerCoLAgain]]
+
+
+:: AskJob
+Aleksei: Besides being the founder, what do you do in the church?
+[[Continue|AnswerJob]]
+
+
+:: AskPast
+ItemReq-- SentonPastInfo
+Aleksei: What did you do before founding the Churhc of Light?
+[[Continue|AnswerPast]]
+
+
+:: AnswerGlowingWater
+Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
+[[Continue|AnswerGlowingWater2]]
+[[Other Questions|DoQuestions]]
+
+
+:: AnswerWine
+Senton: It is for church gatherings only.
+[[Not a church yet?|ChurchOfficial]]
+[[Other Questions|DoQuestions]]
+
+
+:: AnswerCoLAgain
+Senton: The Church of Light was founded with the discovery of the glowing water a few years ago. We're a very small protestant group seeking to become a real church.
+[[Other Questions|DoQuestions]]
+
+
+:: AnswerJob
+Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occassionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
+[[Why?|WhyRecognized]]
+[[Other Questions|DoQuestions]]
+
+
+:: AnswerPast
+Senton: ...
+[[Other Questions|DoQuestions]]
+
+
+:: AnswerGlowingWater2
+Senton: Personally, I don't think it tastes very good, but it does make me feel livelier. You should try it some time.
+[[Other Questions|DoQuestions]]
+
+
+:: ChurchOfficial
+Aleksei: Aren't you still working on paperwork for that?
+[[Contine|AnswerOfficial]]
+
+
+:: WhyRecognized
+Aleksei: Why do you want to be recognized?
+[[Contine|AnswerRecognized]]
+
+
+:: AnswerOfficial
+Senton: Yes. Are you threatening me?
+[[Yes|YesThreat]]
+[[No|NoThreat]]
+
+
+:: AnswerRecognized
+Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
+[[Other Questions|DoQuestions]]
+
+
+:: YesThreat
+Aleksei: Actually, yes. Yes I am. Smuggling is illegal. But give me your ties to the mafia, and I won't say anything.
+
+
+:: NoThreat
+Aleksei: I don't condone smuggling, but I'm not interested in exposing you.
+[[Other Questions|DoQuestions]]
+
+
+:: DoneQuestions
+Aleksei: I don't have any more questions.
+[[Continue|Good-bye]]
+
+
+:: Good-bye
+Aleksei: Farewell.
+
+
