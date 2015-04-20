@@ -77,6 +77,9 @@ public class Interactable : MonoBehaviour
 		if(Twine.TwineData.Current.ItemsGain !=""){
 			Inventory.addItem(Twine.TwineData.Current.ItemsGain);
 		}
+		if(Twine.TwineData.Current.ItemRem !=""){
+			Inventory.removeItem(Twine.TwineData.Current.ItemRem);
+		}
 		if(Twine.TwineData.Current.EmotnDwn !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
 		}
