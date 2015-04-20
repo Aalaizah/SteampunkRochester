@@ -15,7 +15,6 @@ public class TestManager : MonoBehaviour {
 		testInteractable.AddComponent<SpriteRenderer> ();
 		test = testInteractable.AddComponent<Interactable> ();
 		test.SetName ("test", "test");
-		test.isItem = true;
 		Twine = GameObject.Find ("TwineImporter").GetComponent<TwineImporter> ();
 	}
 	

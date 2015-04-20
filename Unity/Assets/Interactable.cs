@@ -18,7 +18,6 @@ public class Interactable : MonoBehaviour
     string message = "";
     string currentNode = "0";
     public bool taken = false;
-    public bool isItem;
     public List<string> choicesList;
     public List<string> choicesLinksList;
     public bool choice = false;
@@ -42,53 +41,47 @@ public class Interactable : MonoBehaviour
 		{
 			Twine.TwineData.NextNode (currentNode);
 			//Debug.Log (Twine.TwineData.Current.itemsReq);
-			if (!Twine.TwineData.Current.itemsReq.Equals ("")) 
+			bool itemReq = !Twine.TwineData.Current.itemsReq.Equals ("");
+			bool emotnReq = !Twine.TwineData.Current.EmotnReqChar.Equals( "");
+			if (itemReq || emotnReq) 
 			{
-				//Debug.Log("Item Required!");
-				if (Inventory.inventory.Count != 0) 
+				if(itemReq)
 				{
-					for (int x = 0; x < Inventory.inventory.Count; x++) 
-					{
-						//Debug.Log(Twine.TwineData.Current.itemsReq.Contains(i.inventory[x]));
-						if (Twine.TwineData.Current.itemsReq.Contains (Inventory.inventory [x])) 
-						{
-							createMessage ();
-							if (Twine.TwineData.Current.Link.Count != 0) 
-							{
-								//if(!choice)
-								{
-									//Debug.Log(Twine.TwineData.Current.Link [0]);
-									currentNode = Twine.TwineData.Current.Link [0];
-								}
-
-							}
-							break;
-						}
-					}
-
+					if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
+						return;
 				}
-			} 
+				if(emotnReq)
+				{
+					if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
+						return;
+				}
+				if (Twine.TwineData.Current.Link.Count != 0) 
+				{
+					currentNode = Twine.TwineData.Current.Link [0];
+				}
+			}
 			else 
 			{
-				//Debug.Log("No item required!");
 				createMessage ();
 				if (Twine.TwineData.Current.Link.Count != 0) 
 				{
-					//if(!choice)
-					//{
-					//Debug.Log(Twine.TwineData.Current.Link [0]);
 					currentNode = Twine.TwineData.Current.Link [0];
-					//}
 
 				}
 			}
-		}
-    }
+    	}
+	}
 
     void Update()
     {
 		if(Twine.TwineData.Current.ItemsGain !=""){
 			Inventory.addItem(Twine.TwineData.Current.ItemsGain);
+		}
+		if(Twine.TwineData.Current.EmotnDwn !=""){
+			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
+		}
+		if(Twine.TwineData.Current.EmotnUp !=""){
+			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
 		}
     }
 
@@ -178,6 +171,7 @@ public class Interactable : MonoBehaviour
 
     void createMessage()
     {
+		EmotionManager.resetBooleans();
         message = "";
 
         //speaker = Twine.TwineData.Current.SpeakerData;
@@ -192,6 +186,7 @@ public class Interactable : MonoBehaviour
 
         TypeText();
     }
+	
 
     void TypeText()
     {

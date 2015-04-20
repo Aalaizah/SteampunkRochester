@@ -14,7 +14,8 @@ public class TwineNode
 	string itmGain = "";
 	string emotnUp = "";
 	string emotnDwn = "";
-	string emotnReq = "";
+	string emotnReqChar = "";
+	string emotnReqInt = "";
 	string nextPassage;
 	bool itmTaken;
 	
@@ -27,7 +28,8 @@ public class TwineNode
 	public string ItemsGain{ get { return itmGain; } }
 	public string EmotnUp{ get {return emotnUp;}}
 	public string EmotnDwn{ get {return emotnDwn;}}
-	public string EmotnReq{get{return emotnReq;}}
+	public string EmotnReqChar{get{return emotnReqChar;}}
+	public string EmotnReqInt{get{return emotnReqInt;}}
 	
 	public string ContentData
 	{
@@ -192,11 +194,43 @@ public class TwineNode
 					startItem++;
 				}
 			}
+			if(data.IndexOf("happyUp--") != -1)
+			{
+				startItem = data.IndexOf("happyUp--")+10;
+				while(data[startItem] != '\n')
+				{
+					emotnUp += data[startItem];
+					startItem++;
+				}
+			}
+			if(data.IndexOf("happyDwn--") != -1)
+			{
+				startItem = data.IndexOf("happyDwn--")+11;
+				while(data[startItem] != '\n')
+				{
+					emotnDwn += data[startItem];
+					startItem++;
+				}
+			}
+			if(data.IndexOf ("happyReq--") != -1)
+			{
+				startItem = data.IndexOf("happyReq--") +11;
+				while(data[startItem] != ':')
+				{
+					emotnReqChar += data[startItem];
+					startItem++;
+				}
+				startItem++;
+				while(data[startItem] != '\n'){
+					emotnReqInt += data[startItem];
+					startItem++;
+				}
+			}
 			startPassage = data.IndexOf ("::") + 3;
 
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
-			Debug.Log(passage);
+			//Debug.Log(passage);
 			string tempContent;
 			
 			int endContent = data.IndexOf ("[[");
