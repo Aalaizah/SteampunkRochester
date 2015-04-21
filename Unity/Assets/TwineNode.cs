@@ -200,7 +200,7 @@ public class TwineNode
 				}
 			}
 			//lose/use an item command
-			if(data.IndexOf("itemRem--" !=-1)){
+			if(data.IndexOf("itemRem--") != -1){
 				startItem = data.IndexOf("itemRem--")+10;
 				while(data[startItem] != '\n'){
 
