@@ -200,10 +200,11 @@ public class TwineNode
 				}
 			}
 			//lose/use an item command
-			if(data.IndexOf("itemRem--" !=-1)){
+			if(data.IndexOf("itemRem--") !=-1){
 				startItem = data.IndexOf("itemRem--")+10;
 				while(data[startItem] != '\n'){
-
+					itmRem += data[startItem];
+					startItem++;
 				}
 			}
 			//a character is happier with the player
@@ -241,11 +242,20 @@ public class TwineNode
 					startItem++;
 				}
 			}
+
 			startPassage = data.IndexOf ("::") + 3;
 
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
 			//Debug.Log(passage);
+			Debug.Log(passage);
+			Debug.Log(itmReq);
+			Debug.Log(itmGain);
+			Debug.Log(itmRem);
+			Debug.Log(emotnUp);
+			Debug.Log(emotnDwn);
+			Debug.Log(emotnReqChar);
+			Debug.Log(emotnReqInt);
 			string tempContent;
 			
 			int endContent = data.IndexOf ("[[");

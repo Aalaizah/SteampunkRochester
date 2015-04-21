@@ -1,11 +1,8 @@
-﻿:: StoryTitle
-Mason, at Park
-
-
-:: 0
-Senton: Hello again.
+﻿:: 0
+Priest: Hello there.
 [[Hello|Hi]]
-[[I have some questions|AskQuestions]]
+[[Who are you?|AskWho]]
+[[What is going on here?|AskHere]]
 
 
 :: Hi
@@ -17,34 +14,124 @@ Aleksei: Good day.
 Anonymous
 
 
+:: AskWho
+Aleksei: Who are you?
+[[Continue|AnswerWho]]
+
+
 :: AnswerHi
-Senton: How may I be of service to you?
-[[I have some questions|AskQuestions]]
+Priest: How may I be of service to you?
+[[Who are you?|AskWho]]
+[[What is going on here?|AskHere]]
+
+
+:: AnswerWho
+Priest: I am Mason Senton. I am the founder of this Church and the chief representative of this congregation.
+[[The Church?|AskCoL]]
+[[How old is the church?|AskCoLAge]]
+
+
+:: AskCoL
+Aleksei: You mean the Church of Light? What exactly do you worship?
+[[Continue|AnswerCoL]]
+
+
+:: AskHere
+Aleksei: What is happening here?
+[[Continue|AnswerHere]]
+
+
+:: AskCoLAge
+Aleksei: You're the founder? The church can't be very old then.
+[[Continue|AnswerCoLAge]]
+
+
+:: AnswerCoL
+Senton: We're Protestant. We serve and praise the Trinity through holistic well-being and humanitarian work. 
+[[Convert me?|Convert?]]
+[[How old is the church?|AskCoLAge]]
+
+
+:: AnswerHere
+Priest: This is our daily church gathering. We worship through exercise and nutrition the way others do through song. I am Mason Senton, the founder. Many call be a Priest, which isn't true.
+[[The Church?|AskCoL]]
+
+
+:: AnswerCoLAge
+Senton: The Church of Light is as old as the glowing water here, yet people seem to believe it has always been here, even before we could see it.
+[[Continue|AnswerColAge2]]
+
+
+:: Convert?
+Aleksei: You're not going to convert me?
+[[Continue|AnswerConvert]]
+
+
+:: AnswerColAge2
+Senton: The Church of Light is new, but our ideas of nutrition and exercise are not. The glowing element of the water simply helps us achieve our goals. 
+[[Continue|AnswerConvert2]]
+
+
+:: AnswerConvert
+Senton: No, I won't. I don't like it when people force religion on others. However, I would encourage you to consider your physical well-being hand in hand with your spiritual.
+[[Continue|AnswerConvert2]]
+
+
+:: AnswerConvert2
+Senton: Joining the Church of Light is more about looking after yourself to honor God. Feel free to join the exercising. 
+[[Certainly|JoinIn]]
+[[I might later|JoinIn]]
+[[No, thank you|NoJoin]]
+[[I hate exercising.|NoJoinRude]]
+
+
+:: NoJoin
+Aleksei: I politely decline. But thank you for the offer.
+[[Ask Questions?|AskQuestions]]
+[[Good-bye|Good-bye]]
+
+
+:: Pin
+itemGain-- CoLPin
+Senton: If you do, here is a pin, as a reminder of your experience. I encourage you to return to us. And that way, the congregation knows you have talked to me.
+[[Ask Questions?|AskQuestions]]
+[[Good-bye|Good-bye]]
+
+
+:: JoinIn
+Aleksei: I may join in later.
+[[Continue|Pin]]
+
+
+:: NoJoinRude
+happyDown-- Senton
+Aleksei: No, I don't like exercising.
+[[Ask Questions?|AskQuestions]]
+[[Good-bye|Good-bye]]
 
 
 :: AskQuestions
 Aleksei: Would you mind if I asked you some questions?
-[[Continue|DoQuestions]]
+[[Continue(if not unhappy)|DoQuestions]]
+[[Continue(if unhappy)|NoQuestions]]
+
+
+:: NoQuestions
+Senton: Perhaps another day. I have other matters to attend to right now. Good-day, sir.
+[[Good-bye|Good-bye]]
 
 
 :: DoQuestions
 Senton: What would you like to know?
 [[Glowing Water?|AskGlowingWater]]
-[[Church Wine?(if found this)|AskWine]]
 [[Church of Light?|AskCoLAgain]]
 [[Your Job?|AskJob]]
-[[Your Past?|AskPast]]
 [[No more questions|DoneQuestions]]
 
 
 :: AskGlowingWater
 Aleksei: What do you believe in regards to the glowing water?
 [[Continue|AnswerGlowingWater]]
-
-
-:: AskWine
-Aleksei: What can you tell me about the alcohol you have for church gatherings?
-[[Continue|AnswerWine]]
 
 
 :: AskCoLAgain
@@ -57,26 +144,14 @@ Aleksei: Besides being the founder, what do you do in the church?
 [[Continue|AnswerJob]]
 
 
-:: AskPast
-ItemReq-- SentonPastInfo
-Aleksei: What did you do before founding the Churhc of Light?
-[[Continue|AnswerPast]]
-
-
 :: AnswerGlowingWater
 Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
 [[Continue|AnswerGlowingWater2]]
 [[Other Questions|DoQuestions]]
 
 
-:: AnswerWine
-Senton: It is for church gatherings only.
-[[Not a church yet?|ChurchOfficial]]
-[[Other Questions|DoQuestions]]
-
-
 :: AnswerCoLAgain
-Senton: The Church of Light was founded with the discovery of the glowing water a few years ago. We're a very small protestant group seeking to become a real church.
+Senton: The Church of Light was founded with the discovery of the glowing water a short while ago. We're a very small protestant group seeking to become a real church
 [[Other Questions|DoQuestions]]
 
 
@@ -86,19 +161,9 @@ Senton: As the founder, I try to keep an eye on everything and make sure things 
 [[Other Questions|DoQuestions]]
 
 
-:: AnswerPast
-Senton: ...
-[[Other Questions|DoQuestions]]
-
-
 :: AnswerGlowingWater2
-Senton: Personally, I don't think it tastes very good, but it does make me feel livelier. You should try it some time.
+Senton: Personally, I don't think it tastes any different, but it does make me feel livelier. You should try it some time.
 [[Other Questions|DoQuestions]]
-
-
-:: ChurchOfficial
-Aleksei: Aren't you still working on paperwork for that?
-[[Contine|AnswerOfficial]]
 
 
 :: WhyRecognized
@@ -106,23 +171,8 @@ Aleksei: Why do you want to be recognized?
 [[Contine|AnswerRecognized]]
 
 
-:: AnswerOfficial
-Senton: Yes. Are you threatening me?
-[[Yes|YesThreat]]
-[[No|NoThreat]]
-
-
 :: AnswerRecognized
 Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
-[[Other Questions|DoQuestions]]
-
-
-:: YesThreat
-Aleksei: Actually, yes. Yes I am. Smuggling is illegal. But give me your ties to the mafia, and I won't say anything.
-
-
-:: NoThreat
-Aleksei: I don't condone smuggling, but I'm not interested in exposing you.
 [[Other Questions|DoQuestions]]
 
 

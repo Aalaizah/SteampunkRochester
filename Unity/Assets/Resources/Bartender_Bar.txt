@@ -1,8 +1,4 @@
-﻿:: StoryTitle
-Bartender_Bar
-
-
-:: 0
+﻿:: 0
 Bartender: *nods* What can I do ya for?
 [[How are you?|AskHowAre]]
 [[Order a drink|OrderDrink]]
@@ -25,7 +21,7 @@ Fluffy: You know any rumors or news?
 
 
 :: OrderDrink
-Fluffy: I'll have a drink. *place money on counter*
+Fluffy: I'll have a drink. *place money on counter* (track this?)
 [[Continue|ReceiveDrink]]
 
 
@@ -68,13 +64,13 @@ Fluffy: I'm sorry for misunderstanding.
 
 
 :: IThought
-Fluffy: I thought, since you run bar, you talk to lots of people-
+Fluffy: I thought, since you run a speakeasy, you talk to lots of people-
 [[Continue|ThoughtWrong2]]
 
 
 :: Yes?
 happyDown-- Bartender
-Fluffy: *says something smartass/rude*
+Fluffy: *says something smartass/rude* (ideas? I'm bad at these)
 [[Continue|ThoughtWrong1]]
 
 
