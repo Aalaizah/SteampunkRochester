@@ -1,0 +1,102 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Game Programmer, 1st Half</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:2368/assets/css/screen.css?v=fdf74af4e3">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic%7COpen+Sans:700,400">
+
+    <meta name="generator" content="Ghost 0.5">
+<link rel="alternate" type="application/rss+xml" title="Steampunk Rochester Dev Blog" href="../rss/index.html">
+<link rel="canonical" href="http://my-ghost-blog.com/game-programmer-1st-half/">
+</head>
+<body class="post-template">
+
+    
+
+<nav class="main-nav clearfix">
+    <a class="back-button icon-arrow-left" href="http://my-ghost-blog.com">Home</a>
+    <a class="subscribe-button icon-feed" href="http://my-ghost-blog.com/rss/">Subscribe</a>
+</nav>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Game Programmer, 1st Half</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-03-31">31 March 2015</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p><b>Beginning</b> <br>
+Jacobs and the class defined our goal. We would make a game set in 1920's rochester which emphasized story, choices, and travel throughout the city. We split into different teams and I volunteered for programming.</p>
+
+<p><b>First Step</b> <br>
+    The programming team coordinated with other teams. Determining what features were demanded or desirable for the game system. Also determining what content we could expect other teams to deliver and how to schedule our milestones. This was difficult because many details were up in the air, the process of development for other teams was not as clear. What were artists using for software, what were writers using for software, was the design document accurate to design intentions? We created a good view of the vitals and discussed the potential road bumps with eachother.</p>
+
+<p><b>Going to Work</b> <br>
+    Camera: To support larger environments, we needed a scrolling camera to explore the level. To do this I created a script for the unity camera. The result is an orthographic camera with boundarys on its sides and the ability to move within these boundaries via the mouse.
+    Levels: To create levels we have a background and the ability to add characters and move via the scrolling camera. Natasha and I made a scene for crafting new level prefabs. Prefabs which represent a level and its contents. We will be modifying this system soon to avoid nesting prefab conflicts.
+    Map: Natasha and I created a map for selecting from multiple levels. There is a map marker prefab which shows a default preview of the level and can be clicked to navigate to specific levels.</p>
+
+<p><b>Reflection</b> <br>
+    I am enjoying this project. Taking a large amount of time ramping up cuts into our development time. However it also allows us to move confidently in a common direction. I am enjoying working with a large team with different sub-teams. Source-Control is currently working well, however large-scale organization and communication could be better.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/tls8963/">Tim Steen</a></h4>
+
+                    <p>Read <a href="../author/tls8963/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Game%20Programmer%2C%201st%20Half&amp;url=http://my-ghost-blog.com/game-programmer-1st-half/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://my-ghost-blog.com/game-programmer-1st-half/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://my-ghost-blog.com/game-programmer-1st-half/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://my-ghost-blog.com">Steampunk Rochester Dev Blog</a> © 2015</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="http://127.0.0.1:2368/public/jquery.js?v=fdf74af4e3"></script>
+
+    <script type="text/javascript" src="http://127.0.0.1:2368/assets/js/jquery.fitvids.js?v=fdf74af4e3"></script>
+    <script type="text/javascript" src="http://127.0.0.1:2368/assets/js/index.js?v=fdf74af4e3"></script>
+
+</body>

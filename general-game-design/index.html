@@ -1,0 +1,102 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>General Game Design</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:2368/assets/css/screen.css?v=fdf74af4e3">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic%7COpen+Sans:700,400">
+
+    <meta name="generator" content="Ghost 0.5">
+<link rel="alternate" type="application/rss+xml" title="Steampunk Rochester Dev Blog" href="../rss/index.html">
+<link rel="canonical" href="http://my-ghost-blog.com/general-game-design/">
+</head>
+<body class="post-template tag-designteam tag-design">
+
+    
+
+<nav class="main-nav clearfix">
+    <a class="back-button icon-arrow-left" href="http://my-ghost-blog.com">Home</a>
+    <a class="subscribe-button icon-feed" href="http://my-ghost-blog.com/rss/">Subscribe</a>
+</nav>
+
+<main class="content" role="main">
+
+    <article class="post tag-designteam tag-design">
+
+        <header class="post-header">
+            <h1 class="post-title">General Game Design</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-03-20">20 March 2015</time>  on <a href="../tag/designteam/">#designteam</a>, <a href="../tag/design/">design</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>I don't know how to start this blog, so I'm just gonna dive in. Designing investigative journalism games leads to a lot of influence from games like Phoenix Wright, but we definitely wanted to give it a different feel. Also the fact that Steampunk Rochester is a student game made in one semester made it so we had to really narrow our focus to make something solid, fun, and playable. We figured that to start we were just going to have a map and conversations; when you click on a location it brings you straight to a conversation with a person, then you would go through that conversation and back to the map.</p>
+
+<p>But that's seriously underestimating programming team. Especially with Twine to Unity, that was too simple. Somebody mentioned platforming levels to travel between locations, but we did a hard pass on that one. Literally nobody wants that. Whoever mentioned that, for shame. We decided to add a time mechanic, where traveling would take a half hour and you would always spend an hour at a location. However, the user wouldn't be forced to micromanage their time like this: they'd simply know if it was morning, afternoon, or night, which changes whether or not some characters are in a location or not. I'm honestly not entirely sold on this, and think maybe we could switch to being able to go one place in the morning, one in the afternoon, and one at night. It adds another element of strategy, and since events take place over a week or so you'll always have a chance to catch up if you miss someone. I don't know, it's something to discuss after break.</p>
+
+<p>Here's how the game flow is gonna go. The base screen is a map, the map in the editor's office. Each location has a pushpin to denote it, and strings tied between them as paths. Hovering over a pushpin will bring up a tooltip, perhaps in the form of a sticky note, that says what the location is and perhaps who is there (we talked about just saying the characters who are always there if you've been there before, but if we do that then players might assume that no new people are there and that might pose a problem). There's a little photograph of your character showing where you are, and when you move to a new location he travels along the string.</p>
+
+<p>When you get to a location, it opens up to a scene. You can click on different things in the scene to investigate, such as objects or people. If you click on a person you start a conversation with them. When you get to a point where you can bring up a topic, ask them a question, or respond, a box pops up with your options. If you are at a break in the conversation you can choose to present evidence, which will pull up a grid representing your inventory that holds all your evidence. But Tim's gonna talk more about the dialog system, so I'm not going to go into it.</p>
+
+<p>I'm excited to see how the game turns out. Writing this blog also totally helped me think of why I'm not so set on some of the decisions we've made. When we get back I'll be sure to bring my issues up.</p>
+
+<p>Deuces, bros.</p>
+
+<p>Jackie Wiley</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/jlw6587/">Jackie Wiley</a></h4>
+
+                    <p>Read <a href="../author/jlw6587/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=General%20Game%20Design&amp;url=http://my-ghost-blog.com/general-game-design/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://my-ghost-blog.com/general-game-design/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://my-ghost-blog.com/general-game-design/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="http://my-ghost-blog.com">Steampunk Rochester Dev Blog</a> © 2015</section>
+         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+
+    <script src="http://127.0.0.1:2368/public/jquery.js?v=fdf74af4e3"></script>
+
+    <script type="text/javascript" src="http://127.0.0.1:2368/assets/js/jquery.fitvids.js?v=fdf74af4e3"></script>
+    <script type="text/javascript" src="http://127.0.0.1:2368/assets/js/index.js?v=fdf74af4e3"></script>
+
+</body>
