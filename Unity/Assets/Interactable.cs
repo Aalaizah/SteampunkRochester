@@ -11,7 +11,7 @@ public class Interactable : MonoBehaviour
     public Sprite activeSprite;
     public string id;
     public string path;
-    private bool clicked;
+    public bool clicked;
     public bool selected;
     private bool readTwine;
     TwineImporter Twine;
@@ -37,6 +37,7 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
+		Debug.Log(Twine.TwineData.Current.Link[0]);
 		if (!choice) 
 		{
 			Twine.TwineData.NextNode (currentNode);
@@ -55,18 +56,26 @@ public class Interactable : MonoBehaviour
 					if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
 						return;
 				}
-				if (Twine.TwineData.Current.Link.Count != 0) 
+				if (!Twine.TwineData.Current.Link[0].Equals( " ")) 
 				{
 					currentNode = Twine.TwineData.Current.Link [0];
+				}
+				else
+				{
+					selected = false;
 				}
 			}
 			else 
 			{
 				createMessage ();
-				if (Twine.TwineData.Current.Link.Count != 0) 
+				if (!Twine.TwineData.Current.Link[0].Equals( " ")) 
 				{
 					currentNode = Twine.TwineData.Current.Link [0];
 
+				}
+				else
+				{
+					selected = false;
 				}
 			}
     	}
@@ -105,21 +114,6 @@ public class Interactable : MonoBehaviour
                 {
 					currentNode = choicesLinksList[i];
 					Twine.TwineData.NextNode(currentNode);
-					bool itemReq = !Twine.TwineData.Current.itemsReq.Equals ("");
-					bool emotnReq = !Twine.TwineData.Current.EmotnReqChar.Equals( "");
-					if (itemReq || emotnReq) 
-					{
-						if(itemReq)
-						{
-							if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
-								return;
-						}
-						if(emotnReq)
-						{
-							if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
-								return;
-						}
-					}
 
                     if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
 						//Screen.width - (Screen.width - 5), 3 * (Screen.height / choicesLinksList.Count) + i * (Screen.height / choicesLinksList.Count / choicesLinksList.Count),
@@ -135,6 +129,7 @@ public class Interactable : MonoBehaviour
                         //Twine.TwineData.NextNode();
                         choice = false;
 						choicesLinksList.Clear();
+						choicesList.Clear();
                     }
                 }
             }
@@ -226,9 +221,32 @@ public class Interactable : MonoBehaviour
             tempNode = Twine.TwineData.Current;
             foreach (string currentChoice in Twine.TwineData.Current.Link)
             {
-                Twine.TwineData.NextNode(currentChoice);
-                choicesLinksList.Add(currentChoice);
-                choicesList.Add(Twine.TwineData.Current.ContentData);
+				bool triggered = false;
+				Twine.TwineData.NextNode(currentChoice);
+				bool itemReq = !Twine.TwineData.Current.itemsReq.Equals ("");
+				bool emotnReq = !Twine.TwineData.Current.EmotnReqChar.Equals( "");
+				if (itemReq || emotnReq) 
+				{
+					if(itemReq)
+					{
+						if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
+							triggered = true;
+					}
+					if(emotnReq)
+					{
+						if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
+							triggered=true;
+					}
+					if (Twine.TwineData.Current.Link.Count != 0) 
+					{
+						currentNode = Twine.TwineData.Current.Link [0];
+					}
+				}
+                if(!triggered)
+				{
+                	choicesLinksList.Add(currentChoice);
+                	choicesList.Add(Twine.TwineData.Current.ContentData);
+				}
             }
             Twine.TwineData.Current = tempNode;
         }

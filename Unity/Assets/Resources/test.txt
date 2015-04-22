@@ -16,12 +16,12 @@ Narrator: You took the black box but it is still here....
 [[Test|9]]
 
 :: 9
-itemReq-- BlackBox
 Narrator: Do you really want two items?
 [[Test|4]] 
 [[Test|5]]
 
 :: 4
+itemReq-- potato
 Narrator: Yes
 [[Test|6]]
 
