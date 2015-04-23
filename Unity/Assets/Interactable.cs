@@ -140,14 +140,16 @@ public class Interactable : MonoBehaviour
     {
         if (!clicked)
         {
-            spriteRenderer.sprite = hoverSprite;
+			if(hoverSprite)
+            	spriteRenderer.sprite = hoverSprite;
         }
     }
 
     void OnMouseExit()
     {
         clicked = false;
-        spriteRenderer.sprite = idleSprite;
+		if(idleSprite)
+        	spriteRenderer.sprite = idleSprite;
     }
 
     void OnMouseDown()
@@ -156,7 +158,8 @@ public class Interactable : MonoBehaviour
         {
 
             clicked = true;
-            spriteRenderer.sprite = activeSprite;
+			if(activeSprite)
+            	spriteRenderer.sprite = activeSprite;
             selected = !selected;
             //Debug.Log(selected);
             if (!selected)
