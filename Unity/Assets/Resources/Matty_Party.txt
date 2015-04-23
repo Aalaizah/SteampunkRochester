@@ -1,0 +1,127 @@
+﻿:: 0
+Matty: Aleksei! So glad you could make it, darling.
+[[Hello|Hi]]
+[[Thanks|Thank]]
+
+
+:: StoryTitle
+Matty, at Party
+
+
+:: Hi
+Aleksei: Hello, Matty. It's been a while.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Thank
+Aleksei: Thanks for inviting me, Matty. I'm surprised to see so many people in one place!
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: StoryAuthor
+Anonymous
+
+
+:: ContinueMatty
+Aleksei: That's wonderful, Matty. Where did you meet?
+Matty: Well, I was on a stroll through the park and they were having a little gathering and looked like they were having such a fabulous time that I just had to approach them and join. So happy that I did, because they're just so very kind.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Who
+Aleksei: Who are all of these people, Matty? It feels like this place is more packed that the World's Fair!
+Matty: Oh well these are my new friends, Aleksei! They're all so welcoming and have wonderful tales. Perhaps they'll lead you to your next story? They're not snooty like those suffragettes or scary like the Ziccardi's or Mercurio's; they'll tell you their tales for days!
+Aleksei: Well then I must thank you for inviting me.
+Matty: Of course, Aleksei. It's always good to have you here.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: ContinueAleksei
+Matty: How about you, Aleksei darling? Any interesting escapades you've been investigating into?
+Aleksei: I'm in between stories, sadly. I'm trying to look for the next big thing, front page news! I very much enjoy my job, but small filler pieces will get me nowhere. That Pulitzer Prize is calling to me, Matty. I just have to figure out how to get there.
+Matty: And I'm sure you will. You're just a gem! Your writing always gets me on the edge of my seat.
+Aleksei: Thanks, Matty.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: AskYou
+Aleksei: How are you, Matty? What have you been up to?
+Matty: Oh well my life has just been going fabulously! I've met such a wonderful group of new companions. We have tea every morning and they've been teaching me new exercises and introducing me to oh so many things! They are really just a joy to be around.
+[[Matty's friends|ContinueMatty]]
+[[Your work|ContinueAleksei]]
+
+
+:: SmallTalk
+[[How are you?|AskYou]]
+[[Your brother|AskBrother]]
+[[Fun story|TellStory]]
+[[Questions|Questions]]
+[[Goodbye|Leave]]
+
+
+:: Questions
+[[Who's here?|Who]]
+[[Purpose of party|Why]]
+[[The drink|Drink]]
+[[Converse|SmallTalk]]
+[[Goodbye|Leave]]
+
+
+:: AskBrother
+Aleksei: How's your brother? I haven't seen him in quite some time.
+Matty: Oh, Gregor? Busy as always. He can't seem to sit still! He's always traveling with those comrades of his, providing protection. It sounds like a fabulous life; he gets to see so much!
+Aleksei: Comrades, hmm?
+Matty: *Laughs* Oh Aleksei, what can I say. I'm trying out some new vocabulary, and I thought that one would be particularly amusing for you!
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Why
+Aleksei: So what led you to throw this roaring party?
+Matty: Well you know I just love parties, darling. I was overdue for throwing my own! Of course, having all of these new friends meant that I had a great reason to invite all of these people over and enjoy their company.
+Aleksei: That makes sense. Although I do see money being passed around and checks being written... what's going on with that?
+Matty: Oh it's simple. These friends do a lot of charity work to help out our city. Getting everybody together and talking tends to lead to people sharing ideas and helping each other out with their endeavors.
+Aleksei: What kind of things are they raising money for?
+Matty: Oh, I don't know. This and that. Health, nutrition, something to do with the canal water. I'm sure you've heard the peculiar rumors.
+[[Rumors?|Rumors]]
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Rumors
+Aleksei: You always know your onions, Matty. I'm not sure I've heard these rumors yet.
+Matty: Oh, I do always seem to be on top of things don't I? I'll get you in the know. There's been a lot of talk about the canal water... most nights it seems to be completely lit, as if it was full of lanterns or fireflies! I haven't seen it myself, but I've heard mention of it amongst my companions.
+Aleksei: Hmm, that seems peculiar. Maybe I can find out more about it.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: TellStory
+Matty: I just love your stories, Aleksei. Do you have any marvelous new ones for me?
+Aleksei: Well I was walking down West Main Street, on my way to Hots and Potatoes for breakfast. Before I knew it, something zoomed right passed me, nearly blowing my hat off! I whipped around to see what it was, and imagine my surprise when I saw a large man skating around... on steam-powered roller skates!
+Matty: Steam-powered roller skates?! Go chase yourself, Aleksei! I don't believe you for a second.
+Aleksei: Oh but it's true! Would I lie to you? I saw it right before my very eyes. I could hardly believe it myself.
+Matty: You always see the most outrageous things, Aleksei, but I must believe you. Surely I'll be walking down Park Ave next week and see these steam skates all over! That's always how it goes with your stories.
+[[Coverse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Drink
+Aleksei: There seems to be something curious about that giggle water, Matty. It almost looks as if it's glowing!
+Matty: Oh it's all the rage now, darling. I was actually just introduced to it! You're not just imagining, it really is glowing! It's just a natural little bit of water you add to it and there it goes, shining like the sun!
+Aleksei: How odd! I'll have to look into it.
+[[Converse|SmallTalk]]
+[[Questions|Questions]]
+
+
+:: Leave
+Aleksei: I think I'm going to blouse, Matty. I had quite the long day. But you do throw a marvelous party. Thank you for having me.
+Matty: Of course, Aleksei. It's always wonderful catching up. We'll have to go out for tea soon.
+Aleksei: I'd like that very much. Enjoy the rest of your night.
+
+

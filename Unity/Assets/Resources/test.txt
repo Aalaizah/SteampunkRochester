@@ -12,12 +12,16 @@ Narrator: Do you want to pick up the item?
 [[Test|8]]
 
 :: 3
-itemReq-- BlackBox
+Narrator: You took the black box but it is still here....
+[[Test|9]]
+
+:: 9
 Narrator: Do you really want two items?
-[[Choice1.1|4]] 
-[[Choice1.2|5]]
+[[Test|4]] 
+[[Test|5]]
 
 :: 4
+itemReq-- potato
 Narrator: Yes
 [[Test|6]]
 
