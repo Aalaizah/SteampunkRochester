@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour
     public string path;
     public bool clicked;
     public bool selected;
+	public bool isPerson;
+	private bool hasAlreadyTalked = false;
     private bool readTwine;
     TwineImporter Twine;
     string message = "";
@@ -95,6 +97,11 @@ public class Interactable : MonoBehaviour
 		}
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
+		}
+		if(isPerson && !hasAlreadyTalked)
+		{
+			TimeManager.passTime(60);
+			hasAlreadyTalked = true;
 		}
     }
 
