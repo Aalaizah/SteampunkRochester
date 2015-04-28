@@ -247,15 +247,19 @@ public class TwineNode
 
 			int endPassage = data.IndexOf ("\r\n");
 			passage = data.Substring (startPassage, endPassage - 1);
-			//Debug.Log(passage);
-			Debug.Log(passage);
-			Debug.Log(itmReq);
-			Debug.Log(itmGain);
-			Debug.Log(itmRem);
-			Debug.Log(emotnUp);
-			Debug.Log(emotnDwn);
-			Debug.Log(emotnReqChar);
-			Debug.Log(emotnReqInt);
+			bool printDebug = false;
+			if(printDebug)
+			{
+				//Debug.Log(passage);
+				Debug.Log(passage);
+				Debug.Log(itmReq);
+				Debug.Log(itmGain);
+				Debug.Log(itmRem);
+				Debug.Log(emotnUp);
+				Debug.Log(emotnDwn);
+				Debug.Log(emotnReqChar);
+				Debug.Log(emotnReqInt);
+			}
 			string tempContent;
 			
 			int endContent = data.IndexOf ("[[");

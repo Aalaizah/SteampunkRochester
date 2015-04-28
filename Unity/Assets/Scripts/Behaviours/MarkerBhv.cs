@@ -5,6 +5,7 @@ public class MarkerBhv : MonoBehaviour {
 	GameObject m_tack;
 	GameObject m_thumbnail;
 	GameObject m_map;
+	MapHub mapScript;
 	Vector2 m_mousePosition;
 	public GameObject m_levelToLoad;
 
@@ -13,6 +14,7 @@ public class MarkerBhv : MonoBehaviour {
 		m_tack = transform.Find("Tack").gameObject;
 		m_thumbnail = transform.Find("Thumbnail").gameObject;
 		m_map = GameObject.Find("Map");
+		mapScript = m_map.GetComponent<MapHub>();
 	}
 	
 	// Update is called once per frame
@@ -41,10 +43,22 @@ public class MarkerBhv : MonoBehaviour {
 			return;
 		//disable the map
 		m_map.SetActive(false);
-		//move time foward 30 minutes
-		TimeManager.passTime(30);
+		//move time foward 30 minutes, if we werent just here
+		Debug.Log("Time Ebbs: " + TimeManager.getFormattedTime());
+		if(mapScript.LastLevel != m_levelToLoad)
+		{
+			TimeManager.passTime(30);
+		}
+		Debug.Log("Time and Flows?: " + TimeManager.getFormattedTime());
+		mapScript.LastLevel = m_levelToLoad;
 		//load level
 		Instantiate(m_levelToLoad);
-		//todo, add player and disable map
+		Invoke("delayedChangeEvent", 1);
+	}
+
+	void delayedChangeEvent()
+	{
+		var obj = GameObject.FindObjectOfType<TestManager>();
+		obj.SendMessage("OnLevelChange", m_map, SendMessageOptions.RequireReceiver);
 	}
 }

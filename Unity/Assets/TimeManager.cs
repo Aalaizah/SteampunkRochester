@@ -4,7 +4,7 @@ using System.Collections;
 public static class TimeManager{
 
 	private static int minutes = 0;//minutes of the time (goes up to 60)
-	private static int hours = 0;//hours of time (goes up to 24)
+	private static int hours = 19;//hours of time (goes up to 24)
 	private static string timeOfDay = "Night"; //time of the day as a string; Morning, day, or night.
 
 	//passes time by the passed in number of minutes
@@ -35,5 +35,17 @@ public static class TimeManager{
 	public static string getTime()
 	{
 		return timeOfDay;
+	}
+
+	public static int getMinutes()
+	{
+		return minutes;
+	}
+
+	public static string getFormattedTime()
+	{
+		int wrapHours = hours % 12;
+		bool pm = hours >= 12;
+		return "It is " + wrapHours + ":" + minutes + (pm ? " pm" : " am");
 	}
 }

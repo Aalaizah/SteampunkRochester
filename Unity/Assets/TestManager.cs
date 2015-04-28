@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 
 public class TestManager : MonoBehaviour {
-	
 	TwineImporter Twine;
 	bool wasClicked;
 	List<Interactable> interactables;
+	GameObject map;
+	GameObject root;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,13 @@ public class TestManager : MonoBehaviour {
 		test = testInteractable.AddComponent<Interactable> ();
 		test.SetName ("test", "test");*/
 		Twine = GameObject.Find ("TwineImporter").GetComponent<TwineImporter> ();
+		//recurse until we find the root
+		Transform cur = transform;
+		while(cur.parent != null)
+		{
+			cur = cur.parent;
+		}
+		root = cur.gameObject;
 
 		//find interactables
 		interactables = new List<Interactable>();
@@ -51,6 +59,25 @@ public class TestManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void OnGUI()
+	{
+		Rect br = new Rect(0,0,Screen.width/10, Screen.height/10);
+		br.x = br.width;
+		br.y = br.height;
+		if(GUI.Button(br, "Relocate"))
+		{
+			//disable the level/root and activate the map
+			root.SetActive(false);
+			map.SetActive(true);
+		}
+	}
+
+	public void OnLevelChange(object sender)
+	{
+		Debug.Log("Is this a map?... " + sender);
+		map = sender as GameObject;
 	}
 
 	/*void OnMouseDown(){
