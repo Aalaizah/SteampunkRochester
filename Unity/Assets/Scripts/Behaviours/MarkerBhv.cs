@@ -41,6 +41,8 @@ public class MarkerBhv : MonoBehaviour {
 			return;
 		//disable the map
 		m_map.SetActive(false);
+		//move time foward 30 minutes
+		TimeManager.passTime(30);
 		//load level
 		Instantiate(m_levelToLoad);
 		//todo, add player and disable map

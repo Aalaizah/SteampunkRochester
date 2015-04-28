@@ -13,6 +13,8 @@ public class Interactable : MonoBehaviour
     public string path;
     public bool clicked;
     public bool selected;
+	public bool isPerson;
+	private bool hasAlreadyTalked = false;
     private bool readTwine;
     TwineImporter Twine;
     string message = "";
@@ -96,6 +98,15 @@ public class Interactable : MonoBehaviour
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
 		}
+		if(isPerson && !hasAlreadyTalked)
+		{
+			TimeManager.passTime(60);
+			hasAlreadyTalked = true;
+		}
+		if (!selected)
+		{
+			currentNode = "0";
+		}
     }
 
     void OnGUI()
@@ -140,14 +151,16 @@ public class Interactable : MonoBehaviour
     {
         if (!clicked)
         {
-            spriteRenderer.sprite = hoverSprite;
+			if(hoverSprite)
+            	spriteRenderer.sprite = hoverSprite;
         }
     }
 
     void OnMouseExit()
     {
         clicked = false;
-        spriteRenderer.sprite = idleSprite;
+		if(idleSprite)
+        	spriteRenderer.sprite = idleSprite;
     }
 
     void OnMouseDown()
@@ -156,13 +169,10 @@ public class Interactable : MonoBehaviour
         {
 
             clicked = true;
-            spriteRenderer.sprite = activeSprite;
+			if(activeSprite)
+            	spriteRenderer.sprite = activeSprite;
             selected = !selected;
             //Debug.Log(selected);
-            if (!selected)
-            {
-                currentNode = "0";
-            }
         }
     }
 
