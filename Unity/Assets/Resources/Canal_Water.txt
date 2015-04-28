@@ -9,6 +9,7 @@ The water in the canal is very murky.
 :: TakeWithBottle
 itemReq-- emptyBottle
 itemGain-- bottleWater
+itemRem-- emptyBottle
 Aleksei scoops up some water in the empty bottle.
 [[Leave]]
 

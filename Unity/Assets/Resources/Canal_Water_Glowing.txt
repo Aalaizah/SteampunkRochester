@@ -22,6 +22,7 @@ The glow is both soothing and alien. It does seem to smell better than the regul
 
 
 :: TakeNoBottle
+(don't show if have an empty bottle)
 Aleksei doesn't think carrying around dirty glowing canal water in his bare hands makes any sense.
 [[Leave]]
 

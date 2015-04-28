@@ -1,0 +1,9 @@
+﻿:: 0
+This glass of wine appears to be glowing faintly. It's also slightly blue-ish.
+[[Leave]]
+
+
+:: Leave
+
+
+

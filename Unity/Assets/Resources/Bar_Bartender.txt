@@ -6,22 +6,19 @@ Bartender: *nods* What can I do ya for?
 [[Leave|Leave]]
 
 
-:: StoryAuthor
-Anonymous
-
-
 :: AskHowAre
-Fluffy: How you doing today?
+Aleksei: How you doing today?
 [[Continue|AnswerHowAre]]
 
 
 :: AskRumors
-Fluffy: You know any rumors or news?
+Aleksei: You know any rumors or news?
 [[Continue|AnswerRumors]]
+[[Continue|AnswerRumorsHappy]]
 
 
 :: OrderDrink
-Fluffy: I'll have a drink. *place money on counter* (track this?)
+Aleksei: I'll have a drink. *place money on counter*
 [[Continue|ReceiveDrink]]
 
 
@@ -33,6 +30,7 @@ Bartender: I'm busy. You gonna buy a drink or not?
 
 
 :: AnswerRumors
+happyReq-- Bartender : 1(or less)
 Bartender: *frowns* Do I look like a newspaper? 
 [[My apologies...|Apologize]]
 [[I just thought...|IThought]]
@@ -50,47 +48,55 @@ Bartender: Coming right up.
 
 :: TipBartender
 happyUp-- Bartender
-Fluffy: *place change in tip jar*
+Aleksei: *places change in tip jar*
 [[How are you?|AskHowAre]]
 [[Know any rumors?|AskRumors]]
 [[Leave|Leave]]
 
 
 :: Apologize
-Fluffy: I'm sorry for misunderstanding.
+Aleksei: I'm sorry for misunderstanding.
 [[How are you?|AskHowAre]]
 [[Order a drink|OrderDrink]]
 [[Leave|Leave]]
 
 
 :: IThought
-Fluffy: I thought, since you run a speakeasy, you talk to lots of people-
+Aleksei: I thought, since you run a speakeasy, you talk to lots of people-
 [[Continue|ThoughtWrong2]]
 
 
 :: Yes?
 happyDown-- Bartender
-Fluffy: *says something smartass/rude* (ideas? I'm bad at these)
+Aleksei: Maybe keep better track of your patrons.
 [[Continue|ThoughtWrong1]]
+
+
+:: AnswerRumorsHappy
+happyReq-- Bartender : 2
+Bartender: Look, chap. I don't know any rumors, but I do know that theres a guy who comes in on Mondays or some nights and he's full of 'em. Maybe come back then and talk to him.
+[[Thank you.|Thank You]]
 
 
 :: ThoughtWrong2
 Bartender: Why the hell does everyone keep askin' me that? Yeah, I hear a lot of drunk mumbling. No, I ain't got time to remember them. 
 [[My apologies...|Apologize]]
-[[Nevermind|LeaveBad]]
+[[Nevermind|Leave]]
 
 
 :: ThoughtWrong1
-Bartender: *responds to remark*
+Bartender: I'm not an idiot. Don't tie me up in whatever business you got going on here.
 [[Continue|ThoughtWrong2]]
 
 
+:: Thank You
+Aleksei: I see. Thank you.
+[[How are you?|AskHowAre]]
+[[Order a drink|OrderDrink]]
+[[Leave|Leave]]
+
+
 :: Leave
-Fluffy: I come back later, maybe.
-
-
-:: LeaveBad
-happyDown-- Bartender
-Fluffy: I talk to you later, newspaper.
+Aleksei: I come back later, maybe.
 
 

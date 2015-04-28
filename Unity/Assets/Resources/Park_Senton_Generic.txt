@@ -26,8 +26,9 @@ Aleksei: Would you mind if I asked you some questions?
 
 :: DoQuestions
 Senton: What would you like to know?
+[[Could I have a pin?|AskPin]]
 [[Glowing Water?|AskGlowingWater]]
-[[Church Wine?(if found this)|AskWine]]
+[[Church Wine?|AskWine]]
 [[Church of Light?|AskCoLAgain]]
 [[Your Job?|AskJob]]
 [[Your Past?|AskPast]]
@@ -59,6 +60,12 @@ Aleksei: What did you do before founding the Churhc of Light?
 [[Continue|AnswerPast]]
 
 
+:: AskPin
+itemReq-- noPin
+Aleksei: Could I have a church pin?
+[[Continue|GivePin]]
+
+
 :: AnswerGlowingWater
 Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
 [[Continue|AnswerGlowingWater2]]
@@ -87,6 +94,14 @@ Senton: As the founder, I try to keep an eye on everything and make sure things 
 Senton: It doesn't matter who I was, but who I am. It is too long of a story to tell today.
 [[I heard you used to be conman...|AskConman]]
 [[Other Questions|DoQuestions]]
+
+
+:: GivePin
+itemGain-- Pin
+happyUp-- Senton
+Senton: Of course. *hands pin to Aleksei*
+[[Ask Questions|DoQuestions]]
+[[Leave|Good-bye]]
 
 
 :: AnswerGlowingWater2
@@ -142,7 +157,6 @@ Senton: Families?  You mean to imply the mafia? We get our wine through legitima
 
 
 :: SmugglingAttemptSuceed
-happyDown-- Senton
 Senton: I see. Very well then. I cannot confirm or deny anything here. Come visit me in my office in private some time. Wear your pin. Farewell.
 [[Good-bye|Good-bye]]
 

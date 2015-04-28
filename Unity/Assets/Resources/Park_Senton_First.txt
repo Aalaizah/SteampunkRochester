@@ -10,10 +10,6 @@ Aleksei: Good day.
 [[Continue|AnswerHi]]
 
 
-:: StoryAuthor
-Anonymous
-
-
 :: AskWho
 Aleksei: Who are you?
 [[Continue|AnswerWho]]
@@ -92,13 +88,14 @@ Aleksei: I politely decline. But thank you for the offer.
 
 
 :: Pin
-itemGain-- CoLPin
+itemGain-- Pin
 Senton: If you do, here is a pin, as a reminder of your experience. I encourage you to return to us. And that way, the congregation knows you have talked to me.
 [[Ask Questions?|AskQuestions]]
 [[Good-bye|Good-bye]]
 
 
 :: JoinIn
+happyUp-- Senton
 Aleksei: I may join in later.
 [[Continue|Pin]]
 
@@ -117,11 +114,13 @@ Aleksei: Would you mind if I asked you some questions?
 
 
 :: NoQuestions
+happyReq-- Senton : -1
 Senton: Perhaps another day. I have other matters to attend to right now. Good-day, sir.
 [[Good-bye|Good-bye]]
 
 
 :: DoQuestions
+happyReq-- Senton : 0
 Senton: What would you like to know?
 [[Glowing Water?|AskGlowingWater]]
 [[Church of Light?|AskCoLAgain]]

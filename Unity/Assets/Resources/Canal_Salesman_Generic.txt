@@ -1,0 +1,122 @@
+﻿:: 0
+Foreman: Howdy valued customer! How can I interest you once again today!?
+[[Ask About Church of Light|Peter - Light Info 1]]
+[[Ask About Mafia|Peter - Mafia Info 1]]
+[[Ask About Glowing Water|Peter - Good Info 1]]
+[[Bye For Now|Peter - Happy Ending]]
+
+
+:: Peter - Happy Ending
+Peter: Thank you for your time.
+[[Continue|Salesman - Happy Ending]]
+
+
+:: Peter - Good Info 1
+Peter: What you know of glowing water?
+[[Continue|Salesman - Good Info 1]]
+
+
+:: Peter - Mafia Info 1
+Peter: What you know about Mafia?
+[[Continue|Salesman - Mafia Info 1]]
+
+
+:: Peter - Light Info 1
+Peter: What you know about Church of Light?
+[[Continue|Salesman - Light Info 1]]
+
+
+:: Salesman - Happy Ending
+Foreman: Come back anytime, I've always got the goods as long as you show me the goods!
+
+
+:: Salesman - Good Info 1
+Foreman: I know that people are willing to pay through the nose for them! Kids, adults, Church of Light, They can't get enough of the stuff!
+[[Continue|Peter - Good Info 2]]
+
+
+:: Salesman - Mafia Info 1
+Foreman: Hey I'm not offing punks left and right if that's what you're thinking! They're just my water suppliers, got to get my wares from somebody you know!
+[[Continue|Peter - Mafia Info 2]]
+
+
+:: Salesman - Light Info 1
+Foreman: Why they're my best customers! Talk to any one of them and you'll get the same response, that I have the one and only best products on the market!
+[[Continue|Peter - Light Info 2]]
+
+
+:: Peter - Good Info 2
+Peter: Church of Light?
+[[Continue|Salesman - Good Info 2]]
+
+
+:: Peter - Mafia Info 2
+Peter: There are two mafias. Which one is supplying you?
+[[Continue|Salesman - Mafia Info 2]]
+
+
+:: Peter - Light Info 2
+Peter: Anything else?
+[[Continue|Salesman - Light Info 2]]
+
+
+:: Salesman - Good Info 2
+Foreman: Yep yep yep! Can't say I blame them, this stuff sure is pretty, and who doesn't like pretty things!? And I have the top quality pretty things on the market! Speaking of which, can I interest you in some-
+[[Continue|Peter - Good Info 3]]
+
+
+:: Salesman - Mafia Info 2
+Foreman: Why both of them! You didn't here this from me, but the Mercurios and the Ziccardis are a tighter knit than you think! It's all a ploy to keep the citizens afraid of gang wars while they steal all the resources from under their noses!
+[[Continue|Peter - Mafia Info 3]]
+
+
+:: Salesman - Light Info 2
+Foreman: Well their favorite product is easily the glowing water, not too sure what they do with it though! They're pretty bonkers as well! The only thing crazier than them are my prices! Aaaaaaaand...that's all I know, can't say anything more!
+[[Continue|Peter - Light Info 3]]
+
+
+:: Peter - Good Info 3
+Peter: Is quite alright. What they really want with water?
+[[Continue|Salesman - Good Info 3]]
+
+
+:: Peter - Mafia Info 3
+Peter: And I can trust this source?
+[[Continue|Salesman - Mafia Info 3]]
+
+
+:: Peter - Light Info 3
+Peter: *sigh* The one time I want you to talk more.
+[[Continue|0]]
+
+
+:: Salesman - Good Info 3
+Foreman: Haven't the foggiest idea, no sir I do not! But word on the street is that they worship the stuff! Well that and the fact that I've seen those guys around with my goods drinking it and turning them into fishbowl crowns, love the idea, should sell those myself!
+[[Continue|Salesman - Good Info 3.2]]
+
+
+:: Salesman - Mafia Info 3
+Foreman: I told you my name was "Honest John" didn't I!?
+[[Continue|Peter - Mafia Info 4]]
+
+
+:: Salesman - Good Info 3.2
+Foreman: If you want to know what those cuckoo cultists are doing with my water, you're better off asking them yourself!
+[[Continue|Peter - Good Info 4]]
+
+
+:: Peter - Mafia Info 4
+Peter: You said your name was Evelyn Foreman.
+[[Continue|Salesman - Mafia Info 4]]
+
+
+:: Peter - Good Info 4
+Peter: I need to look into it anyways.
+[[Continue|0]]
+
+
+:: Salesman - Mafia Info 4
+Foreman: .........Did I?
+[[Continue|0]]
+
+
