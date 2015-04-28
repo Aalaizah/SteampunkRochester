@@ -103,6 +103,10 @@ public class Interactable : MonoBehaviour
 			TimeManager.passTime(60);
 			hasAlreadyTalked = true;
 		}
+		if (!selected)
+		{
+			currentNode = "0";
+		}
     }
 
     void OnGUI()
@@ -169,10 +173,6 @@ public class Interactable : MonoBehaviour
             	spriteRenderer.sprite = activeSprite;
             selected = !selected;
             //Debug.Log(selected);
-            if (!selected)
-            {
-                currentNode = "0";
-            }
         }
     }
 
