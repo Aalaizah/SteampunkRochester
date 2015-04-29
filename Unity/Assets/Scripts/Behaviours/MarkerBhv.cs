@@ -12,7 +12,7 @@ public class MarkerBhv : MonoBehaviour {
 	void Start () {
 		m_tack = transform.Find("Tack").gameObject;
 		m_thumbnail = transform.Find("Thumbnail").gameObject;
-		m_map = GameObject.Find("Map");
+		m_map = GameObject.Find("Map_BG");
 	}
 	
 	// Update is called once per frame
