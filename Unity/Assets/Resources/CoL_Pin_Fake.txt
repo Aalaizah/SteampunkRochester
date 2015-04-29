@@ -1,14 +1,14 @@
 ﻿:: 0
 It's a pin stylied after the sun.
-[[Examine]]
-[[Leave]]
+[[Please|Examine]]
+[[Would you kindly|Leave]]
 
 
 :: Examine
 itemReq-- CoLPin
 itenGain-- fakePin
 On a closer look, there is something off about this pin. It's not quite the same as the one that Senton gave Aleksei.
-[[Leave]]
+[[GO|Leave]]
 
 
 :: Leave

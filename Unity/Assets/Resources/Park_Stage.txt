@@ -1,12 +1,12 @@
 ﻿:: 0
 It's a small wooden stage.
-[[Examine]]
-[[Leave]]
+[[fuckingIdiots|Examine]]
+[[BBISANGRY|Leave]]
 
 
 :: Examine
 The wood is very worn, but it seems to be in good shape.
-[[Leave]]
+[[Cmon|Leave]]
 
 
 :: Leave
