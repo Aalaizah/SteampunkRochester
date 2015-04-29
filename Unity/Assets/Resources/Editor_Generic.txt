@@ -1,4 +1,4 @@
-﻿:: Start
+﻿:: 0
 Editor: What do ya want, Peter?
 [[Sarcastic reply|SarcasticReply]]
 [[Ask for advice|AskAdviceReply]]
