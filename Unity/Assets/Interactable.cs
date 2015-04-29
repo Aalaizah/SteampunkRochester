@@ -28,6 +28,7 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
+		Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
         gameObject.AddComponent<BoxCollider2D>();

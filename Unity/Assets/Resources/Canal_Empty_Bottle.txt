@@ -1,8 +1,8 @@
 ﻿:: 0
 
 Some empty and broken bottles.
-[[Examine]]
-[[Leave]]
+[[bored|Examine]]
+[[blegh|Leave]]
 
 
 
@@ -10,8 +10,8 @@ Some empty and broken bottles.
 :: Examine
 
 Aleksei takes a closer look at the bottles. Most of them are broken, but there is one unbroken bottle.
-[[Take Empty Bottle]]
-[[Leave]]
+[[asdf|Take Empty Bottle]]
+[[asd|Leave]]
 
 
 
@@ -19,7 +19,7 @@ Aleksei takes a closer look at the bottles. Most of them are broken, but there i
 :: Take Empty Bottle
 itemGain-- emptyBottle
 Aleksei picks up the unbroken bottle.
-[[Leave]]
+[[ddd|Leave]]
 
 
 
