@@ -1,0 +1,244 @@
+﻿:: 0
+Salesman: Welcome stranger! How are you!? Who am I you ask, well I'm your resident honest salesman, Evelyn Foreman! Yes yes, it's a girl's name I know, I've heard all the jokes, but this isn't about me, it's about you and what I can do for you!
+[[Listen More|Salesman - 1.2]]]
+[[Shut Up|Peter - 1 (cruel)]]]
+
+
+:: Peter - 1 (cruel)
+Peter: Shut your windhole.
+[[Continue|Salesman - 2 (cruel choice)]]
+
+
+:: Salesman - 2 (cruel choice)
+Foreman: Ah I see we're the type who gets straight to business, like your style, respect your angle, hate your attitude! But the customer's always right and I aim to please, so how may I be of service!?
+[[Continue|Peter - 2]]
+
+
+:: Peter - 2
+Peter: I'm looking for information about the Church of Light.
+[[Continue|Salesman - 3]]
+
+
+:: Salesman - 3
+Foreman: Hey hey hey hey, shhh shhh shhh shhh shhh shhh shhh, shhh, shhh, shhh, ...shhh, .........shhh.
+[[Continue|Salesman - 3.2]]
+
+
+:: Peter - 3
+Peter: Fine. What are you selling?
+[[Continue|Salesman - 4]]
+
+
+:: Salesman - 4
+Foreman: What am I selling you ask, why the better question is what am I not selling!? I've got goods from all over the tri-state area and even some rarities from the ends of the Earth, made a killing selling a Japanese sword to a lightie, don't ask where I got it, I know a guy!
+[[Continue|Salesman - 4.2]]
+
+
+:: Salesman - 4.2
+Foreman: Right now I have in stock some glowing water, water that glows, glowing H2O, glowing clear liquids, glowing water straight from the canal, and did I mention...genuine commemorative Church of Light pins!?
+[[Continue|Peter - 4]]
+
+
+:: Peter - 4
+Peter: Was only new thing mentioned.
+[[Continue|Salesman - 5]]
+
+
+:: Salesman - 5
+Foreman: Great! So what'll it be vauled customer!?
+[[Buy Glowing Water|Salesman - After Purchase]]
+[[Buy "CoL" Pin|Salesman - After Purchase]]
+[[Ask For Info|Peter - Bad Info 1]]
+
+
+:: Salesman - After Purchase
+Foreman: Hehehe...thank you! What else can I do for you!?
+[[Buy Glowing Water|Salesman - After Purchase]]
+[[Buy "CoL" Pin|Salesman - After Purchase]]
+[[Ask For Info|Question Hub]]
+
+
+:: Salesman - 1.2
+Foreman: I've got the finest merchandise this side of the city and the other side as well, there might as well not be any other businesses while I'm around! I'm just that good because I got anything and everything people want and need!
+[[Listen More|Salesman - 1.3]]]
+[[Shut Up|Peter - 1 (cruel)]]]
+
+
+:: Peter - 1
+Peter: .........You talk fast.
+[[Continue|Salesman - 2]]
+
+
+:: Salesman - 2
+Foreman: Indeed I do, glad you noticed, I started as an auctioneer back in 1908, good times, real proud of that, needed to talk fast, came with the job description! Oh how I miss those days, 45, 45, I'm at 45, do I hear 50, 50, 50, 50, bid on 50, yup those sure were the days!
+[[Continue|Salesman - 2.2]]
+
+
+:: Salesman - 2.2
+Foreman: But enough reminiscing about the days of old, you're clearly hankering to make a purchase, and I'm more than willing to help you out with that, so what're ya buying!?
+[[Continue|Peter - 2]]
+
+
+:: Salesman - 3.2
+Foreman: I see what you're getting at! Sorry, information like that is for paying customers only, but I think we can both help each other out once you buy some Church of Light products from my black market, don't worry it's not illegal, just frowned upon!
+[[Agree To Buy Something|Peter - 3]]
+[[Get Info Now|Peter - 3 (demand)]]
+
+
+:: Salesman - 3 (demand choice)
+Foreman: Not how it works Mr. "I never caught your name"! This is an "I scratch your back, you scratch mine" situation, or we got no deal! Comprende!?
+[[Continue|Peter - 3]]
+
+
+:: Salesman - Bad Info 1
+Foreman: Okay rude, I do believe I said information like that was for paying customers only, but clearly you don't need it that badly. Try asking a random schmuck on the street, maybe they can help you out.
+[[Continue|Peter - Bad Info 2]]
+
+
+:: Peter - Bad Info 1
+Peter: What you know of glowing water?
+[[Continue|Salesman - Bad Info 1]]
+
+
+:: Question Hub
+Foreman: Alright, you payed your dues, now I'll pay you mine! What do you want to know!?
+[[Ask About Church of Light|Peter - Light Info 1]]
+[[Ask About Mafia|Peter - Mafia Info 1]]
+[[Ask About Glowing Water|Peter - Good Info 1]]
+[[Bye For Now|Peter - Happy Ending]]
+
+
+:: Peter - Light Info 1
+Peter: What you know about Church of Light?
+[[Continue|Salesman - Light Info 1]]
+
+
+:: Peter - Bad Info 2
+Peter: *sigh* Fine, I'll go ask someone else.
+
+
+:: Salesman - Light Info 1
+Foreman: Why they're my best customers! Talk to any one of them and you'll get the same response, that I have the one and only best products on the market!
+[[Continue|Peter - Light Info 2]]
+
+
+:: Peter - Light Info 2
+Peter: Anything else?
+[[Continue|Salesman - Light Info 2]]
+
+
+:: Salesman - Light Info 2
+Foreman: Well their favorite product is easily the glowing water, not too sure what they do with it though! They're pretty bonkers as well! The only thing crazier than them are my prices! Aaaaaaaand...that's all I know, can't say anything more!
+[[Continue|Peter - Light Info 3]]
+
+
+:: Peter - Light Info 3
+Peter: *sigh* The one time I want you to talk more.
+[[Continue|Question Hub]]
+
+
+:: Salesman - 1.3
+Foreman: You catch my drift guy, friend, pal, buddy, chum, amigo, compadre, heterosexual life-partner!?
+[[Continue|Peter - 1]]
+
+
+:: Peter - 3 (demand)
+Peter: How 'bout you just tell me what I want to know.
+[[Continue|Salesman - 3 (demand choice)]]
+
+
+:: Time
+Midday
+
+
+:: Peter - Mafia Info 1
+Peter: What you know about Mafia?
+[[Continue|Salesman - Mafia Info 1]]
+
+
+:: Salesman - Mafia Info 1
+Foreman: Hey I'm not offing punks left and right if that's what you're thinking! They're just my water suppliers, got to get my wares from somebody you know!
+[[Continue|Peter - Mafia Info 2]]
+
+
+:: Peter - Mafia Info 2
+Peter: There are two mafias. Which one is supplying you?
+[[Continue|Salesman - Mafia Info 2]]
+
+
+:: Salesman - Mafia Info 2
+Foreman: Why both of them! You didn't here this from me, but the Mercurios and the Ziccardis are a tighter knit than you think! It's all a ploy to keep the citizens afraid of gang wars while they steal all the resources from under their noses!
+[[Continue|Peter - Mafia Info 3]]
+
+
+:: Peter - Mafia Info 3
+Peter: And I can trust this source?
+[[Continue|Salesman - Mafia Info 3]]
+
+
+:: Salesman - Mafia Info 3
+Foreman: I told you my name was "Honest John" didn't I!?
+[[Continue|Peter - Mafia Info 4]]
+
+
+:: Peter - Mafia Info 4
+Peter: You said your name was Evelyn Foreman.
+[[Continue|Salesman - Mafia Info 4]]
+
+
+:: Salesman - Mafia Info 4
+Foreman: .........Did I?
+[[Continue|Question Hub]]
+
+
+:: Salesman Example Dialogue
+This is just a test.
+
+
+:: Peter - Good Info 4
+Peter: I need to look into it anyways.
+[[Continue|Question Hub]]
+
+
+:: Salesman - Good Info 3.2
+Foreman: If you want to know what those cuckoo cultists are doing with my water, you're better off asking them yourself!
+[[Continue|Peter - Good Info 4]]
+
+
+:: Salesman - Good Info 3
+Foreman: Haven't the foggiest idea, no sir I do not! But word on the street is that they worship the stuff! Well that and the fact that I've seen those guys around with my goods drinking it and turning them into fishbowl crowns, love the idea, should sell those myself!
+[[Continue|Salesman - Good Info 3.2]]
+
+
+:: Peter - Good Info 3
+Peter: Is quite alright. What they really want with water?
+[[Continue|Salesman - Good Info 3]]
+
+
+:: Salesman - Good Info 2
+Foreman: Yep yep yep! Can't say I blame them, this stuff sure is pretty, and who doesn't like pretty things!? And I have the top quality pretty things on the market! Speaking of which, can I interest you in some-
+[[Continue|Peter - Good Info 3]]
+
+
+:: Peter - Good Info 2
+Peter: Church of Light?
+[[Continue|Salesman - Good Info 2]]
+
+
+:: Salesman - Good Info 1
+Foreman: I know that people are willing to pay through the nose for them! Kids, adults, Church of Light, They can't get enough of the stuff!
+[[Continue|Peter - Good Info 2]]
+
+
+:: Peter - Good Info 1
+Peter: What you know of glowing water?
+[[Continue|Salesman - Good Info 1]]
+
+
+:: Peter - Happy Ending
+Peter: Thank you for your time.
+[[Continue|Salesman - Happy Ending]]
+
+
+:: Salesman - Happy Ending
+Foreman: Come back anytime, I've always got the goods as long as you show me the goods!

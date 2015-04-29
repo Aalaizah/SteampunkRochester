@@ -1,0 +1,207 @@
+﻿:: 0
+Tim White: Hey, I remember you from somewhere. Get over here and join me for a drink. Who are you again?
+
+[[Remember|InitializeConvoRemember]]
+[[Approach|InitializeConvo]]
+
+:: InitializeConvoRemember
+itemReq-- BUSINESS CARD
+Alekei: Hey there, I remember you from the park earlier. You gave me your business card, correct? I'm Aleksei.
+[[Continue|RememberCont]] 
+
+
+
+
+:: InitializeConvo
+Aleksei: I'm Aleksei. Reporter. And you are?
+[[Continue|ConvoCont]]
+
+:: RememberCont
+Tim White: Yessir! That was me! I believe I was walking Gizmo when we met. So are you going to join me for a drink or what?
+[[Questions|FirstDrink]]
+
+
+:: ConvoCont
+Tim White: The name is Tim. Tim White. Accountant extraordinaire! Brother of the Church of Light! Owner of Gizmo! Join me for a drink, would you?
+[[How about that drink|BuyDrink]]
+
+
+:: FirstDrink
+Aleksei: Absolutely.
+[[How about that drink|BuyDrink]]
+
+
+:: BuyDrink
+happyUp-- TIM WHITE
+Aleksei: Bartender! Can we can a round of drinks over here?
+[[Continue|AskQuestions]]
+
+
+:: AskQuestions
+Aleksei: So I would like to talk to you about...
+[[Your job|AskJob]]
+[[The Church of Light|AskChurch]]
+[[Gizmo|AskDog]]
+[[Why are you here?|AskFamily]]
+[[How about another drink|BuyDrink]]
+
+
+:: AskJob
+Tim White: So I'm an accountant at the Cunningham Carriage Factory. A fairly good one at that. I've been keeping an eye on records for years!
+[[Continue|AskJob2]]
+
+
+:: AskDog
+happyReq-- TIM WHITE : 1
+Aleksei: You never told me what happened to your dog.
+
+[[Continue|AskDog2]]
+
+
+:: AskFamily
+happyReq-- TIM WHITE : 2
+Aleksei: This might be a sensitive subject, but it seems like you have a few things to say about your family life. Do you want to talk about it?
+[[Continue|AskFamily2]]
+
+
+:: AskChurch
+happyReq-- TIM WHITE: 3
+Aleksei: I know you're worried Tim. But there is something I need from you. I need to know about the Church of Light. I think they're behind the glowing water. And I need you to tell me the name of the man who helped you.
+
+[[Continue|AskChurch2]]
+
+
+:: AskFamily2
+Tim White: Why you want to know? I don't think is related to your story.
+[[Continue|AskFamily3]]
+
+
+:: AskChurch2
+Tim White: Hmmmm... I don't knooooow...
+[[Continue|AskChurch3]]
+
+
+:: AskDog2
+Tim White: Gizmo! My poor Gizmo. My dog will never leave me.
+[[Continue|AskDog3]]
+
+
+:: AskJob2
+Aleksei: So you like your job, I assume? You seem to speak of it very fondly.
+[[Continue|AskJob3]]
+
+
+:: AskChurch3
+Aleksei: I won't ever leave you, friend. I promise.
+[[Continue|AskChurch4]]
+
+
+:: AskFamily3
+Aleksei: I'm concerned for you. You seem to be very upset and as your friend, I'm worried about your well being. Anything you tell me about your life is completely off the record.
+[[Continue|AskFamily4]]
+
+
+:: AskDog3
+Aleksei: Leave you? Are you afraid that Gizmo will run away?
+[[Continue|AskDog4]]
+
+
+:: AskJob3
+Tim White: I used to love my job. It gave me a sense of accomplishment and it paid for the roof over my head. But lately I've been thinking of leaving. But James won't be too happy.
+[[Continue|AskJob4]]
+
+
+:: AskChurch4
+Tim White: If you think is all good... He told me his name is Senton.
+[[Continue|AskChurch5]]
+
+
+:: AskFamily4
+Tim White: Friend... Is all good, friend. I trust you. My family left me all alone. I didn't have Gizmo at the time. I was all alone.
+[[Continue|AskFamily5]]
+
+
+:: AskDog4
+Tim White: My dog wouldn't ever leave me. He's too loyal for that. But poor Gizmo, he almost passed away shortly after I got him!
+[[Continue|AskDog5]]
+
+
+:: AskJob4
+Aleksei: James?
+[[Continue|AskJob5]]
+
+
+:: AskChurch5
+Aleksei: Thank you, Tim. I will make sure to get to the bottom of this just for you.
+[[Continue|AskChurch6]]
+
+
+:: AskFamily5
+Aleksei: Why would they leave you?
+[[Continue|AskFamily6]]
+
+
+:: AskDog5
+Aleksei: What happened?
+[[Continue|AskDog6]]
+
+
+:: AskJob5
+Tim White: My boss. I do good work and he knows it. My job has come in the way of me and my family. And I can't live my life like that.
+[[Change Topic|AskQuestions]]
+
+
+:: AskChurch6
+Tim White: Thank you, Aleksei. Just leave me alone for now. I need some time to think about things.
+
+
+:: AskFamily6
+Tim White: My wife, she took off. Took the kids. Told me I was not good enough for her. My job was no good. It pays the bills, I could support her. But it was not good enough for her. Is my work not exciting? I thought it was. Apparently not.
+[[Continue|AskFamily7]]
+
+
+:: AskDog6
+Tim White: Shortly after I got him, he started fainting frequently and then vomiting and I had no one to go to for help. I honestly thought he would leave me. Poor Gizmo...
+[[Continue|AskDog7]]
+
+
+:: AskFamily7
+Aleksei: I'm sorry to hear that, friend. What happened next?
+[[Continue|AskFamily8]]
+
+
+:: AskDog7
+Aleksei: How did he get better?
+[[Continue|AskDog8]]
+
+
+:: AskFamily8
+Tim White: She took the kids. I was all alone. I got Gizmo to keep me company. But Gizmo got sick. Everyone who I love leaves me...
+[[Change Topic|AskQuestions]]
+
+
+:: AskDog8
+Tim White: A man came to me and told me he can help. He took me to a church and dipped Gizmo in some of the glowing water. He said it had healing properties. He saved Gizmo; I will never forget that.
+[[Continue|AskDog9]]
+
+
+:: AskDog9
+Aleksei: So this man saved your dog with the glowing water? Do you know his name?
+[[Continue|AskDog10]]
+
+
+:: AskDog10
+Tim White: He asked me to not tell people his name. He's involved with the Church of Light and told me to consider joining.
+[[Continue|AskDog11]]
+
+
+:: AskDog11
+Aleksei: Can you tell me what he looks like? What his voice sounds like? High? Low?
+[[Continue|AskDog12]]
+
+
+:: AskDog12
+Tim White: Please, friend. I made him a promise. My poor Gizmo...
+[[Change Topic|AskQuestions]]
+
+
