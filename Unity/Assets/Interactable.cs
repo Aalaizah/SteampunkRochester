@@ -23,14 +23,16 @@ public class Interactable : MonoBehaviour
     public List<string> choicesList;
     public List<string> choicesLinksList;
     public bool choice = false;
-	string lastEmotionNode;
+	//public List<Interactable> otherInteractables;
 
     //string speaker = "";
 
     void Start()
     {
+		Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
+		//otherInteractables = new List<Interactable> ();
         gameObject.AddComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
@@ -40,6 +42,7 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
+		Debug.Log(Twine.TwineData.Current.Link[0]);
 		if (!choice) 
 		{
 			Twine.TwineData.NextNode (currentNode);
@@ -94,23 +97,26 @@ public class Interactable : MonoBehaviour
 		}
 		if(Twine.TwineData.Current.EmotnDwn !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
-			lastEmotionNode = currentNode;
 		}
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
-			lastEmotionNode = currentNode;
 		}
 		if(isPerson && !hasAlreadyTalked)
 		{
 			TimeManager.passTime(60);
 			hasAlreadyTalked = true;
 		}
-		if (!selected)
+		if (!selected && currentNode != "0")
 		{
 			currentNode = "0";
-		}
-		if(lastEmotionNode != currentNode){
-			EmotionManager.resetBooleans();
+			/*if(otherInteractables.Count > 0)
+			{
+				foreach(Interactable inter in otherInteractables)
+				{
+					inter.gameObject.SetActive(true);
+				}
+				otherInteractables.Clear();
+			}*/
 		}
     }
 
@@ -119,8 +125,7 @@ public class Interactable : MonoBehaviour
         if (selected)
         {
             GUI.skin.box.wordWrap = true;
-
-            GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
+			GUI.skin.button.wordWrap = true;
 
             if (choice)
             {
@@ -131,24 +136,39 @@ public class Interactable : MonoBehaviour
 					currentNode = choicesLinksList[i];
 					Twine.TwineData.NextNode(currentNode);
 
-                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
-						//Screen.width - (Screen.width - 5), 3 * (Screen.height / choicesLinksList.Count) + i * (Screen.height / choicesLinksList.Count / choicesLinksList.Count),
-                    {
-						//Debug.Log(i);
-						//Debug.Log(choicesLinksList[i]);
+					if(choicesLinksList.Count == 1)
+					{
+						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 
+	                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
+	                    {
+	                        createMessage();
+	                        //Twine.TwineData.NextNode();
+	                        choice = false;
+							choicesLinksList.Clear();
+							choicesList.Clear();
+	                    }
+					}
+					else
+					{
+						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 
-                        
-
-                        //Twine.TwineData.NextNode(Twine.TwineData.Current.Link[0]);
-                        createMessage();
-                        //Twine.TwineData.NextNode();
-                        choice = false;
-						choicesLinksList.Clear();
-						choicesList.Clear();
-                    }
+						int yInc =  Screen.height / choicesLinksList.Count / choicesLinksList.Count;
+						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,(Screen.height - (yInc * (i+1))),Screen.width - 10,yInc), choicesList[i]))
+						{
+							createMessage();
+							//Twine.TwineData.NextNode();
+							choice = false;
+							choicesLinksList.Clear();
+							choicesList.Clear();
+						}
+					}
                 }
             }
+			else
+			{
+				GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
+			}
         }
     }
 
@@ -172,7 +192,15 @@ public class Interactable : MonoBehaviour
     {
         if (!clicked)
         {
-
+			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
+			foreach(Interactable inter in interactables)
+			{
+				if(inter != this)
+				{
+					inter.gameObject.SetActive(false);
+					otherInteractables.Add(inter);
+				}
+			}*/
             clicked = true;
 			if(activeSprite)
             	spriteRenderer.sprite = activeSprite;
@@ -203,7 +231,7 @@ public class Interactable : MonoBehaviour
 
     void createMessage()
     {
-
+		EmotionManager.resetBooleans();
         message = "";
 
         //speaker = Twine.TwineData.Current.SpeakerData;
