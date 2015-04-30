@@ -4,8 +4,8 @@ using System.Collections;
 public class ScrollCamBhv : MonoBehaviour {
 	float m_constantScale = 100;
 	public float m_scrollSpeed;
-	public float m_scrollWidth;
-	public float m_scrollHeight;
+	float m_scrollWidth;
+	float m_scrollHeight;
 	public bool m_inclusive;
 	public bool enableVerticalScroll;
 	public bool fitVertically;
@@ -43,10 +43,13 @@ public class ScrollCamBhv : MonoBehaviour {
 	void refreshCamera()
 	{
 		m_camera = Camera.main;
-		if(m_camera==null)
-			throw new UnassignedReferenceException("Scroll camera reference is null.");
-		if (fitVertically)
-			m_camera.orthographicSize = background.sprite.bounds.extents.y;
+		if (m_camera == null) {
+			throw new UnityException("Scroll camera reference is null.");
+		}
+		if (fitVertically) {
+			//Debug.Log("Do we even have bounds?" + background.sprite);
+			//m_camera.orthographicSize = background.sprite.bounds.extents.y;
+		}
 	}
 	
 	// Use this for initialization
