@@ -1,6 +1,6 @@
 ﻿:: 0
 This pin looks like a stylized sun.
-[[Leave]]
+[[please|Leave]]
 
 
 :: Leave

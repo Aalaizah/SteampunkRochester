@@ -1,9 +1,9 @@
 ﻿:: 0
 The water in the canal is blue and glowing.
-[[Examine]]
+[[Examine|Examine]]
 [[Take|TakeNoBottle]]
 [[Take|TakeWithBottle]]
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: TakeWithBottle
@@ -11,20 +11,19 @@ itemReq-- emptyBottle
 itemGain-- bottleGlowingWater
 itemRem-- emptyBottle
 Aleksei scoops up some glowing water in the empty bottle.
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: Examine
 The glow is both soothing and alien. It does seem to smell better than the regular canal water, but the source of the glow is impossible to tell.
 [[Take|TakeNoBottle]]
 [[Take|TakeWithBottle]]
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: TakeNoBottle
-(don't show if have an empty bottle)
 Aleksei doesn't think carrying around dirty glowing canal water in his bare hands makes any sense.
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: Leave

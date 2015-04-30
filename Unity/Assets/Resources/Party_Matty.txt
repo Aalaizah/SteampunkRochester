@@ -1,8 +1,4 @@
-﻿:: StoryTitle
-Matty, at Party
-
-
-:: Start
+﻿:: 0
 Matty: Aleksei! So glad you could make it, darling.
 [[Hello|Hi]]
 [[Thanks|Thank]]

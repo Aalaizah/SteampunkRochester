@@ -5,7 +5,6 @@ Bartender: *nods* What can I do ya for?
 [[Know any rumors?|AskRumors]]
 [[Leave|Leave]]
 
-
 :: AskHowAre
 Aleksei: How you doing today?
 [[Continue|AnswerHowAre]]
