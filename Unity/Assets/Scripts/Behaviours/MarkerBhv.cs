@@ -1,42 +1,47 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MarkerBhv : MonoBehaviour {
 	GameObject m_tack;
 	GameObject m_thumbnail;
+	GameObject m_thumbnailButton;
 	GameObject m_map;
 	Vector2 m_mousePosition;
 	public GameObject m_levelToLoad;
+	bool active;
 
 	// Use this for initialization
 	void Start () {
-		m_tack = transform.Find("Tack").gameObject;
-		m_thumbnail = transform.Find("Thumbnail").gameObject;
-		m_map = GameObject.Find("Map");
+		//m_tack = transform.Find("Tack").gameObject;
+		m_thumbnail = transform.Find("Box").gameObject;
+		m_thumbnailButton = transform.Find("Travel Button").gameObject;
+		m_map = GameObject.Find("Map_BG");
+		active = false;
+		m_thumbnail.SetActive(active);
+		m_thumbnailButton.SetActive(active);
+
+		//CHANGE LOCATION TEXT AND LOCATION IMAGE HERE
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		m_mousePosition = Input.mousePosition;
-		Camera cam = Camera.main;
-		//convert the mouse to world coordinates
-		Vector2 newMouse = cam.ScreenToWorldPoint(m_mousePosition);
-		//check if the mouse contains
-		if(m_tack.collider2D.bounds.Contains(newMouse))
-		{
-			m_thumbnail.SetActive(true);
-			if(Input.GetMouseButtonDown(0))
-			{
-				//do something when tack is clicked
-				ClickAction();
-			}
-		}else{
-			m_thumbnail.SetActive(false);
-		}
+
 	}
 
-	void ClickAction()
+	public void Travel()
 	{
+		m_map.SetActive (false);
+		TimeManager.passTime (30);
+		Instantiate (m_levelToLoad);
+	}
+
+	public void ClickAction()
+	{
+		active = !active;
+
+		m_thumbnail.SetActive(active);
+		m_thumbnailButton.SetActive(active);
+		/*
 		if(m_levelToLoad == null)
 			return;
 		//disable the map
@@ -46,5 +51,6 @@ public class MarkerBhv : MonoBehaviour {
 		//load level
 		Instantiate(m_levelToLoad);
 		//todo, add player and disable map
+		*/
 	}
 }
