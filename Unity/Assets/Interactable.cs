@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Interactable : MonoBehaviour
 {
-
+	//used to lock out other interactables
+	private static Interactable KEYMASTER;
     private SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
     public Sprite hoverSprite;
@@ -35,8 +36,8 @@ public class Interactable : MonoBehaviour
 		//otherInteractables = new List<Interactable> ();
         gameObject.AddComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
-        Twine.ReadTwineFile(path);
+		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
+		Twine.ReadTwineFile(path);
         createMessage();
     }
 
@@ -109,6 +110,8 @@ public class Interactable : MonoBehaviour
 		if (!selected && currentNode != "0")
 		{
 			currentNode = "0";
+			//release the keymaster role
+			KEYMASTER = null;
 			/*if(otherInteractables.Count > 0)
 			{
 				foreach(Interactable inter in otherInteractables)
@@ -190,8 +193,10 @@ public class Interactable : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!clicked)
+        if (!clicked && (KEYMASTER == null || KEYMASTER == this))
         {
+			//All other interactables now must wait!
+			KEYMASTER = this;
 			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
 			foreach(Interactable inter in interactables)
 			{
@@ -205,7 +210,8 @@ public class Interactable : MonoBehaviour
 			if(activeSprite)
             	spriteRenderer.sprite = activeSprite;
             selected = !selected;
-            //Debug.Log(selected);
+			//Debug.Log(selected);
+			Twine.ReadTwineFile(path);
         }
     }
 
