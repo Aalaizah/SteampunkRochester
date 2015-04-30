@@ -41,13 +41,7 @@ public static class EmotionManager{
 	}
 
 	public static bool hasRequirement(string person, int req){
-		if(req < 0)
-		{
-			if(emotionValue[person] <= req){
-				return true;
-			}
-		}
-		else
+		if(emotionValue.ContainsKey(person))
 		{
 			if(emotionValue[person] >= req){
 				return true;

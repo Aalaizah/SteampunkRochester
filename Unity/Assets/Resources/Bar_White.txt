@@ -54,7 +54,6 @@ Tim White: So I'm an accountant at the Cunningham Carriage Factory. A fairly goo
 :: AskDog
 happyReq-- TIM WHITE : 1
 Aleksei: You never told me what happened to your dog.
-
 [[Continue|AskDog2]]
 
 
@@ -65,9 +64,8 @@ Aleksei: This might be a sensitive subject, but it seems like you have a few thi
 
 
 :: AskChurch
-happyReq-- TIM WHITE: 3
+happyReq-- TIM WHITE : 3
 Aleksei: I know you're worried Tim. But there is something I need from you. I need to know about the Church of Light. I think they're behind the glowing water. And I need you to tell me the name of the man who helped you.
-
 [[Continue|AskChurch2]]
 
 
