@@ -23,12 +23,12 @@ public class Interactable : MonoBehaviour
     public List<string> choicesList;
     public List<string> choicesLinksList;
     public bool choice = false;
+	string lastEmotionNode;
 
     //string speaker = "";
 
     void Start()
     {
-		Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
         gameObject.AddComponent<BoxCollider2D>();
@@ -40,7 +40,6 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
-		Debug.Log(Twine.TwineData.Current.Link[0]);
 		if (!choice) 
 		{
 			Twine.TwineData.NextNode (currentNode);
@@ -95,9 +94,11 @@ public class Interactable : MonoBehaviour
 		}
 		if(Twine.TwineData.Current.EmotnDwn !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
+			lastEmotionNode = currentNode;
 		}
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
+			lastEmotionNode = currentNode;
 		}
 		if(isPerson && !hasAlreadyTalked)
 		{
@@ -107,6 +108,9 @@ public class Interactable : MonoBehaviour
 		if (!selected)
 		{
 			currentNode = "0";
+		}
+		if(lastEmotionNode != currentNode){
+			EmotionManager.resetBooleans();
 		}
     }
 
@@ -199,7 +203,7 @@ public class Interactable : MonoBehaviour
 
     void createMessage()
     {
-		EmotionManager.resetBooleans();
+
         message = "";
 
         //speaker = Twine.TwineData.Current.SpeakerData;

@@ -26,8 +26,6 @@ public class TwineImporter : MonoBehaviour {
 		string temp;
 		string[] file;
 		string[] split = {"::"};
-
-		Debug.Log ("What is the path?: " + path);
 		
 		temp = Resources.Load(path, typeof(TextAsset)).ToString();
 		
