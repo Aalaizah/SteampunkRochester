@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Interactable : MonoBehaviour
 {
 	//used to lock out other interactables
-	private static Interactable KEYMASTER;
+	//private static Interactable KEYMASTER;
     private SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
     public Sprite hoverSprite;
@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
-		Debug.Log(Twine.TwineData.Current.Link[0]);
+		Debug.Log("HOLY SHIT");
 		if (!choice) 
 		{
 			Twine.TwineData.NextNode (currentNode);
@@ -111,7 +111,7 @@ public class Interactable : MonoBehaviour
 		{
 			currentNode = "0";
 			//release the keymaster role
-			KEYMASTER = null;
+			//KEYMASTER = null;
 			/*if(otherInteractables.Count > 0)
 			{
 				foreach(Interactable inter in otherInteractables)
@@ -162,6 +162,7 @@ public class Interactable : MonoBehaviour
 						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,(Screen.height - (yInc * (i+1))),Screen.width - 10,yInc), choicesList[i]))
 						{
 							createMessage();
+							currentNode = choicesList[i];
 							//Twine.TwineData.NextNode();
 							choice = false;
 							choicesLinksList.Clear();
@@ -195,10 +196,9 @@ public class Interactable : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!clicked && (KEYMASTER == null || KEYMASTER == this))
+        if (!clicked)
         {
 			//All other interactables now must wait!
-			KEYMASTER = this;
 			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
 			foreach(Interactable inter in interactables)
 			{

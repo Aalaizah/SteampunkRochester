@@ -25,8 +25,21 @@ public class TestManager : MonoBehaviour {
 			var script = obj.GetComponent<Interactable>();
 			if(script != null)
 			{
+				Debug.Log(script);
 				interactables.Add(script);
 			}
+		}
+	}
+
+	void OnGUI()
+	{
+		Rect r = new Rect(0,0,Screen.width/10, Screen.height/10);
+		r.x += r.width;
+		r.y += r.height;
+		if(GUI.Button(r, "Relocate"))
+		{
+			Object.Destroy(transform.parent.gameObject);
+			MarkerBhv.m_map.SetActive(true);
 		}
 	}
 	

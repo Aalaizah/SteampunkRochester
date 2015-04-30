@@ -5,7 +5,7 @@ public class MarkerBhv : MonoBehaviour {
 	GameObject m_tack;
 	GameObject m_thumbnail;
 	GameObject m_thumbnailButton;
-	GameObject m_map;
+	public static GameObject m_map;
 	Vector2 m_mousePosition;
 	public GameObject m_levelToLoad;
 	bool active;
@@ -15,7 +15,7 @@ public class MarkerBhv : MonoBehaviour {
 		//m_tack = transform.Find("Tack").gameObject;
 		m_thumbnail = transform.Find("Box").gameObject;
 		m_thumbnailButton = transform.Find("Travel Button").gameObject;
-		m_map = GameObject.Find("Map_BG");
+		m_map = GameObject.Find("Map_Level_1");
 		active = false;
 		m_thumbnail.SetActive(active);
 		m_thumbnailButton.SetActive(active);
@@ -52,5 +52,6 @@ public class MarkerBhv : MonoBehaviour {
 		Instantiate(m_levelToLoad);
 		//todo, add player and disable map
 		*/
+
 	}
 }
