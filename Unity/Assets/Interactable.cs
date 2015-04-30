@@ -130,6 +130,8 @@ public class Interactable : MonoBehaviour
             GUI.skin.box.wordWrap = true;
 			GUI.skin.button.wordWrap = true;
 
+			GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
+
             if (choice)
             {
 				//Debug.Log(choicesLinksList.Count);
