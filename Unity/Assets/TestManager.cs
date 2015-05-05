@@ -8,6 +8,9 @@ public class TestManager : MonoBehaviour {
 	TwineImporter Twine;
 	bool wasClicked;
 	List<Interactable> interactables;
+	//EmotionManager eM;
+	//TimeManager tM;
+	//Inventory inv;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,7 +19,9 @@ public class TestManager : MonoBehaviour {
 		test = testInteractable.AddComponent<Interactable> ();
 		test.SetName ("test", "test");*/
 		Twine = GameObject.Find ("TwineImporter").GetComponent<TwineImporter> ();
-
+		//eM = new EmotionManager();
+		//tM = new TimeManager();
+		//inv = new Inventory();
 		//find interactables
 		interactables = new List<Interactable>();
 		var gs = GameObject.FindObjectsOfType<GameObject>();

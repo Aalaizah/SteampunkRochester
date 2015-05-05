@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public static class EmotionManager{
 	//dictionary to contain the characters and their respecitve happiness towards the player character
 	private static Dictionary<string,int> emotionValue = new Dictionary<string,int>();
+	//these prevent the emotions of a character from being changed a bunch of times per node
 	private static bool alreadyChangedUp = false;
 	private static bool alreadyChangedDwn = false;
 
@@ -40,6 +41,7 @@ public static class EmotionManager{
 
 	}
 
+	//checks if the player has the correct relationship with the NPC
 	public static bool hasRequirement(string person, int req){
 		if(emotionValue.ContainsKey(person))
 		{
@@ -50,6 +52,7 @@ public static class EmotionManager{
 		return false;
 	}
 
+	//resets the booleans controlling for when the emotions will be updated
 	public static void resetBooleans(){
 		alreadyChangedUp = false;
 		alreadyChangedDwn = false;
