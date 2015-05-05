@@ -43,29 +43,41 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
-		Debug.Log("HOLY SHIT");
+		//Debug.Log("HOLY SHIT");
+		//first checks if the current node has choices or is linerally connected to another node
 		if (!choice) 
 		{
+			//goes to the current node
 			Twine.TwineData.NextNode (currentNode);
 			//Debug.Log (Twine.TwineData.Current.itemsReq);
+
+			//checks if there are any requirementes, item or emotion
 			bool itemReq = !Twine.TwineData.Current.itemsReq.Equals ("");
 			bool emotnReq = !Twine.TwineData.Current.EmotnReqChar.Equals( "");
+
+			// if either exist, then check stuff before going to next node
 			if (itemReq || emotnReq) 
 			{
+				//if there is an item requirement
 				if(itemReq)
 				{
+					//if the player does not have the item, don't progress anymore
 					if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
 						return;
 				}
+				//if there is an emotion requirement
 				if(emotnReq)
 				{
+					//if the player does not meet the requirement, do not progress
 					if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
 						return;
 				}
+				//as long as the next node actually exists, move to the next node
 				if (!Twine.TwineData.Current.Link[0].Equals( " ")) 
 				{
 					currentNode = Twine.TwineData.Current.Link [0];
 				}
+				//if there is no next node, exit the conversation
 				else
 				{
 					selected = false;
@@ -74,11 +86,13 @@ public class Interactable : MonoBehaviour
 			else 
 			{
 				createMessage ();
+				//as long as the next node actually exists, move to the next node
 				if (!Twine.TwineData.Current.Link[0].Equals( " ")) 
 				{
 					currentNode = Twine.TwineData.Current.Link [0];
 
 				}
+				//if there is no next node, exit the conversation
 				else
 				{
 					selected = false;
@@ -90,9 +104,11 @@ public class Interactable : MonoBehaviour
 
     void Update()
     {
+		//adds item if current node calls for it
 		if(Twine.TwineData.Current.ItemsGain !=""){
 			Inventory.addItem(Twine.TwineData.Current.ItemsGain);
 		}
+		//removes item if current node calls for it
 		if(Twine.TwineData.Current.ItemRem !=""){
 			Inventory.removeItem(Twine.TwineData.Current.ItemRem);
 		}

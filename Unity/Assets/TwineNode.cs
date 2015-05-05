@@ -10,16 +10,18 @@ public class TwineNode
 	List<string> speaker = new List<string>();
 	List<string> linkTitles = new List<string>();
 	List<string> links = new List<string>();
-	string itmReq = "";
-	string itmGain = "";
-	string itmRem = "";
-	string emotnUp = "";
-	string emotnDwn = "";
-	string emotnReqChar = "";
-	string emotnReqInt = "";
+	//strings containing the different commands and the necessary parameters for the min order to add the commands to the parser
+	string itmReq = ""; //name of item required
+	string itmGain = ""; //gain the listed item
+	string itmRem = ""; //name of item to be removed
+	string emotnUp = ""; //name of character whose happiness will be upped by 1
+	string emotnDwn = ""; //name of character whose happiness will be downed by 1
+	string emotnReqChar = ""; //name of the character who has an emotional requirement
+	string emotnReqInt = ""; //integer representing the appropriate happiness needed 
 	string nextPassage;
 	bool itmTaken;
-	
+
+	//getters and setters for the various attributes in the 
 	public string Passage {get{return passage;} set{passage = value;}}
 	public List<string> Content {get{return content;} set{content = value;}}
 	public List<string> Speaker {get{return speaker;} set{speaker = value;}}
@@ -179,6 +181,7 @@ public class TwineNode
 			int startPassage;
 			int startItem = 0;
 			//checks various different commands
+
 			//item required command
 			if(data.IndexOf("itemReq--") !=-1)
 			{
@@ -190,6 +193,7 @@ public class TwineNode
 				}
 				//Debug.Log(itmReq);
 			}
+
 			//gain an item command
 			if(data.IndexOf("itemGain--") != -1){
 				startItem = data.IndexOf("itemGain--")+11;
@@ -199,6 +203,7 @@ public class TwineNode
 					startItem++;
 				}
 			}
+
 			//lose/use an item command
 			if(data.IndexOf("itemRem--") !=-1){
 				startItem = data.IndexOf("itemRem--")+10;
@@ -207,6 +212,7 @@ public class TwineNode
 					startItem++;
 				}
 			}
+
 			//a character is happier with the player
 			if(data.IndexOf("happyUp--") != -1)
 			{
@@ -217,6 +223,7 @@ public class TwineNode
 					startItem++;
 				}
 			}
+
 			//a player is less happy with the player
 			if(data.IndexOf("happyDwn--") != -1)
 			{
@@ -227,9 +234,11 @@ public class TwineNode
 					startItem++;
 				}
 			}
+
 			//character has to have a certain happiness for the option
 			if(data.IndexOf ("happyReq--") != -1)
 			{
+				//character required
 				startItem = data.IndexOf("happyReq--") +11;
 				while(data[startItem] != ':')
 				{
@@ -237,6 +246,7 @@ public class TwineNode
 					startItem++;
 				}
 				startItem++;
+				//happiness required for that character
 				while(data[startItem] != '\n'){
 					emotnReqInt += data[startItem];
 					startItem++;
