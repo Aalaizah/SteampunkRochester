@@ -112,17 +112,21 @@ public class Interactable : MonoBehaviour
 		if(Twine.TwineData.Current.ItemRem !=""){
 			Inventory.removeItem(Twine.TwineData.Current.ItemRem);
 		}
+		//makes a character more unhappy if the current node calls for it
 		if(Twine.TwineData.Current.EmotnDwn !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
 		}
+		//makes a character happier if the current node calls for it
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
 		}
+		//if this is a person and you haven't already talked to them, move time forward an hour
 		if(isPerson && !hasAlreadyTalked)
 		{
 			TimeManager.passTime(60);
 			hasAlreadyTalked = true;
 		}
+		//if the item is not currently selected, change the current node back to the origin
 		if (!selected && currentNode != "0")
 		{
 			currentNode = "0";
@@ -141,22 +145,23 @@ public class Interactable : MonoBehaviour
 
     void OnGUI()
     {
+		//if this interactable is currently selected
         if (selected)
         {
             GUI.skin.box.wordWrap = true;
 			GUI.skin.button.wordWrap = true;
 
 			GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
-
+			//if there is a choice currently
             if (choice)
             {
-				//Debug.Log(choicesLinksList.Count);
-				//Debug.Log(choicesList.Count);
+				//for every choice node, create a button for them
                 for (int i = 0; i < choicesLinksList.Count; i++)
                 {
 					currentNode = choicesLinksList[i];
 					Twine.TwineData.NextNode(currentNode);
 
+					//if there is only one available choice, scale the button appropriately
 					if(choicesLinksList.Count == 1)
 					{
 						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
@@ -164,12 +169,14 @@ public class Interactable : MonoBehaviour
 	                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
 	                    {
 	                        createMessage();
+							currentNode = choicesList[i];
 	                        //Twine.TwineData.NextNode();
 	                        choice = false;
 							choicesLinksList.Clear();
 							choicesList.Clear();
 	                    }
 					}
+					//otherwise, scale per how many options
 					else
 					{
 						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
@@ -187,31 +194,38 @@ public class Interactable : MonoBehaviour
 					}
                 }
             }
+			//if it is not a choice, show what is being said
 			else
 			{
 				GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
 			}
         }
     }
-
+	//when the mouse hovers
     void OnMouseOver()
     {
+		//if it hasn't been clicked
         if (!clicked)
         {
+			//if the hoversprite exists, change the sprite
 			if(hoverSprite)
             	spriteRenderer.sprite = hoverSprite;
         }
     }
 
+	//when the mouse no longer hovers over the object/person
     void OnMouseExit()
     {
+		//change clicked to false and the idle sprite is now active if they have it
         clicked = false;
 		if(idleSprite)
         	spriteRenderer.sprite = idleSprite;
     }
 
+	//when this is clicked
     void OnMouseDown()
     {
+		//if it hasn't been clicked yet
         if (!clicked)
         {
 			//All other interactables now must wait!
@@ -225,19 +239,22 @@ public class Interactable : MonoBehaviour
 				}
 			}*/
             clicked = true;
+			//change the sprite if the active sprite exists
 			if(activeSprite)
             	spriteRenderer.sprite = activeSprite;
+			//selected gets changed (current active object
             selected = !selected;
 			//Debug.Log(selected);
+			//read the file amd set up nodes for conversation
 			Twine.ReadTwineFile(path);
         }
     }
-
+	//after the click finishes
     void OnMouseUp()
     {
         clicked = false;
     }
-
+	//set the name of the item
     public void SetName(string pName, string pPath)
     {
         id = pName;
@@ -252,38 +269,40 @@ public class Interactable : MonoBehaviour
     }
 
 
-
+	//build the dialog to be shown
     void createMessage()
     {
+		//reset the emotion manager's booleans for the next node
 		EmotionManager.resetBooleans();
         message = "";
-
-        //speaker = Twine.TwineData.Current.SpeakerData;
-
+		
+		//actually build the message
         foreach (char letter in Twine.TwineData.Current.ContentData.ToString())
         {
             message += letter;
-            //yield return new WaitForSeconds (letterPause);
         }
-
-        //contentList.Clear();
+		
 
         TypeText();
     }
 	
-
+	//???? is this even the correct name for what this does anymore?
     void TypeText()
     {
         TwineNode tempNode;
-		//Debug.Log (Twine.TwineData.Current.Link.Count);
+
+		//checks to see if there is a choice in the dialog
+		//if no choice
         if (Twine.TwineData.Current.Link.Count == 1)
         {
             choice = false;
             //createMessage();
             //Twine.TwineData.NextNode(Twine.TwineData.Current.LinkData);
         }
+		//otherwise
         else
         {
+			//for each choice, make sure that the requirements are met before adding them into the list for buttons to be created
             choice = true;
             tempNode = Twine.TwineData.Current;
             foreach (string currentChoice in Twine.TwineData.Current.Link)
