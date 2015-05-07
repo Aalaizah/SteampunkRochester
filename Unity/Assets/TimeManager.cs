@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class TimeManager{
+public class TimeManager:MonoBehaviour{
 
-	private static int minutes = 0;//minutes of the time (goes up to 60)
-	private static int hours = 0;//hours of time (goes up to 24)
-	private static string timeOfDay = "Night"; //time of the day as a string; Morning, day, or night.
+	private int minutes;//minutes of the time (goes up to 60)
+	private int hours;//hours of time (goes up to 24)
+	private string timeOfDay; //time of the day as a string; Morning, day, or night.
+	void Start(){
+		minutes = 0;
+		hours = 18;
+		timeOfDay = "Night";
+	}
 
+	void Update(){
+	}
 	//passes time by the passed in number of minutes
-	public static void passTime(int i)
+	public void passTime(int i)
 	{
 		minutes += i;
 		//checks the limits of minutes and hours
@@ -32,7 +39,7 @@ public static class TimeManager{
 			timeOfDay = "Night";
 	}
 	//returns the time of day, can be changed to get the numbers if necessary
-	public static string getTime()
+	public string getTime()
 	{
 		return timeOfDay;
 	}
