@@ -2,41 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class EmotionManager : MonoBehaviour {
-	private Dictionary<string,int> emotionValue;
+public class DEP_EmotionManager : MonoBehaviour{
+	//dictionary to contain the characters and their respecitve happiness towards the player character
+	private Dictionary<string,int> emotionValue = new Dictionary<string,int>();
 	//these prevent the emotions of a character from being changed a bunch of times per node
-	private bool alreadyChangedUp;
-	private bool alreadyChangedDwn;
+	private bool alreadyChangedUp = false;
+	private bool alreadyChangedDwn = false;
 	//our emotion emitters
 	private GameObject happyFx;
 	private GameObject sadFx;
-	// Use this for initialization
-	void Start () {
-		emotionValue = new Dictionary<string,int>();
-		alreadyChangedUp = false;
-		alreadyChangedDwn = false;
+
+	void Start(){
 		var happy = Resources.Load("Particles/HappyFx");
 		var sad = Resources.Load("Particles/SadFx");
 		happyFx = Object.Instantiate(happy) as GameObject;
 		sadFx = Object.Instantiate(sad) as GameObject;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update(){
 	}
-	
-	
+
 	//takes in the person to update and whether to make them happier or angrier
 	public void updateEmotions(string person, bool upOrDown)
 	{
-		
+
 		//adds the person to the dictionary if they haven't been added yet
 		if(!emotionValue.ContainsKey(person))
 		{
 			emotionValue.Add(person,0);
 		}
-		
+
 		//adds or subtracts from the value as per the boolean parameter
 		if(upOrDown && !alreadyChangedUp){
 			emotionValue[person]++;
@@ -50,7 +45,7 @@ public class EmotionManager : MonoBehaviour {
 			sadFx.particleSystem.Play();
 			alreadyChangedDwn = true;
 		}
-		
+
 		//clamps the value to between -10 and 10
 		if(emotionValue[person] > 10)
 		{
@@ -60,10 +55,10 @@ public class EmotionManager : MonoBehaviour {
 		{
 			emotionValue[person] = -10;
 		}
-		
-		
+
+
 	}
-	
+
 	//checks if the player has the correct relationship with the NPC
 	public bool hasRequirement(string person, int req){
 		if(emotionValue.ContainsKey(person))
@@ -74,10 +69,11 @@ public class EmotionManager : MonoBehaviour {
 		}
 		return false;
 	}
-	
+
 	//resets the booleans controlling for when the emotions will be updated
 	public void resetBooleans(){
 		alreadyChangedUp = false;
 		alreadyChangedDwn = false;
 	}
+
 }

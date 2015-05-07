@@ -24,6 +24,9 @@ public class Interactable : MonoBehaviour
     public List<string> choicesList;
     public List<string> choicesLinksList;
     public bool choice = false;
+	Inventory inventory;
+	TimeManager timeManager;
+	EmotionManager emotionManager;
 	//public List<Interactable> otherInteractables;
 
     //string speaker = "";
@@ -38,6 +41,9 @@ public class Interactable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
 		Twine.ReadTwineFile(path);
+		inventory = GameObject.FindObjectOfType<Inventory>();
+		timeManager = GameObject.FindObjectOfType<TimeManager>();
+		emotionManager = GameObject.FindObjectOfType<EmotionManager>();
         createMessage();
     }
 
@@ -61,14 +67,14 @@ public class Interactable : MonoBehaviour
 				if(itemReq)
 				{
 					//if the player does not have the item, don't progress anymore
-					if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
+					if(!inventory.hasItem(Twine.TwineData.Current.itemsReq))
 						return;
 				}
 				//if there is an emotion requirement
 				if(emotnReq)
 				{
 					//if the player does not meet the requirement, do not progress
-					if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
+					if(!emotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
 						return;
 				}
 				//as long as the next node actually exists, move to the next node
@@ -105,24 +111,24 @@ public class Interactable : MonoBehaviour
     {
 		//adds item if current node calls for it
 		if(Twine.TwineData.Current.ItemsGain !=""){
-			Inventory.addItem(Twine.TwineData.Current.ItemsGain);
+			inventory.addItem(Twine.TwineData.Current.ItemsGain);
 		}
 		//removes item if current node calls for it
 		if(Twine.TwineData.Current.ItemRem !=""){
-			Inventory.removeItem(Twine.TwineData.Current.ItemRem);
+			inventory.removeItem(Twine.TwineData.Current.ItemRem);
 		}
 		//makes a character more unhappy if the current node calls for it
 		if(Twine.TwineData.Current.EmotnDwn !=""){
-			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
+			emotionManager.updateEmotions(Twine.TwineData.Current.EmotnDwn,false);
 		}
 		//makes a character happier if the current node calls for it
 		if(Twine.TwineData.Current.EmotnUp !=""){
-			EmotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
+			emotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
 		}
 		//if this is a person and you haven't already talked to them, move time forward an hour
 		if(isPerson && !hasAlreadyTalked)
 		{
-			TimeManager.passTime(60);
+			timeManager.passTime(60);
 			hasAlreadyTalked = true;
 		}
 		//if the item is not currently selected, change the current node back to the origin
@@ -272,7 +278,7 @@ public class Interactable : MonoBehaviour
     void createMessage()
     {
 		//reset the emotion manager's booleans for the next node
-		EmotionManager.resetBooleans();
+		emotionManager.resetBooleans();
         message = "";
 		
 		//actually build the message
@@ -314,12 +320,12 @@ public class Interactable : MonoBehaviour
 				{
 					if(itemReq)
 					{
-						if(!Inventory.hasItem(Twine.TwineData.Current.itemsReq))
+						if(!inventory.hasItem(Twine.TwineData.Current.itemsReq))
 							triggered = true;
 					}
 					if(emotnReq)
 					{
-						if(!EmotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
+						if(!emotionManager.hasRequirement(Twine.TwineData.Current.EmotnReqChar,int.Parse(Twine.TwineData.Current.EmotnReqInt)))
 							triggered=true;
 					}
 					if (Twine.TwineData.Current.Link.Count != 0) 

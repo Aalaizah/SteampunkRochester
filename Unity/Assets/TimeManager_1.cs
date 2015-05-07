@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TimeManager:MonoBehaviour{
-	
+public class TimeManager_1:MonoBehaviour{
+
 	private int minutes;//minutes of the time (goes up to 60)
 	private int hours;//hours of time (goes up to 24)
 	private string timeOfDay; //time of the day as a string; Morning, day, or night.
@@ -11,7 +11,7 @@ public class TimeManager:MonoBehaviour{
 		hours = 18;
 		timeOfDay = "Night";
 	}
-	
+
 	void Update(){
 	}
 	//passes time by the passed in number of minutes
@@ -28,11 +28,11 @@ public class TimeManager:MonoBehaviour{
 		{
 			hours = 0;
 		}
-		
+
 		//checks what timeOfDay it is and sets the field appropriately
 		if(hours < 11 && hours > 6)
 			timeOfDay = "Morning";
-		
+
 		if(hours >= 11 && hours < 18)
 			timeOfDay = "Day";
 		if(hours >=18)
