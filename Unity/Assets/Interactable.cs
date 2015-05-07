@@ -34,7 +34,7 @@ public class Interactable : MonoBehaviour
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
 		//otherInteractables = new List<Interactable> ();
-        gameObject.AddComponent<BoxCollider2D>();
+        gameObject.AddComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
 		Twine.ReadTwineFile(path);
@@ -43,7 +43,6 @@ public class Interactable : MonoBehaviour
 
     public void Progress()
     {
-		//Debug.Log("HOLY SHIT");
 		//first checks if the current node has choices or is linerally connected to another node
 		if (!choice) 
 		{
