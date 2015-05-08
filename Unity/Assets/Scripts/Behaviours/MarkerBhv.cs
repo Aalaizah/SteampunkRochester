@@ -19,7 +19,7 @@ public class MarkerBhv : MonoBehaviour {
 		m_thumbnailButton = transform.Find("Travel Button").gameObject;
 		m_map = GameObject.Find("Map_Level_1");
 		mapUI = GameObject.FindGameObjectWithTag("MapUI");
-		timeManager = GameObject.FindObjectOfType<TimeManager>();
+		timeManager = ObjectFinder.FindOrCreateComponent<TimeManager>();
 		active = false;
 		m_thumbnail.SetActive(active);
 		m_thumbnailButton.SetActive(active);
