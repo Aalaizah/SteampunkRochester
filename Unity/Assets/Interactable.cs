@@ -161,7 +161,7 @@ public class Interactable : MonoBehaviour
 	                    {
 	                        createMessage();
 							currentNode = choicesList[i];
-	                        //Twine.TwineData.NextNode();
+	                        Twine.TwineData.NextNode(currentNode);
 	                        choice = false;
 							choicesLinksList.Clear();
 							choicesList.Clear();
@@ -177,7 +177,7 @@ public class Interactable : MonoBehaviour
 						{
 							createMessage();
 							currentNode = choicesList[i];
-							//Twine.TwineData.NextNode();
+							Twine.TwineData.NextNode(currentNode);
 							choice = false;
 							choicesLinksList.Clear();
 							choicesList.Clear();

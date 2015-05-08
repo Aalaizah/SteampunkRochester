@@ -13,6 +13,7 @@ public class Inventory:MonoBehaviour{
 	}
 	//adds the item to the dictionary if it isn't already or makes sure that the item is set to true so that they currently have the item
 	public void addItem(string item){
+		Debug.Log("Adding item " + item);
 		if(!inventory.ContainsKey(item)){
 			inventory.Add(item,true);
 		}
@@ -23,6 +24,7 @@ public class Inventory:MonoBehaviour{
 	
 	//removes the item from the inventory if they have it currently
 	public void removeItem(string item){
+		Debug.Log("Remove item " + item);
 		if(inventory.ContainsKey(item)){
 			inventory[item] = false;
 		}

@@ -12,6 +12,7 @@ Narrator: Do you want to pick up the item?
 [[Test|8]]
 
 :: 3
+itemReq-- BlackBox
 Narrator: You took the black box but it is still here....
 [[Test|9]]
 
@@ -21,7 +22,6 @@ Narrator: Do you really want two items?
 [[Test|5]]
 
 :: 4
-itemReq-- BlackBox
 Narrator: Yes
 [[Test|6]]
 
