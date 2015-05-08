@@ -3,11 +3,6 @@ Matty: Aleksei! So glad you could make it, darling.
 [[Hello|Hi]]
 [[Thanks|Thank]]
 
-
-:: StoryAuthor
-Anonymous
-
-
 :: Hi
 Aleksei: Hello, Matty. It's been a while.
 [[Converse|SmallTalk]]
