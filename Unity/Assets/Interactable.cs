@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Interactable : MonoBehaviour
 {
 	//used to lock out other interactables
-	//private static Interactable KEYMASTER;
+	private static Interactable KEYMASTER;
     private SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
     public Sprite hoverSprite;
@@ -27,7 +27,7 @@ public class Interactable : MonoBehaviour
 	Inventory inventory;
 	TimeManager timeManager;
 	EmotionManager emotionManager;
-	//public List<Interactable> otherInteractables;
+	public List<Interactable> otherInteractables;
 
     //string speaker = "";
 
@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour
 		Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
-		//otherInteractables = new List<Interactable> ();
+		otherInteractables = new List<Interactable> ();
         gameObject.AddComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
@@ -136,15 +136,15 @@ public class Interactable : MonoBehaviour
 		{
 			currentNode = "0";
 			//release the keymaster role
-			//KEYMASTER = null;
-			/*if(otherInteractables.Count > 0)
+			KEYMASTER = null;
+			if(otherInteractables.Count > 0)
 			{
 				foreach(Interactable inter in otherInteractables)
 				{
 					inter.gameObject.SetActive(true);
 				}
 				otherInteractables.Clear();
-			}*/
+			}
 		}
     }
 
@@ -234,7 +234,7 @@ public class Interactable : MonoBehaviour
         if (!clicked)
         {
 			//All other interactables now must wait!
-			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
+			var interactables = GameObject.FindObjectsOfType<Interactable>();
 			foreach(Interactable inter in interactables)
 			{
 				if(inter != this)
@@ -242,7 +242,7 @@ public class Interactable : MonoBehaviour
 					inter.gameObject.SetActive(false);
 					otherInteractables.Add(inter);
 				}
-			}*/
+			}
             clicked = true;
 			//change the sprite if the active sprite exists
 			if(activeSprite)
