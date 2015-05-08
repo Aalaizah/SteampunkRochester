@@ -1,6 +1,5 @@
 ﻿:: 0
 Tim White: Hey, I remember you from somewhere. Get over here and join me for a drink. Who are you again?
-
 [[Remember|InitializeConvoRemember]]
 [[Approach|InitializeConvo]]
 

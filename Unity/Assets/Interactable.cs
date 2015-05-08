@@ -39,12 +39,12 @@ public class Interactable : MonoBehaviour
 		otherInteractables = new List<Interactable> ();
         gameObject.AddComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
+		Twine = ObjectFinder.FindOrCreateComponent<TwineImporter> ();
 		Twine.ReadTwineFile(path);
 
-		inventory = GameObject.FindObjectOfType<Inventory>();
-		timeManager = GameObject.FindObjectOfType<TimeManager>();
-		emotionManager = GameObject.FindObjectOfType<EmotionManager>();
+		inventory = ObjectFinder.FindOrCreateComponent<Inventory>();
+		timeManager = ObjectFinder.FindOrCreateComponent<TimeManager>();
+		emotionManager = ObjectFinder.FindOrCreateComponent<EmotionManager>();
 		spriteRenderer.sprite = null;
         createMessage();
     }
