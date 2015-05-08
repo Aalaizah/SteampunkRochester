@@ -52,7 +52,7 @@ public class TestManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log (test.selected);
-		foreach(Interactable test in interactables)
+		/*foreach(Interactable test in interactables)
 		{
 			if (test.selected) 
 			{
@@ -69,7 +69,7 @@ public class TestManager : MonoBehaviour {
 					test.Progress();
 				}
 			}
-		}
+		}*/
 	}
 
 	/*void OnMouseDown(){

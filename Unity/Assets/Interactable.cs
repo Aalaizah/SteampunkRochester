@@ -41,6 +41,7 @@ public class Interactable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 		Twine = GameObject.Find("TwineImporter").GetComponent<TwineImporter>();
 		Twine.ReadTwineFile(path);
+
 		inventory = GameObject.FindObjectOfType<Inventory>();
 		timeManager = GameObject.FindObjectOfType<TimeManager>();
 		emotionManager = GameObject.FindObjectOfType<EmotionManager>();
@@ -188,7 +189,11 @@ public class Interactable : MonoBehaviour
 			//if it is not a choice, show what is being said
 			else
 			{
-				GUI.Box(new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4), message);
+				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4);
+				if(GUI.Button(rectangle, message))
+				{
+					Progress();
+				}
 			}
         }
     }
