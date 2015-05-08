@@ -17,6 +17,7 @@ public class TimeManager:MonoBehaviour{
 	//passes time by the passed in number of minutes
 	public void passTime(int i)
 	{
+		Debug.Log("Passing " + i + " Minutes");
 		minutes += i;
 		//checks the limits of minutes and hours
 		while(minutes >= 60)

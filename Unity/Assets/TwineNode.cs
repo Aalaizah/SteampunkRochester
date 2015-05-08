@@ -222,6 +222,7 @@ public class TwineNode
 					emotnUp += data[startItem];
 					startItem++;
 				}
+				emotnUp.Trim();
 			}
 
 			//a player is less happy with the player
@@ -233,6 +234,7 @@ public class TwineNode
 					emotnDwn += data[startItem];
 					startItem++;
 				}
+				emotnDwn.Trim();
 			}
 
 			//character has to have a certain happiness for the option
@@ -251,6 +253,9 @@ public class TwineNode
 					emotnReqInt += data[startItem];
 					startItem++;
 				}
+
+				emotnReqChar.Trim();
+				emotnReqInt.Trim();
 			}
 
 			startPassage = data.IndexOf ("::") + 3;

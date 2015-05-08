@@ -6,6 +6,7 @@ public class MarkerBhv : MonoBehaviour {
 	GameObject m_thumbnail;
 	GameObject m_thumbnailButton;
 	public static GameObject m_map;
+	public static GameObject mapUI;
 	Vector2 m_mousePosition;
 	public GameObject m_levelToLoad;
 	bool active;
@@ -17,6 +18,7 @@ public class MarkerBhv : MonoBehaviour {
 		m_thumbnail = transform.Find("Box").gameObject;
 		m_thumbnailButton = transform.Find("Travel Button").gameObject;
 		m_map = GameObject.Find("Map_Level_1");
+		mapUI = GameObject.FindGameObjectWithTag("MapUI");
 		timeManager = GameObject.FindObjectOfType<TimeManager>();
 		active = false;
 		m_thumbnail.SetActive(active);
@@ -33,6 +35,7 @@ public class MarkerBhv : MonoBehaviour {
 	public void Travel()
 	{
 		m_map.SetActive (false);
+		mapUI.SetActive(false);
 		timeManager.passTime (30);
 		Instantiate (m_levelToLoad);
 	}

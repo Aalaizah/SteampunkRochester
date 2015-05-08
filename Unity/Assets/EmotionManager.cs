@@ -30,10 +30,11 @@ public class EmotionManager : MonoBehaviour {
 	//takes in the person to update and whether to make them happier or angrier
 	public void updateEmotions(string person, bool upOrDown)
 	{
-		
+		//Debug.Log("updating Emotions of " + person + " " + upOrDown);
 		//adds the person to the dictionary if they haven't been added yet
 		if(!emotionValue.ContainsKey(person))
 		{
+			Debug.Log("Adding " + person);
 			emotionValue.Add(person,0);
 		}
 		
@@ -66,6 +67,7 @@ public class EmotionManager : MonoBehaviour {
 	
 	//checks if the player has the correct relationship with the NPC
 	public bool hasRequirement(string person, int req){
+		Debug.Log(emotionValue.ContainsKey(person));
 		if(emotionValue.ContainsKey(person))
 		{
 			if(emotionValue[person] >= req){
