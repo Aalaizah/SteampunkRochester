@@ -44,6 +44,7 @@ public class Interactable : MonoBehaviour
 		inventory = GameObject.FindObjectOfType<Inventory>();
 		timeManager = GameObject.FindObjectOfType<TimeManager>();
 		emotionManager = GameObject.FindObjectOfType<EmotionManager>();
+		spriteRenderer.sprite = null;
         createMessage();
     }
 
@@ -131,21 +132,6 @@ public class Interactable : MonoBehaviour
 			timeManager.passTime(60);
 			hasAlreadyTalked = true;
 		}
-		//if the item is not currently selected, change the current node back to the origin
-		if (!selected && currentNode != "0")
-		{
-			currentNode = "0";
-			//release the keymaster role
-			KEYMASTER = null;
-			if(otherInteractables.Count > 0)
-			{
-				foreach(Interactable inter in otherInteractables)
-				{
-					inter.gameObject.SetActive(true);
-				}
-				otherInteractables.Clear();
-			}
-		}
     }
 
     void OnGUI()
@@ -223,8 +209,7 @@ public class Interactable : MonoBehaviour
     {
 		//change clicked to false and the idle sprite is now active if they have it
         clicked = false;
-		if(idleSprite)
-        	spriteRenderer.sprite = idleSprite;
+       	spriteRenderer.sprite = null;
     }
 
 	//when this is clicked
@@ -234,7 +219,7 @@ public class Interactable : MonoBehaviour
         if (!clicked)
         {
 			//All other interactables now must wait!
-			var interactables = GameObject.FindObjectsOfType<Interactable>();
+			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
 			foreach(Interactable inter in interactables)
 			{
 				if(inter != this)
@@ -242,8 +227,9 @@ public class Interactable : MonoBehaviour
 					inter.gameObject.SetActive(false);
 					otherInteractables.Add(inter);
 				}
-			}
+			}*/
             clicked = true;
+			Debug.Log("Clicked now select, please.");
 			//change the sprite if the active sprite exists
 			if(activeSprite)
             	spriteRenderer.sprite = activeSprite;
@@ -257,7 +243,24 @@ public class Interactable : MonoBehaviour
 	//after the click finishes
     void OnMouseUp()
     {
-        clicked = false;
+		clicked = false;
+		//if the item is not currently selected, change the current node back to the origin
+		if (!selected && currentNode != "0")
+		{
+			Debug.Log ("KEYMASTER CODE " + transform.parent.gameObject.name);
+			Debug.Log ("Current Node " + currentNode);
+			currentNode = " ";
+			//release the keymaster role
+			KEYMASTER = null;
+			/*if(otherInteractables.Count > 0)
+			{
+				foreach(Interactable inter in otherInteractables)
+				{
+					inter.gameObject.SetActive(true);
+				}
+				otherInteractables.Clear();
+			}*/
+		}
     }
 	//set the name of the item
     public void SetName(string pName, string pPath)
