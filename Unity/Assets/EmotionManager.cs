@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class EmotionManager : MonoBehaviour {
-	private Dictionary<string,int> emotionValue;
+	private List<string> characterName;
+	private List<int> characterEmotion;
 	//these prevent the emotions of a character from being changed a bunch of times per node
 	private bool alreadyChangedUp;
 	private bool alreadyChangedDwn;
@@ -12,7 +13,8 @@ public class EmotionManager : MonoBehaviour {
 	private GameObject sadFx;
 	// Use this for initialization
 	void Start () {
-		emotionValue = new Dictionary<string,int>();
+		characterName = new List<string>();
+		characterEmotion = new List<int>();
 		alreadyChangedUp = false;
 		alreadyChangedDwn = false;
 		var happy = Resources.Load("Particles/HappyFx");
@@ -32,34 +34,35 @@ public class EmotionManager : MonoBehaviour {
 	{
 		//Debug.Log("updating Emotions of " + person + " " + upOrDown);
 		//adds the person to the dictionary if they haven't been added yet
-		if(!emotionValue.ContainsKey(person))
+		//Debug.Log(characterName.Contains(person));
+		if(!characterName.Contains(person))
 		{
-			Debug.Log("Adding " + person);
-			emotionValue.Add(person,0);
+			characterName.Add(person);
+			characterEmotion.Add(0);
 		}
 		
 		//adds or subtracts from the value as per the boolean parameter
 		if(upOrDown && !alreadyChangedUp){
-			emotionValue[person]++;
+			characterEmotion[characterName.IndexOf(person)]++;
 			//trigger happy emoticon
 			happyFx.particleSystem.Play();
 			alreadyChangedUp = true;
 		}
 		else if(!upOrDown && !alreadyChangedDwn){
-			emotionValue[person]--;
+			characterEmotion[characterName.IndexOf(person)]--;
 			//trigger sad emoticon
 			sadFx.particleSystem.Play();
 			alreadyChangedDwn = true;
 		}
 		
 		//clamps the value to between -10 and 10
-		if(emotionValue[person] > 10)
+		if(characterEmotion[characterName.IndexOf(person)] > 10)
 		{
-			emotionValue[person] = 10;
+			characterEmotion[characterName.IndexOf(person)] = 10;
 		}
-		else if(emotionValue[person] < -10)
+		else if(characterEmotion[characterName.IndexOf(person)] < -10)
 		{
-			emotionValue[person] = -10;
+			characterEmotion[characterName.IndexOf(person)] = -10;
 		}
 		
 		
@@ -67,12 +70,17 @@ public class EmotionManager : MonoBehaviour {
 	
 	//checks if the player has the correct relationship with the NPC
 	public bool hasRequirement(string person, int req){
-		Debug.Log(emotionValue.ContainsKey(person));
-		if(emotionValue.ContainsKey(person))
+		for(int i=0; i < characterName.Count; i++)
 		{
-			if(emotionValue[person] >= req){
-				return true;
+			Debug.Log("List: "  + characterName[i] + "! person: " + person + "!");
+			Debug.Log(characterName[i].Equals(person));
+			if(characterName[i] == person)
+			{
+				if(characterEmotion[i] >= req){
+					return true;
+				}
 			}
+
 		}
 		return false;
 	}

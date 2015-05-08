@@ -186,7 +186,7 @@ public class TwineNode
 			if(data.IndexOf("itemReq--") !=-1)
 			{
 				startItem = data.IndexOf("itemReq--")+10;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					itmReq += data[startItem];
 					startItem++;
@@ -197,7 +197,7 @@ public class TwineNode
 			//gain an item command
 			if(data.IndexOf("itemGain--") != -1){
 				startItem = data.IndexOf("itemGain--")+11;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					itmGain += data[startItem];
 					startItem++;
@@ -207,7 +207,8 @@ public class TwineNode
 			//lose/use an item command
 			if(data.IndexOf("itemRem--") !=-1){
 				startItem = data.IndexOf("itemRem--")+10;
-				while(data[startItem] != '\n'){
+				while(data[startItem] != '\n' && data[startItem] != '\r')
+				{
 					itmRem += data[startItem];
 					startItem++;
 				}
@@ -217,24 +218,24 @@ public class TwineNode
 			if(data.IndexOf("happyUp--") != -1)
 			{
 				startItem = data.IndexOf("happyUp--")+10;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					emotnUp += data[startItem];
 					startItem++;
 				}
-				emotnUp.Trim();
+				emotnUp = emotnUp.Trim();
 			}
 
 			//a player is less happy with the player
 			if(data.IndexOf("happyDwn--") != -1)
 			{
 				startItem = data.IndexOf("happyDwn--")+11;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					emotnDwn += data[startItem];
 					startItem++;
 				}
-				emotnDwn.Trim();
+				emotnDwn = emotnDwn.Trim();
 			}
 
 			//character has to have a certain happiness for the option
@@ -249,13 +250,13 @@ public class TwineNode
 				}
 				startItem++;
 				//happiness required for that character
-				while(data[startItem] != '\n'){
+				while(data[startItem] != '\n' && data[startItem] != '\r'){
 					emotnReqInt += data[startItem];
 					startItem++;
 				}
 
-				emotnReqChar.Trim();
-				emotnReqInt.Trim();
+				emotnReqChar = emotnReqChar.Trim();
+				emotnReqInt = emotnReqInt.Trim();
 			}
 
 			startPassage = data.IndexOf ("::") + 3;
