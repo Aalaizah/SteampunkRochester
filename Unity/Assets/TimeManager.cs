@@ -44,4 +44,9 @@ public class TimeManager:MonoBehaviour{
 	{
 		return timeOfDay;
 	}
+
+	public string getFullTime()
+	{
+		return ("Time: " + hours + ":" + minutes);
+	}
 }

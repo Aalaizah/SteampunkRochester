@@ -15,6 +15,7 @@ public class Interactable : MonoBehaviour
     public bool clicked;
     public bool selected;
 	public bool isPerson;
+	string toDisplay = "";
 	private bool hasAlreadyTalked = false;
     private bool readTwine;
     TwineImporter Twine;
@@ -23,6 +24,7 @@ public class Interactable : MonoBehaviour
     public bool taken = false;
     public List<string> choicesList;
     public List<string> choicesLinksList;
+	public List<string> choicesTitles;
     public bool choice = false;
 	Inventory inventory;
 	TimeManager timeManager;
@@ -36,6 +38,7 @@ public class Interactable : MonoBehaviour
 		Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
+		choicesTitles = new List<string>();
 		otherInteractables = new List<Interactable> ();
         gameObject.AddComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -152,13 +155,22 @@ public class Interactable : MonoBehaviour
                 {
 					currentNode = choicesLinksList[i];
 					Twine.TwineData.NextNode(currentNode);
-
+					Debug.Log(Twine.TwineData.Current.ContentData + "!");
+					if(Twine.TwineData.Current.ContentData == "")
+					{
+						Debug.Log ("Using title data");
+						toDisplay = choicesTitles[i];
+					}
+					else{
+						Debug.Log("Not using title data");
+						toDisplay = choicesList[i];
+					}
 					//if there is only one available choice, scale the button appropriately
 					if(choicesLinksList.Count == 1)
 					{
 						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 
-	                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), choicesList[i]))
+	                    if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), toDisplay))
 	                    {
 	                        createMessage();
 							currentNode = choicesList[i];
@@ -166,6 +178,8 @@ public class Interactable : MonoBehaviour
 	                        choice = false;
 							choicesLinksList.Clear();
 							choicesList.Clear();
+							choicesTitles.Clear();
+
 	                    }
 					}
 					//otherwise, scale per how many options
@@ -174,7 +188,7 @@ public class Interactable : MonoBehaviour
 						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 
 						int yInc =  Screen.height / choicesLinksList.Count / choicesLinksList.Count;
-						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,(Screen.height - (yInc * (i+1))),Screen.width - 10,yInc), choicesList[i]))
+						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,(Screen.height - (yInc * (i+1))),Screen.width - 10,yInc), toDisplay))
 						{
 							createMessage();
 							currentNode = choicesList[i];
@@ -182,6 +196,7 @@ public class Interactable : MonoBehaviour
 							choice = false;
 							choicesLinksList.Clear();
 							choicesList.Clear();
+							choicesTitles.Clear();
 						}
 					}
                 }
@@ -345,6 +360,8 @@ public class Interactable : MonoBehaviour
 				{
                 	choicesLinksList.Add(currentChoice);
                 	choicesList.Add(Twine.TwineData.Current.ContentData);
+					choicesTitles.Add(Twine.TwineData.Current.LinkTitle[0]);
+					Debug.Log(choicesTitles.Count);
 				}
             }
             Twine.TwineData.Current = tempNode;
