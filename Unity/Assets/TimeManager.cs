@@ -18,8 +18,20 @@ public class TimeManager:MonoBehaviour{
 	}
 	
 	void Update(){
-
 		timeOfDayUI.GetComponent<Text>().text = timeOfDay;
+
+		if(timeOfDay == "Morning")
+		{
+			camera.GetComponent<Camera>().backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
+		}
+		else if(timeOfDay == "Day")
+		{
+			camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
+		}
+		else if(timeOfDay == "Night")
+		{
+			camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+		}
 	}
 	//passes time by the passed in number of minutes
 	public void passTime(int i)
