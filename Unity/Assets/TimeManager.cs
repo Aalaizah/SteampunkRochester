@@ -14,9 +14,9 @@ public class TimeManager:MonoBehaviour{
 	public static bool ending2Flag;
 
 	void Start(){
-		day=1;
+		day=0;
 		minutes = 0;
-		hours = 22;
+		hours = 23;
 		timeOfDay = "Night";
 
 	}

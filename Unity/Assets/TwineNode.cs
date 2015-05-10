@@ -187,11 +187,11 @@ public class TwineNode
 			//endingFlag!
 			if(data.IndexOf("endingFlag--") != -1)
 			{
-				int flag = data.IndexOf("endingFlag--");
-				while(data[flag] != '\n' && data[flag] !='\r')
+				startItem= data.IndexOf("endingFlag--") + 13;
+				while(data[startItem] != '\n' && data[startItem] !='\r')
 				{
-					endingFlag += data[flag];
-					flag++;
+					endingFlag += data[startItem];
+					startItem++;
 				}
 			}
 			//item required command

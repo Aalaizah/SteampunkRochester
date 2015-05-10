@@ -13,7 +13,7 @@ public class TestManager : MonoBehaviour {
 	//Inventory inv;
 	string currentLevel;
 	string currLvl;
-	
+	static bool finalLoaded = false;
 	// Use this for initialization
 	void Start () {
 		/*GameObject testInteractable = new GameObject("BlackBox");
@@ -75,10 +75,11 @@ public class TestManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(tM.getDay() >= 2)
+		if(tM.getDay() >= 2 && !finalLoaded)
 		{
 			Object.Destroy(transform.parent.gameObject);
 			Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Final")as GameObject);
+			finalLoaded = true;
 		}
 		//Debug.Log (test.selected);
 		/*foreach(Interactable test in interactables)
