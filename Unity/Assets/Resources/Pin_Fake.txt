@@ -12,6 +12,4 @@ On a closer look, there is something off about this pin. It's not quite the same
 
 
 :: Leave
-
-
-
+You decide to leave.

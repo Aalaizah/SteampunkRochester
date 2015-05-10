@@ -30,6 +30,6 @@ The crates have some hard to read letters on them, something starting with a "Z"
 
 
 :: Leave
-
+You decide to leave well enough alone.
 
 
