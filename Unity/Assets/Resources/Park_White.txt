@@ -87,6 +87,7 @@ Tim White: Alright. Have a good day!
 
 
 :: Questions
+I'd like to ask you a question.
 [[Your involvement|CoLinvolvement]]
 [[Church of Light ideals|CoLideals]]
 [[Glowing Water|GlowingWater]]
