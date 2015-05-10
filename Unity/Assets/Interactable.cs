@@ -90,6 +90,7 @@ public class Interactable : MonoBehaviour
 				//if there is no next node, exit the conversation
 				else
 				{
+					OnDialogueCompelete();
 					selected = false;
 				}
 			}
@@ -105,15 +106,26 @@ public class Interactable : MonoBehaviour
 				//if there is no next node, exit the conversation
 				else
 				{
+					OnDialogueCompelete();
 					selected = false;
 				}
 			}
     	}
 	}
 
+	void OnDialogueCompelete()
+	{
+		//re-activate interactables
+		foreach(Interactable thing in otherInteractables)
+		{
+			thing.transform.parent.gameObject.SetActive(true);
+		}
+	}
+
 
     void Update()
     {
+
 		//adds item if current node calls for it
 		if(Twine.TwineData.Current.ItemsGain !=""){
 			inventory.addItem(Twine.TwineData.Current.ItemsGain);
@@ -238,16 +250,17 @@ public class Interactable : MonoBehaviour
 		//if it hasn't been clicked yet
         if (!clicked)
         {
-			//All other interactables now must wait!
-			/*var interactables = GameObject.FindObjectsOfType<Interactable>();
+			//hide all interactables (de-activate)
+			var interactables = GameObject.FindObjectsOfType<Interactable>();
 			foreach(Interactable inter in interactables)
 			{
-				if(inter != this)
+				var parent = inter.transform.parent.gameObject;
+				if(inter != this && parent.activeSelf)
 				{
-					inter.gameObject.SetActive(false);
+					inter.transform.parent.gameObject.SetActive(false);
 					otherInteractables.Add(inter);
 				}
-			}*/
+			}
             clicked = true;
 			Debug.Log("Clicked now select, please.");
 			//change the sprite if the active sprite exists
