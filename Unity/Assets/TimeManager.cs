@@ -10,11 +10,13 @@ public class TimeManager:MonoBehaviour{
 	private string timeOfDay; //time of the day as a string; Morning, day, or night.
 	public GameObject camera; 
 	public GameObject timeOfDayUI;
+	public static bool ending1Flag;
+	public static bool ending2Flag;
 
 	void Start(){
-		day=-1;
+		day=1;
 		minutes = 0;
-		hours = 1;
+		hours = 22;
 		timeOfDay = "Night";
 
 	}

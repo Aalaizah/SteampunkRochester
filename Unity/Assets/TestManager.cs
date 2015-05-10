@@ -12,6 +12,7 @@ public class TestManager : MonoBehaviour {
 	TimeManager tM;
 	//Inventory inv;
 	string currentLevel;
+	string currLvl;
 	
 	// Use this for initialization
 	void Start () {
@@ -45,21 +46,23 @@ public class TestManager : MonoBehaviour {
 		r.y += r.height;
 		if(GUI.Button(r, "Leave"))
 		{
-			Debug.Log(currentLevel);
+			//Debug.Log(currentLevel);
 			if(currentLevel == "Party_Night")
 			{
+				currLvl = "Canal_Day";
 				Object.Destroy(transform.parent.gameObject);
 				Instantiate(Resources.Load("Prefabs/Locations/Canal_Day") as GameObject);
-				currentLevel = "Canal_Day";
+
 			}
-			else if(currentLevel == "Canal_Day(Clone)")
+			else if(currLvl == "Canal_Day")
 			{
+				currLvl = "";
 				//Destory current level
 				Object.Destroy(transform.parent.gameObject);
 
 				//load editor office
 				Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
-				currentLevel = "EditorOffice_First";
+
 			}
 			//otherwise, go back to map screen.
 			else{
@@ -75,7 +78,7 @@ public class TestManager : MonoBehaviour {
 		if(tM.getDay() >= 2)
 		{
 			Object.Destroy(transform.parent.gameObject);
-			Instantiate(Resources.Load("Prefabs/locations/EditorOffice_Final")as GameObject);
+			Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Final")as GameObject);
 		}
 		//Debug.Log (test.selected);
 		/*foreach(Interactable test in interactables)

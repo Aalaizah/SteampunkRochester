@@ -26,6 +26,7 @@ public class Interactable : MonoBehaviour
     public List<string> choicesLinksList;
 	public List<string> choicesTitles;
     public bool choice = false;
+	public bool isFinalEditor = false;
 	Inventory inventory;
 	TimeManager timeManager;
 	EmotionManager emotionManager;
@@ -35,6 +36,20 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
+		if(isFinalEditor)
+		{
+			if(TimeManager.ending1Flag)
+			{
+				path = "Ending3";
+			}
+			else if(TimeManager.ending2Flag)
+			{
+				path = "Ending1";
+			}
+			else{
+				path = "Ending2";
+			}
+		}
 		//Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
@@ -129,6 +144,18 @@ public class Interactable : MonoBehaviour
 		//makes a character happier if the current node calls for it
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			emotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
+		}
+
+		if(Twine.TwineData.Current.EndingFlag != "")
+		{
+			if(int.Parse(Twine.TwineData.Current.EndingFlag) == 1)
+			{
+				TimeManager.ending1Flag = true;
+			}
+			else if(int.Parse(Twine.TwineData.Current.EndingFlag)==2)
+			{
+				TimeManager.ending2Flag = true;
+			}
 		}
 
     }

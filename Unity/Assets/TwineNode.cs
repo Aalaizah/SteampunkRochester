@@ -18,6 +18,7 @@ public class TwineNode
 	string emotnDwn = ""; //name of character whose happiness will be downed by 1
 	string emotnReqChar = ""; //name of the character who has an emotional requirement
 	string emotnReqInt = ""; //integer representing the appropriate happiness needed 
+	string endingFlag = ""; //flags that a condition for an ending has been met.
 	string nextPassage;
 	bool itmTaken;
 
@@ -34,6 +35,7 @@ public class TwineNode
 	public string EmotnDwn{ get {return emotnDwn;}}
 	public string EmotnReqChar{get{return emotnReqChar;}}
 	public string EmotnReqInt{get{return emotnReqInt;}}
+	public string EndingFlag{get{return endingFlag;}}
 	
 	public string ContentData
 	{
@@ -182,6 +184,16 @@ public class TwineNode
 			int startItem = 0;
 			//checks various different commands
 
+			//endingFlag!
+			if(data.IndexOf("endingFlag--") != -1)
+			{
+				int flag = data.IndexOf("endingFlag--");
+				while(data[flag] != '\n' && data[flag] !='\r')
+				{
+					endingFlag += data[flag];
+					flag++;
+				}
+			}
 			//item required command
 			if(data.IndexOf("itemReq--") !=-1)
 			{
