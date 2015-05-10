@@ -6,31 +6,37 @@ public class TimeManager:MonoBehaviour{
 	
 	private int minutes;//minutes of the time (goes up to 60)
 	private int hours;//hours of time (goes up to 24)
+	private int day;
 	private string timeOfDay; //time of the day as a string; Morning, day, or night.
 	public GameObject camera; 
 	public GameObject timeOfDayUI;
 
 	void Start(){
+		day=-1;
 		minutes = 0;
-		hours = 18;
-		timeOfDay = "Morning";
-		timeOfDayUI = GameObject.Find ("Time");
+		hours = 1;
+		timeOfDay = "Night";
+
 	}
 	
 	void Update(){
-		timeOfDayUI.GetComponent<Text>().text = timeOfDay;
+		timeOfDayUI = GameObject.Find ("Time");
+		if(timeOfDayUI){
 
-		if(timeOfDay == "Morning")
-		{
-			camera.GetComponent<Camera>().backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
-		}
-		else if(timeOfDay == "Day")
-		{
-			camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
-		}
-		else if(timeOfDay == "Night")
-		{
-			camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+			timeOfDayUI.GetComponent<Text>().text = timeOfDay;
+
+			if(timeOfDay == "Morning")
+			{
+				camera.GetComponent<Camera>().backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
+			}
+			else if(timeOfDay == "Day")
+			{
+				camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
+			}
+			else if(timeOfDay == "Night")
+			{
+				camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+			}
 		}
 	}
 	//passes time by the passed in number of minutes
@@ -47,6 +53,7 @@ public class TimeManager:MonoBehaviour{
 		if(hours >= 24)
 		{
 			hours = 0;
+			day++;
 		}
 		
 		//checks what timeOfDay it is and sets the field appropriately
@@ -62,6 +69,11 @@ public class TimeManager:MonoBehaviour{
 	public string getTime()
 	{
 		return timeOfDay;
+	}
+
+	public int getDay()
+	{
+		return day;
 	}
 
 	public string getFullTime()

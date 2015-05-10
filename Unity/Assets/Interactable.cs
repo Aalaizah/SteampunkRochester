@@ -35,7 +35,7 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
-		Debug.Log (path);
+		//Debug.Log (path);
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
 		choicesTitles = new List<string>();
@@ -130,12 +130,7 @@ public class Interactable : MonoBehaviour
 		if(Twine.TwineData.Current.EmotnUp !=""){
 			emotionManager.updateEmotions(Twine.TwineData.Current.EmotnUp,true);
 		}
-		//if this is a person and you haven't already talked to them, move time forward an hour
-		if(isPerson && !hasAlreadyTalked)
-		{
-			timeManager.passTime(60);
-			hasAlreadyTalked = true;
-		}
+
     }
 
     void OnGUI()
@@ -155,14 +150,14 @@ public class Interactable : MonoBehaviour
                 {
 					currentNode = choicesLinksList[i];
 					Twine.TwineData.NextNode(currentNode);
-					Debug.Log(Twine.TwineData.Current.ContentData + "!");
+					//Debug.Log(Twine.TwineData.Current.ContentData + "!");
 					if(Twine.TwineData.Current.ContentData == "")
 					{
-						Debug.Log ("Using title data");
+						//Debug.Log ("Using title data");
 						toDisplay = choicesTitles[i];
 					}
 					else{
-						Debug.Log("Not using title data");
+						//Debug.Log("Not using title data");
 						toDisplay = choicesList[i];
 					}
 					//if there is only one available choice, scale the button appropriately
@@ -249,16 +244,22 @@ public class Interactable : MonoBehaviour
 				}
 			}*/
             clicked = true;
-			Debug.Log("Clicked now select, please.");
+			//Debug.Log("Clicked now select, please.");
 			//change the sprite if the active sprite exists
 			if(activeSprite)
             	spriteRenderer.sprite = activeSprite;
 			//selected gets changed (current active object
             selected = !selected;
 			//Debug.Log(selected);
-			//read the file amd set up nodes for conversation
+			//read the file and set up nodes for conversation
 			Twine.ReadTwineFile(path);
         }
+		//if this is a person and you haven't already talked to them, move time forward an hour
+		if(isPerson && !hasAlreadyTalked)
+		{
+			timeManager.passTime(60);
+			hasAlreadyTalked = true;
+		}
     }
 	//after the click finishes
     void OnMouseUp()
@@ -267,11 +268,13 @@ public class Interactable : MonoBehaviour
 		//if the item is not currently selected, change the current node back to the origin
 		if (!selected && currentNode != "0")
 		{
-			Debug.Log ("KEYMASTER CODE " + transform.parent.gameObject.name);
-			Debug.Log ("Current Node " + currentNode);
+			//Debug.Log ("KEYMASTER CODE " + transform.parent.gameObject.name);
+			//Debug.Log ("Current Node " + currentNode);
 			currentNode = " ";
 			//release the keymaster role
 			KEYMASTER = null;
+			//can talk to again to change time
+			hasAlreadyTalked = false;
 			/*if(otherInteractables.Count > 0)
 			{
 				foreach(Interactable inter in otherInteractables)
@@ -361,7 +364,7 @@ public class Interactable : MonoBehaviour
                 	choicesLinksList.Add(currentChoice);
                 	choicesList.Add(Twine.TwineData.Current.ContentData);
 					choicesTitles.Add(Twine.TwineData.Current.LinkTitle[0]);
-					Debug.Log(choicesTitles.Count);
+					//Debug.Log(choicesTitles.Count);
 				}
             }
             Twine.TwineData.Current = tempNode;

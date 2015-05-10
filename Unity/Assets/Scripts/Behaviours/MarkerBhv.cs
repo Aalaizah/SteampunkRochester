@@ -10,6 +10,7 @@ public class MarkerBhv : MonoBehaviour {
 	Vector2 m_mousePosition;
 	public GameObject m_levelToLoad;
 	bool active;
+	bool initalM_MapInactive = false;
 	TimeManager timeManager;
 
 	// Use this for initialization
@@ -29,7 +30,10 @@ public class MarkerBhv : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(!initalM_MapInactive){
+			m_map.SetActive(false);
+			initalM_MapInactive = true;
+		}
 	}
 
 	public void Travel()

@@ -56,7 +56,8 @@ public class ScrollCamBhv : MonoBehaviour {
 	void Start () {
 		refreshCamera();
 		//find the background so we can clamp to it
-		var bg = GameObject.Find ("Bg");
+		var bg = transform.parent.FindChild("Bg").gameObject;
+		Debug.Log(bg);
 		if (bg == null)
 			throw new UnityException ("Either the level doesnt have a background. Or the background is not named \"Bg\"");
 		background = bg.GetComponent<SpriteRenderer> ();

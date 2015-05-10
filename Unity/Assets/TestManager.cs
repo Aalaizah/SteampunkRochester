@@ -9,8 +9,9 @@ public class TestManager : MonoBehaviour {
 	bool wasClicked;
 	List<Interactable> interactables;
 	//EmotionManager eM;
-	//TimeManager tM;
+	TimeManager tM;
 	//Inventory inv;
+	string currentLevel;
 	
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,9 @@ public class TestManager : MonoBehaviour {
 		test = testInteractable.AddComponent<Interactable> ();
 		test.SetName ("test", "test");*/
 		Twine = GameObject.Find ("TwineImporter").GetComponent<TwineImporter> ();
+		currentLevel = transform.parent.gameObject.name;
 		//eM = new EmotionManager();
-		//tM = new TimeManager();
+		tM = GameObject.Find("SystemManager").GetComponent<TimeManager>();
 		//inv = new Inventory();
 		//find interactables
 		interactables = new List<Interactable>();
@@ -41,16 +43,40 @@ public class TestManager : MonoBehaviour {
 		Rect r = new Rect(0,0,Screen.width/10, Screen.height/10);
 		r.x += r.width;
 		r.y += r.height;
-		if(GUI.Button(r, "Relocate"))
+		if(GUI.Button(r, "Leave"))
 		{
-			Object.Destroy(transform.parent.gameObject);
-			MarkerBhv.m_map.SetActive(true);
-			MarkerBhv.mapUI.SetActive(true);
+			Debug.Log(currentLevel);
+			if(currentLevel == "Party_Night")
+			{
+				Object.Destroy(transform.parent.gameObject);
+				Instantiate(Resources.Load("Prefabs/Locations/Canal_Day") as GameObject);
+				currentLevel = "Canal_Day";
+			}
+			else if(currentLevel == "Canal_Day(Clone)")
+			{
+				//Destory current level
+				Object.Destroy(transform.parent.gameObject);
+
+				//load editor office
+				Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
+				currentLevel = "EditorOffice_First";
+			}
+			//otherwise, go back to map screen.
+			else{
+				Object.Destroy(transform.parent.gameObject);
+				MarkerBhv.m_map.SetActive(true);
+				MarkerBhv.mapUI.SetActive(true);
+			}
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(tM.getDay() >= 2)
+		{
+			Object.Destroy(transform.parent.gameObject);
+			Instantiate(Resources.Load("Prefabs/locations/EditorOffice_Final")as GameObject);
+		}
 		//Debug.Log (test.selected);
 		/*foreach(Interactable test in interactables)
 		{
