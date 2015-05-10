@@ -1,18 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TimeManager:MonoBehaviour{
 	
 	private int minutes;//minutes of the time (goes up to 60)
 	private int hours;//hours of time (goes up to 24)
 	private string timeOfDay; //time of the day as a string; Morning, day, or night.
+	public GameObject camera; 
+	public GameObject timeOfDayUI;
+
 	void Start(){
 		minutes = 0;
 		hours = 18;
-		timeOfDay = "Night";
+		timeOfDay = "Morning";
+		timeOfDayUI = GameObject.Find ("Time");
 	}
 	
 	void Update(){
+
+		timeOfDayUI.GetComponent<Text>().text = timeOfDay;
 	}
 	//passes time by the passed in number of minutes
 	public void passTime(int i)
