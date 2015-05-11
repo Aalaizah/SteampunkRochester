@@ -67,7 +67,6 @@ Editor: This story is going to require several sources, sources it would be impo
 
 :: TalkToYourPeople
 Editor: Talk to your people to find some leads. You, Fluffy, you're good with the fancy pants people - see if you can pull something from them. Sophie, everyone here knows you're a woman, so go talk to them suffra-whatchamacallits. And Kieran...go dig up some of those bodies you and your old Ziccardi chums buried.
-[[Continue|TalkToYourPeople]]
 
 
 :: Time

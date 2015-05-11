@@ -33,7 +33,6 @@ public class TestManager : MonoBehaviour {
 			var script = obj.GetComponent<Interactable>();
 			if(script != null)
 			{
-				Debug.Log(script);
 				interactables.Add(script);
 			}
 		}

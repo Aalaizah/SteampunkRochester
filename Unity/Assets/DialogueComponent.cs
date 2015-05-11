@@ -22,7 +22,6 @@ public class DialogueComponent : MonoBehaviour {
 
 	void Start()
 	{
-		Debug.Log("Startup called from dialogue component");
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
 		choicesTitles = new List<string>();
@@ -44,14 +43,15 @@ public class DialogueComponent : MonoBehaviour {
 				backgroundInteractables.Add(inter);
 			}
 		}
-		
+
 		twineImporter.ReadTwineFile(Interactable.KEYMASTER.path);
+		//populate the dialogue with the initial twine node text
 		createMessage();
 	}
 	
 	public void Progress()
 	{
-		//first checks if the current node has choices or is linerally connected to another node
+		//first checks if the current node has choices or is linearly connected to another node
 		if (!choice) 
 		{
 			//goes to the current node
@@ -137,7 +137,13 @@ public class DialogueComponent : MonoBehaviour {
 	void Update()
 	{
 		if(twineImporter.TwineData == null)
+		{
 			Debug.Log("There is no twine file loaded.");
+			if(String.IsNullOrEmpty(Interactable.KEYMASTER.path))
+			{
+				twineImporter.ReadTwineFile(Interactable.KEYMASTER.path);
+			}
+		}
 		//adds item if current node calls for it
 		if(twineImporter.TwineData.Current.ItemsGain !=""){
 			inventory.addItem(twineImporter.TwineData.Current.ItemsGain);
@@ -197,14 +203,11 @@ public class DialogueComponent : MonoBehaviour {
 				{
 					currentNode = choicesLinksList[i];
 					twineImporter.TwineData.NextNode(currentNode);
-					Debug.Log(twineImporter.TwineData.Current.ContentData + "!");
 					if(twineImporter.TwineData.Current.ContentData == "")
 					{
-						Debug.Log ("Using title data");
 						toDisplay = choicesTitles[i];
 					}
 					else{
-						Debug.Log("Not using title data");
 						toDisplay = choicesList[i];
 					}
 					//if there is only one available choice, scale the button appropriately
@@ -214,14 +217,7 @@ public class DialogueComponent : MonoBehaviour {
 						
 						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), toDisplay))
 						{
-							createMessage();
-							currentNode = choicesList[i];
-							twineImporter.TwineData.NextNode(currentNode);
-							choice = false;
-							choicesLinksList.Clear();
-							choicesList.Clear();
-							choicesTitles.Clear();
-							
+							OnChoiceClick(i);
 						}
 					}
 					//otherwise, scale per how many options
@@ -237,13 +233,7 @@ public class DialogueComponent : MonoBehaviour {
 						
 						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 						{
-							createMessage();
-							currentNode = choicesList[i];
-							twineImporter.TwineData.NextNode(currentNode);
-							choice = false;
-							choicesLinksList.Clear();
-							choicesList.Clear();
-							choicesTitles.Clear();
+							OnChoiceClick(i);
 						}
 						
 						
@@ -282,6 +272,18 @@ public class DialogueComponent : MonoBehaviour {
 				GUILayout.EndArea();
 			}
 		}
+	}
+
+	void OnChoiceClick(int choiceIndex)
+	{
+		//createMessage();
+		currentNode = choicesList[choiceIndex];
+		twineImporter.TwineData.NextNode(currentNode);
+		choice = false;
+		choicesLinksList.Clear();
+		choicesList.Clear();
+		choicesTitles.Clear();
+		Progress();
 	}
 	
 	
