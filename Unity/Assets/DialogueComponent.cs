@@ -18,6 +18,7 @@ public class DialogueComponent : MonoBehaviour {
 	string currentNode = "0";
 	string toDisplay = "";
 	public Image interactableImage;
+	public Vector2 scrollPosition;
 
 	void Start()
 	{
@@ -175,23 +176,37 @@ public class DialogueComponent : MonoBehaviour {
 			//if there is a choice currently
 			if (choice)
 			{
+				//Dialouge ScrollBox
+				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4);
+				
+				GUILayout.BeginArea(rectangle);
+				scrollPosition.y = Mathf.Infinity;
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(100));
+				
+				GUILayout.Box(message);
+				
+				GUILayout.EndScrollView();
+				GUILayout.EndArea();
+				
 				//for every choice node, create a button for them
 				for (int i = 0; i < choicesLinksList.Count; i++)
 				{
 					currentNode = choicesLinksList[i];
 					twineImporter.TwineData.NextNode(currentNode);
-					//Debug.Log(twineImporter.TwineData.Current.ContentData + "!");
+					Debug.Log(twineImporter.TwineData.Current.ContentData + "!");
 					if(twineImporter.TwineData.Current.ContentData == "")
 					{
+						Debug.Log ("Using title data");
 						toDisplay = choicesTitles[i];
 					}
 					else{
+						Debug.Log("Not using title data");
 						toDisplay = choicesList[i];
 					}
 					//if there is only one available choice, scale the button appropriately
 					if(choicesLinksList.Count == 1)
 					{
-						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
+						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 						
 						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), toDisplay))
 						{
@@ -208,10 +223,15 @@ public class DialogueComponent : MonoBehaviour {
 					//otherwise, scale per how many options
 					else
 					{
-						GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
+						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
 						
-						int yInc =  Screen.height / choicesLinksList.Count / choicesLinksList.Count;
-						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,(Screen.height - (yInc * (i+1))),Screen.width - 10,yInc), toDisplay))
+						float choiceAreaHeight = (float)Screen.height * .5f;
+						
+						float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
+						float x = Screen.width * (2/3) + Screen.width/4;
+						float y = (float)(Screen.height * .25) + (choiceHeight * (i));
+						
+						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 						{
 							createMessage();
 							currentNode = choicesList[i];
@@ -221,6 +241,20 @@ public class DialogueComponent : MonoBehaviour {
 							choicesList.Clear();
 							choicesTitles.Clear();
 						}
+						
+						
+						/*
+						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,((Screen.height/2) - (choiceHeight * (i+1))),Screen.width - 10,choiceHeight), toDisplay))
+						{
+							createMessage();
+							currentNode = choicesList[i];
+							Twine.TwineData.NextNode(currentNode);
+							choice = false;
+							choicesLinksList.Clear();
+							choicesList.Clear();
+							choicesTitles.Clear();
+						}
+*/
 					}
 				}
 			}
@@ -228,10 +262,20 @@ public class DialogueComponent : MonoBehaviour {
 			else
 			{
 				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4);
-				if(GUI.Button(rectangle, message))
+				
+				GUILayout.BeginArea(rectangle);
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(100));
+				
+				GUILayout.Box(message);
+				
+				if(GUI.Button(new Rect(rectangle.width - 125,scrollPosition.y + 5,100,50),"Progress"))
 				{
 					Progress();
+					scrollPosition.y = Mathf.Infinity;
 				}
+				
+				GUILayout.EndScrollView();
+				GUILayout.EndArea();
 			}
 		}
 	}
@@ -242,7 +286,7 @@ public class DialogueComponent : MonoBehaviour {
 	{
 		//reset the emotion manager's booleans for the next node
 		emotionManager.resetBooleans();
-		message = "";
+		message += "\n";
 		
 		//actually build the message
 		foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
