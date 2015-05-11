@@ -27,17 +27,21 @@ public class TimeManager:MonoBehaviour{
 
 			timeOfDayUI.GetComponent<Text>().text = timeOfDay;
 
-			if(timeOfDay == "Morning")
+			if(camera!=null)
 			{
-				camera.GetComponent<Camera>().backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
-			}
-			else if(timeOfDay == "Day")
-			{
-				camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
-			}
-			else if(timeOfDay == "Night")
-			{
-				camera.GetComponent<Camera>().backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+				Camera cameraComponent = camera.GetComponent<Camera>();
+				if(timeOfDay == "Morning")
+				{
+					cameraComponent.backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
+				}
+				else if(timeOfDay == "Day")
+				{
+					cameraComponent.backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
+				}
+				else if(timeOfDay == "Night")
+				{
+					cameraComponent.backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+				}
 			}
 		}
 	}

@@ -12,7 +12,7 @@ public class TestManager : MonoBehaviour {
 	TimeManager tM;
 	//Inventory inv;
 	string currentLevel;
-	string currLvl;
+	static string currLvl;
 	static bool finalLoaded = false;
 	// Use this for initialization
 	void Start () {
