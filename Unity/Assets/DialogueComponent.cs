@@ -109,7 +109,7 @@ public class DialogueComponent : MonoBehaviour {
 	}
 
 	//Respond when a conversation is finished.
-	void OnDialogueCompelete()
+	public void OnDialogueCompelete()
 	{
 		//if this is a person and you haven't already talked to them, move time forward an hour
 		if(Interactable.KEYMASTER.isPerson && !Interactable.KEYMASTER.hasAlreadyTalked)

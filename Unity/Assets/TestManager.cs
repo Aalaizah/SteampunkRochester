@@ -40,31 +40,40 @@ public class TestManager : MonoBehaviour {
 
 	void OnGUI()
 	{
-		Rect r = new Rect(0,0,Screen.width/10, Screen.height/10);
+		Rect r = new Rect(0,0,Screen.width/7.5f, Screen.height/8);
 		r.x += r.width;
 		r.y += r.height;
-		if(GUI.Button(r, "Leave"))
+		if(Interactable.KEYMASTER == null)
 		{
-			if(GameObject.Find("DialogueScreen(Clone)"))
+			if(GUI.Button(r, "Leave"))
 			{
-				Object.Destroy(GameObject.Find("DialogueScreen(Clone)"));
+				if(GameObject.Find("DialogueScreen(Clone)"))
+				{
+					Object.Destroy(GameObject.Find("DialogueScreen(Clone)"));
+				}
+				//Debug.Log(currentLevel);
+				if(currentLevel == "Party_Night")
+				{
+					currLvl = "";
+					//Destory current level
+					Object.Destroy(transform.parent.gameObject);
+					
+					//load editor office
+					Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
+			
+				}
+				//otherwise, go back to map screen.
+				else{
+					Object.Destroy(transform.parent.gameObject);
+					MarkerBhv.m_map.SetActive(true);
+					MarkerBhv.mapUI.SetActive(true);
+				}
 			}
-			//Debug.Log(currentLevel);
-			if(currentLevel == "Party_Night")
+		}
+		else{
+			if(GUI.Button(r,"Leave conversation"))
 			{
-				currLvl = "";
-				//Destory current level
-				Object.Destroy(transform.parent.gameObject);
-				
-				//load editor office
-				Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
-
-			}
-			//otherwise, go back to map screen.
-			else{
-				Object.Destroy(transform.parent.gameObject);
-				MarkerBhv.m_map.SetActive(true);
-				MarkerBhv.mapUI.SetActive(true);
+				GameObject.Find("DialogueScreen(Clone)").GetComponent<DialogueComponent>().OnDialogueCompelete();
 			}
 		}
 	}
