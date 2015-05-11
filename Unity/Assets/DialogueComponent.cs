@@ -122,6 +122,10 @@ public class DialogueComponent : MonoBehaviour {
 		{
 			thing.transform.parent.gameObject.SetActive(true);
 		}
+		if(Interactable.KEYMASTER.path.Contains("First"))
+		{
+			Interactable.KEYMASTER.path = Interactable.KEYMASTER.path.Replace("First","Generic");
+		}
 		backgroundInteractables.Clear();
 		Interactable.KEYMASTER.selected = false;
 		//RELEASE THE KEYMASTER now others can hold the power
