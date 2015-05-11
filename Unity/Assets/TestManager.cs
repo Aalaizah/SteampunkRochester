@@ -46,20 +46,17 @@ public class TestManager : MonoBehaviour {
 		r.y += r.height;
 		if(GUI.Button(r, "Leave"))
 		{
+			if(GameObject.Find("DialogueScreen(Clone)"))
+			{
+				Object.Destroy(GameObject.Find("DialogueScreen(Clone)"));
+			}
 			//Debug.Log(currentLevel);
 			if(currentLevel == "Party_Night")
-			{
-				currLvl = "Canal_Day";
-				Object.Destroy(transform.parent.gameObject);
-				Instantiate(Resources.Load("Prefabs/Locations/Canal_Day") as GameObject);
-
-			}
-			else if(currLvl == "Canal_Day")
 			{
 				currLvl = "";
 				//Destory current level
 				Object.Destroy(transform.parent.gameObject);
-
+				
 				//load editor office
 				Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
 
