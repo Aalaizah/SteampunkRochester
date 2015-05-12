@@ -3,11 +3,6 @@ Matty: Aleksei! So glad you could make it, darling.
 [[Hello|Hi]]
 [[Thanks|Thank]]
 
-
-:: StoryAuthor
-Anonymous
-
-
 :: Hi
 Aleksei: Hello, Matty. It's been a while.
 [[Converse|SmallTalk]]
@@ -21,6 +16,7 @@ Aleksei: Thanks for inviting me, Matty. I'm surprised to see so many people in o
 
 
 :: SmallTalk
+Converse
 [[How are you?|AskYou]]
 [[Your brother|AskBrother]]
 [[Fun story|TellStory]]
@@ -29,6 +25,7 @@ Aleksei: Thanks for inviting me, Matty. I'm surprised to see so many people in o
 
 
 :: Questions
+Questions
 [[Who's here?|Who]]
 [[Purpose of party|Why]]
 [[The drink|Drink]]

@@ -1,15 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public static class TimeManager{
+public class TimeManager:MonoBehaviour{
+	
+	private int minutes;//minutes of the time (goes up to 60)
+	private int hours;//hours of time (goes up to 24)
+	private int day;
+	private string timeOfDay; //time of the day as a string; Morning, day, or night.
+	public GameObject camera; 
+	public GameObject timeOfDayUI;
+	public static bool ending1Flag;
+	public static bool ending2Flag;
 
-	private static int minutes = 0;//minutes of the time (goes up to 60)
-	private static int hours = 0;//hours of time (goes up to 24)
-	private static string timeOfDay = "Night"; //time of the day as a string; Morning, day, or night.
+	void Start(){
+		day=0;
+		minutes = 0;
+		hours = 23;
+		timeOfDay = "Night";
 
+	}
+	
+	void Update(){
+		timeOfDayUI = GameObject.Find ("Time");
+		if(timeOfDayUI){
+
+			timeOfDayUI.GetComponent<Text>().text = timeOfDay;
+
+			if(camera!=null)
+			{
+				Camera cameraComponent = camera.GetComponent<Camera>();
+				if(timeOfDay == "Morning")
+				{
+					cameraComponent.backgroundColor = new Color(255.0f/255.0f,153.0f/255.0f,0.0f/255.0f);
+				}
+				else if(timeOfDay == "Day")
+				{
+					cameraComponent.backgroundColor = new Color(0.0f/255.0f,171.0f/255.0f,255.0f/255.0f);
+				}
+				else if(timeOfDay == "Night")
+				{
+					cameraComponent.backgroundColor = new Color(0.0f/255.0f,0.0f/255.0f,0.0f/255.0f);
+				}
+			}
+		}
+	}
 	//passes time by the passed in number of minutes
-	public static void passTime(int i)
+	public void passTime(int i)
 	{
+		Debug.Log("Passing " + i + " Minutes");
 		minutes += i;
 		//checks the limits of minutes and hours
 		while(minutes >= 60)
@@ -20,20 +59,31 @@ public static class TimeManager{
 		if(hours >= 24)
 		{
 			hours = 0;
+			day++;
 		}
-
+		
 		//checks what timeOfDay it is and sets the field appropriately
 		if(hours < 11 && hours > 6)
 			timeOfDay = "Morning";
-
+		
 		if(hours >= 11 && hours < 18)
 			timeOfDay = "Day";
 		if(hours >=18)
 			timeOfDay = "Night";
 	}
 	//returns the time of day, can be changed to get the numbers if necessary
-	public static string getTime()
+	public string getTime()
 	{
 		return timeOfDay;
+	}
+
+	public int getDay()
+	{
+		return day;
+	}
+
+	public string getFullTime()
+	{
+		return ("Time: " + hours + ":" + minutes);
 	}
 }

@@ -18,6 +18,7 @@ public class TwineNode
 	string emotnDwn = ""; //name of character whose happiness will be downed by 1
 	string emotnReqChar = ""; //name of the character who has an emotional requirement
 	string emotnReqInt = ""; //integer representing the appropriate happiness needed 
+	string endingFlag = ""; //flags that a condition for an ending has been met.
 	string nextPassage;
 	bool itmTaken;
 
@@ -34,6 +35,7 @@ public class TwineNode
 	public string EmotnDwn{ get {return emotnDwn;}}
 	public string EmotnReqChar{get{return emotnReqChar;}}
 	public string EmotnReqInt{get{return emotnReqInt;}}
+	public string EndingFlag{get{return endingFlag;}}
 	
 	public string ContentData
 	{
@@ -182,11 +184,21 @@ public class TwineNode
 			int startItem = 0;
 			//checks various different commands
 
+			//endingFlag!
+			if(data.IndexOf("endingFlag--") != -1)
+			{
+				startItem= data.IndexOf("endingFlag--") + 13;
+				while(data[startItem] != '\n' && data[startItem] !='\r')
+				{
+					endingFlag += data[startItem];
+					startItem++;
+				}
+			}
 			//item required command
 			if(data.IndexOf("itemReq--") !=-1)
 			{
 				startItem = data.IndexOf("itemReq--")+10;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					itmReq += data[startItem];
 					startItem++;
@@ -197,7 +209,7 @@ public class TwineNode
 			//gain an item command
 			if(data.IndexOf("itemGain--") != -1){
 				startItem = data.IndexOf("itemGain--")+11;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					itmGain += data[startItem];
 					startItem++;
@@ -207,7 +219,8 @@ public class TwineNode
 			//lose/use an item command
 			if(data.IndexOf("itemRem--") !=-1){
 				startItem = data.IndexOf("itemRem--")+10;
-				while(data[startItem] != '\n'){
+				while(data[startItem] != '\n' && data[startItem] != '\r')
+				{
 					itmRem += data[startItem];
 					startItem++;
 				}
@@ -217,22 +230,24 @@ public class TwineNode
 			if(data.IndexOf("happyUp--") != -1)
 			{
 				startItem = data.IndexOf("happyUp--")+10;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					emotnUp += data[startItem];
 					startItem++;
 				}
+				emotnUp = emotnUp.Trim();
 			}
 
 			//a player is less happy with the player
 			if(data.IndexOf("happyDwn--") != -1)
 			{
 				startItem = data.IndexOf("happyDwn--")+11;
-				while(data[startItem] != '\n')
+				while(data[startItem] != '\n' && data[startItem] != '\r')
 				{
 					emotnDwn += data[startItem];
 					startItem++;
 				}
+				emotnDwn = emotnDwn.Trim();
 			}
 
 			//character has to have a certain happiness for the option
@@ -247,10 +262,13 @@ public class TwineNode
 				}
 				startItem++;
 				//happiness required for that character
-				while(data[startItem] != '\n'){
+				while(data[startItem] != '\n' && data[startItem] != '\r'){
 					emotnReqInt += data[startItem];
 					startItem++;
 				}
+
+				emotnReqChar = emotnReqChar.Trim();
+				emotnReqInt = emotnReqInt.Trim();
 			}
 
 			startPassage = data.IndexOf ("::") + 3;

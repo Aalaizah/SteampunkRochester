@@ -1,6 +1,5 @@
 ﻿:: 0
 Tim White: Hey, I remember you from somewhere. Get over here and join me for a drink. Who are you again?
-
 [[Remember|InitializeConvoRemember]]
 [[Approach|InitializeConvo]]
 
@@ -199,6 +198,7 @@ Aleksei: Can you tell me what he looks like? What his voice sounds like? High? L
 
 
 :: AskDog12
+endingFlag-- 1
 Tim White: Please, friend. I made him a promise. My poor Gizmo...
 [[Change Topic|AskQuestions]]
 

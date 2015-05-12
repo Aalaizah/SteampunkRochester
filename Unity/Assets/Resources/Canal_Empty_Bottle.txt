@@ -1,5 +1,4 @@
 ﻿:: 0
-
 Some empty and broken bottles.
 [[bored|Examine]]
 [[blegh|Leave]]
@@ -8,7 +7,6 @@ Some empty and broken bottles.
 
 
 :: Examine
-
 Aleksei takes a closer look at the bottles. Most of them are broken, but there is one unbroken bottle.
 [[asdf|Take Empty Bottle]]
 [[asd|Leave]]
@@ -25,6 +23,4 @@ Aleksei picks up the unbroken bottle.
 
 
 :: Leave
-
-
-
+You decide to leave.

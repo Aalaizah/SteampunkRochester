@@ -2,86 +2,92 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public static class EmotionManager{
-	//one intialize
-	static bool initialized;
-	//dictionary to contain the characters and their respecitve happiness towards the player character
-	private static Dictionary<string,int> emotionValue = new Dictionary<string,int>();
+public class EmotionManager : MonoBehaviour {
+	private List<string> characterName;
+	private List<int> characterEmotion;
 	//these prevent the emotions of a character from being changed a bunch of times per node
-	private static bool alreadyChangedUp = false;
-	private static bool alreadyChangedDwn = false;
+	private bool alreadyChangedUp;
+	private bool alreadyChangedDwn;
 	//our emotion emitters
-	private static GameObject happyFx;
-	private static GameObject sadFx;
-
-	//Initializes only if its not already done
-	public static bool TryInitialize()
-	{
-		if(initialized)
-			return false;
+	private GameObject happyFx;
+	private GameObject sadFx;
+	// Use this for initialization
+	void Start () {
+		characterName = new List<string>();
+		characterEmotion = new List<int>();
+		alreadyChangedUp = false;
+		alreadyChangedDwn = false;
 		var happy = Resources.Load("Particles/HappyFx");
 		var sad = Resources.Load("Particles/SadFx");
-		Debug.Log(happy);
-		Debug.Log(sad);
 		happyFx = Object.Instantiate(happy) as GameObject;
 		sadFx = Object.Instantiate(sad) as GameObject;
-		initialized = true;
-		return true;
 	}
-
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+	
+	
 	//takes in the person to update and whether to make them happier or angrier
-	public static void updateEmotions(string person, bool upOrDown)
+	public void updateEmotions(string person, bool upOrDown)
 	{
-		TryInitialize();
-
+		//Debug.Log("updating Emotions of " + person + " " + upOrDown);
 		//adds the person to the dictionary if they haven't been added yet
-		if(!emotionValue.ContainsKey(person))
+		//Debug.Log(characterName.Contains(person));
+		if(!characterName.Contains(person))
 		{
-			emotionValue.Add(person,0);
+			characterName.Add(person);
+			characterEmotion.Add(0);
 		}
-
+		
 		//adds or subtracts from the value as per the boolean parameter
 		if(upOrDown && !alreadyChangedUp){
-			emotionValue[person]++;
+			characterEmotion[characterName.IndexOf(person)]++;
 			//trigger happy emoticon
 			happyFx.particleSystem.Play();
 			alreadyChangedUp = true;
 		}
 		else if(!upOrDown && !alreadyChangedDwn){
-			emotionValue[person]--;
+			characterEmotion[characterName.IndexOf(person)]--;
 			//trigger sad emoticon
 			sadFx.particleSystem.Play();
 			alreadyChangedDwn = true;
 		}
-
+		
 		//clamps the value to between -10 and 10
-		if(emotionValue[person] > 10)
+		if(characterEmotion[characterName.IndexOf(person)] > 10)
 		{
-			emotionValue[person] = 10;
+			characterEmotion[characterName.IndexOf(person)] = 10;
 		}
-		else if(emotionValue[person] < -10)
+		else if(characterEmotion[characterName.IndexOf(person)] < -10)
 		{
-			emotionValue[person] = -10;
+			characterEmotion[characterName.IndexOf(person)] = -10;
 		}
-
-
+		
+		
 	}
-
+	
 	//checks if the player has the correct relationship with the NPC
-	public static bool hasRequirement(string person, int req){
-		if(emotionValue.ContainsKey(person))
+	public bool hasRequirement(string person, int req){
+		for(int i=0; i < characterName.Count; i++)
 		{
-			if(emotionValue[person] >= req){
-				return true;
+			Debug.Log("List: "  + characterName[i] + "! person: " + person + "!");
+			Debug.Log(characterName[i].Equals(person));
+			if(characterName[i] == person)
+			{
+				if(characterEmotion[i] >= req){
+					return true;
+				}
 			}
+
 		}
 		return false;
 	}
-
+	
 	//resets the booleans controlling for when the emotions will be updated
-	public static void resetBooleans(){
+	public void resetBooleans(){
 		alreadyChangedUp = false;
 		alreadyChangedDwn = false;
 	}
-
 }
