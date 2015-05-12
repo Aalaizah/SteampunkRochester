@@ -41,12 +41,13 @@ public class TestManager : MonoBehaviour {
 
 	void OnGUI()
 	{
-		Rect r = new Rect(Screen.width/1.5f,0,Screen.width/7.5f, Screen.height/8);
+		Rect r = new Rect(0,0,Screen.width/7.5f, Screen.height/8);
 		r.x += r.width;
 		r.y += r.height;
 		GUI.skin = normal;
 		if(Interactable.KEYMASTER == null)
 		{
+			r = new Rect(Screen.width/1.5f,0,Screen.width/7.5f, Screen.height/8);
 			if(GUI.Button(r, "Leave"))
 			{
 				if(GameObject.Find("DialogueScreen(Clone)"))

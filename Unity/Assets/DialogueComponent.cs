@@ -82,6 +82,7 @@ public class DialogueComponent : MonoBehaviour {
 					if(!emotionManager.hasRequirement(twineImporter.TwineData.Current.EmotnReqChar,int.Parse(twineImporter.TwineData.Current.EmotnReqInt)))
 						return;
 				}
+				createMessage ();
 				//as long as the next node actually exists, move to the next node
 				if (!twineImporter.TwineData.Current.Link[0].Equals( " ")) 
 				{
@@ -139,6 +140,7 @@ public class DialogueComponent : MonoBehaviour {
 	
 	void Update()
 	{
+		Debug.Log(twineImporter.TwineData.Current.EmotnUp);
 		nameText = GameObject.Find ("Name");
 		if(nameText){
 			
@@ -163,10 +165,12 @@ public class DialogueComponent : MonoBehaviour {
 		}
 		//makes a character more unhappy if the current node calls for it
 		if(twineImporter.TwineData.Current.EmotnDwn !=""){
+			Debug.Log("Updating emotions!");
 			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnDwn,false);
 		}
 		//makes a character happier if the current node calls for it
 		if(twineImporter.TwineData.Current.EmotnUp !=""){
+			Debug.Log("Updating emotions!");
 			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnUp,true);
 		}
 		
@@ -307,7 +311,8 @@ public class DialogueComponent : MonoBehaviour {
 		//reset the emotion manager's booleans for the next node
 		emotionManager.resetBooleans();
 		message += "\n";
-		
+
+		message += twineImporter.TwineData.Current.Speaker[0] + ":";
 		//actually build the message
 		foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
 		{

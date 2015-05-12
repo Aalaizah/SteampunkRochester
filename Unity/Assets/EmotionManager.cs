@@ -43,6 +43,7 @@ public class EmotionManager : MonoBehaviour {
 		
 		//adds or subtracts from the value as per the boolean parameter
 		if(upOrDown && !alreadyChangedUp){
+			Debug.Log("GoingUp!");
 			characterEmotion[characterName.IndexOf(person)]++;
 			//trigger happy emoticon
 			happyFx.particleSystem.Play();
