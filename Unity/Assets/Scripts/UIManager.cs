@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
@@ -8,12 +9,15 @@ public class UIManager : MonoBehaviour {
 	public GameObject MapUIPrefab;
 	public GameObject PauseUIPrefab;
 	public GameObject InventoryUIPrefab;
+	public GUISkin skin;
+	GameObject mapUI;
 
 	// Use this for initialization
 	void Start () {
 		canvasTransfrom = GameObject.Find ("Canvas").transform;
 		GameObject MapUI = (GameObject) Instantiate (MapUIPrefab);
 		MapUI.transform.SetParent (canvasTransfrom, false);
+		mapUI = GameObject.Find ("MapUI(Clone)");
 	}
 	
 	// Update is called once per frame
@@ -27,16 +31,17 @@ public class UIManager : MonoBehaviour {
 		canvasTransfrom = GameObject.Find ("Canvas").transform;
 		GameObject PauseMenu = (GameObject) Instantiate (PauseUIPrefab);
 		PauseMenu.transform.SetParent (canvasTransfrom, false);
-		GameObject mapUI = GameObject.Find ("MapUI(Clone)");
-		Destroy (mapUI);
+		mapUI = GameObject.Find ("MapUI(Clone)");
+		mapUI.SetActive (false);
 	}
 
 	public void Resume(){
 		canvasTransfrom = GameObject.Find ("Canvas").transform;
 		GameObject pauseMenu = GameObject.Find ("PauseMenu(Clone)");
 		Destroy (pauseMenu);
-		GameObject mapUI = (GameObject) Instantiate (MapUIPrefab);
-		mapUI.transform.SetParent (canvasTransfrom, false);
+		mapUI.SetActive (true);
+		//GameObject mapUI = (GameObject) Instantiate (MapUIPrefab);
+		//mapUI.transform.SetParent (canvasTransfrom, false);
 	}
 
 	public void Inventory(){

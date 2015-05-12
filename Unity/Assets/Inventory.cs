@@ -37,4 +37,15 @@ public class Inventory:MonoBehaviour{
 		}
 		return false;
 	}
+
+	public List<string> getAllCurrItems(){
+		List<string> toReturn = new List<string>();
+		foreach (string s in inventory.Keys) {
+			if(inventory[s])
+			{
+				toReturn.Add(s);
+			}
+		}
+		return toReturn;
+	}
 }

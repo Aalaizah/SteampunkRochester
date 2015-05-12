@@ -19,6 +19,8 @@ public class DialogueComponent : MonoBehaviour {
 	string toDisplay = "";
 	public Image interactableImage;
 	public Vector2 scrollPosition;
+	public GUISkin backgroundUI;
+	public GUISkin normal;
 
 	void Start()
 	{
@@ -182,7 +184,8 @@ public class DialogueComponent : MonoBehaviour {
 			GUI.skin.box.wordWrap = true;
 			GUI.skin.button.wordWrap = true;
 			
-			GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
+			//GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
+			GUI.skin = backgroundUI;
 			//if there is a choice currently
 			if (choice)
 			{
@@ -271,6 +274,8 @@ public class DialogueComponent : MonoBehaviour {
 				GUILayout.EndScrollView();
 				GUILayout.EndArea();
 			}
+
+			GUI.skin = normal;
 		}
 	}
 
