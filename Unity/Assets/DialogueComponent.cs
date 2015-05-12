@@ -197,7 +197,7 @@ public class DialogueComponent : MonoBehaviour {
 			if (choice)
 			{
 				//Dialouge ScrollBox
-				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
+				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition.y = Mathf.Infinity;
@@ -267,7 +267,7 @@ public class DialogueComponent : MonoBehaviour {
 			//if it is not a choice, show what is being said
 			else
 			{
-				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
+				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
