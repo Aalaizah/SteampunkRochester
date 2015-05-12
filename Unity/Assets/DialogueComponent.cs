@@ -21,6 +21,7 @@ public class DialogueComponent : MonoBehaviour {
 	public Vector2 scrollPosition;
 	public GUISkin backgroundUI;
 	public GUISkin normal;
+	public GameObject nameText;
 
 	void Start()
 	{
@@ -138,6 +139,12 @@ public class DialogueComponent : MonoBehaviour {
 	
 	void Update()
 	{
+		nameText = GameObject.Find ("Name");
+		if(nameText){
+			
+			nameText.GetComponent<Text>().text = Interactable.KEYMASTER.transform.parent.name;
+		}
+
 		if(twineImporter.TwineData == null)
 		{
 			Debug.Log("There is no twine file loaded.");
@@ -190,11 +197,11 @@ public class DialogueComponent : MonoBehaviour {
 			if (choice)
 			{
 				//Dialouge ScrollBox
-				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4);
+				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition.y = Mathf.Infinity;
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(100));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
 				
 				GUILayout.Box(message);
 				
@@ -204,6 +211,12 @@ public class DialogueComponent : MonoBehaviour {
 				//for every choice node, create a button for them
 				for (int i = 0; i < choicesLinksList.Count; i++)
 				{
+					float choiceAreaHeight = (float)Screen.height * .5f;
+					
+					float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
+					float x = Screen.width * (2/3) + Screen.width/4;
+					float y = (float)(Screen.height * .25) + (choiceHeight * (i));
+
 					currentNode = choicesLinksList[i];
 					twineImporter.TwineData.NextNode(currentNode);
 					if(twineImporter.TwineData.Current.ContentData == "")
@@ -217,8 +230,9 @@ public class DialogueComponent : MonoBehaviour {
 					if(choicesLinksList.Count == 1)
 					{
 						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
+
 						
-						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,Screen.height/4*i,Screen.width - 10, Screen.height / choicesLinksList.Count / choicesLinksList.Count), toDisplay))
+						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 						{
 							OnChoiceClick(i);
 						}
@@ -227,12 +241,7 @@ public class DialogueComponent : MonoBehaviour {
 					else
 					{
 						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
-						
-						float choiceAreaHeight = (float)Screen.height * .5f;
-						
-						float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
-						float x = Screen.width * (2/3) + Screen.width/4;
-						float y = (float)(Screen.height * .25) + (choiceHeight * (i));
+
 						
 						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 						{
@@ -258,10 +267,10 @@ public class DialogueComponent : MonoBehaviour {
 			//if it is not a choice, show what is being said
 			else
 			{
-				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4) - 5, Screen.width - 10, Screen.height / 4);
+				Rect rectangle = new Rect(Screen.width - (Screen.width - 5), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(100));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
 				
 				GUILayout.Box(message);
 				
