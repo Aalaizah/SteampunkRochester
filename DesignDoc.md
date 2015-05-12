@@ -498,18 +498,18 @@ Different conversation choices you make throughout the game award points. Each c
 # User Interface Mockups
 
 ## Design 1
-![](http://imgur.com/a/2ehTi#eFxjqoQ)
-![](http://imgur.com/a/2ehTi#fJfbZD1)
-![](http://imgur.com/a/2ehTi#QFrirzy)
-![](http://imgur.com/a/2ehTi#wfZhBCd)
-![](http://imgur.com/a/2ehTi#6tfeLLm)
+![](http://i.imgur.com/eFxjqoQ.png)
+![](http://i.imgur.com/fJfbZD1.png)
+![](http://i.imgur.com/QFrirzy.png)
+![](http://i.imgur.com/wfZhBCd.png)
+![](http://i.imgur.com/6tfeLLm.png)
 
 ## Design 2
-![](http://imgur.com/a/S6Lpr#xdtxx4P)
-![](http://imgur.com/a/S6Lpr#OjVJ4K8)
-![](http://imgur.com/a/S6Lpr#w1OUrt4)
-![](http://imgur.com/a/S6Lpr#a4Juqcu)
-![](http://imgur.com/a/S6Lpr#Eo9uj2k)
+![](http://i.imgur.com/xdtxx4P.png)
+![](http://i.imgur.com/OjVJ4K8.png)
+![](http://i.imgur.com/w1OUrt4.png)
+![](http://i.imgur.com/a4Juqcu.png)
+![](http://i.imgur.com/Eo9uj2k.png)
 
 # Design Statements
 
