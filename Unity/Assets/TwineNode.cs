@@ -236,6 +236,7 @@ public class TwineNode
 					startItem++;
 				}
 				emotnUp = emotnUp.Trim();
+				Debug.Log(emotnUp);
 			}
 
 			//a player is less happy with the player
@@ -248,6 +249,7 @@ public class TwineNode
 					startItem++;
 				}
 				emotnDwn = emotnDwn.Trim();
+				Debug.Log(emotnDwn);
 			}
 
 			//character has to have a certain happiness for the option
@@ -302,7 +304,9 @@ public class TwineNode
 				{
 					speaker.Add(temp[i].Substring(startSpeaker));
 					content.Add(temp[i+1]);
+					//Debug.Log(speaker[i]);
 				}
+
 			} 
 			else if(temp.Length >= 2)
 			{
@@ -312,6 +316,7 @@ public class TwineNode
 				{
 					speaker.Add(temp[i].Substring(startSpeaker));
 					content.Add(temp[i+1]);
+					//Debug.Log(speaker[i]);
 				}
 				content.Add(temp[i]);
 			}
