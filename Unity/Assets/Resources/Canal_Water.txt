@@ -9,7 +9,6 @@ The water in the canal is very murky.
 :: TakeWithBottle
 itemReq-- BOTTLEEMPTY
 itemGain-- BOTTLEWATER
-itemRem-- BOTTLEEMPTY
 You scoop up some water in the empty bottle.
 [[Leave|Leave]]
 
@@ -24,7 +23,6 @@ There doesn't seem to be anything in the water, but it is too dark and dirty to 
 :: TakeNoBottle
 You don't think carrying around dirty canal water in your bare hands is safe.
 [[Leave|Leave]]
-
 
 :: Leave
 You leave.

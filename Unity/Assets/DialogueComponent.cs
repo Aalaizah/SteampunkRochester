@@ -148,6 +148,8 @@ public class DialogueComponent : MonoBehaviour {
 		}
 		backgroundInteractables.Clear();
 		Interactable.KEYMASTER.selected = false;
+		Interactable.KEYMASTER.clicked = false;
+		Interactable.KEYMASTER.spriteRenderer.sprite = null;
 		scrollingCamera.enabled = true;
 		scrollingCam.enabled = true;
 		//RELEASE THE KEYMASTER now others can hold the power
