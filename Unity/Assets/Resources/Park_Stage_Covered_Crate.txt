@@ -1,35 +1,34 @@
 ﻿:: 0
 The wooden stage has been covered with a cloth.
-[[Examine|Examine]]
-[[Leave|Leave]]
+[[Examine]]
+[[Leave]]
 
 
 :: Examine
 It definitely looks a bit more refined with that cloth on it.
-[[Check|Check Under]]
-[Leave|[Leave]]
+[[Check Under]]
+[[Leave]]
 
 
 :: Check Under
 It's very dark under the cloth, but the blocky shapes of crates can be made out in the soft ethereal glow.
-[[Examine|Examine Glow]]
-[[Leave|Leave]]
-
-
-:: Take
-itemGain-- glowingBottle
-Aleksei pulls a bottle out of the crate carefully.
-[[Leave|Leave]]
+[[Examine Glow]]
+[[Leave]]
 
 
 :: Examine Glow
-itemGain-- knowledgeShipment
+itemGain-- KSHIPMENT
+itemRem-- KNOSHIPMENT
 The crates have some hard to read letters on them, something starting with a "Z". One of the crates is broken and there are bottles of glowing wine inside.
-[[Take|Take]]
-[[leave|Leave]]
+[[Take]]
+[[Leave]]
+
+
+:: Take
+itemGain-- GLOWINGBOTTLE
+You pull a bottle out of the crate carefully.
+[[Leave]]
 
 
 :: Leave
-You decide to leave well enough alone.
-
-
+You leave.

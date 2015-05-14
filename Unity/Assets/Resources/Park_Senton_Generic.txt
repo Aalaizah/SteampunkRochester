@@ -56,18 +56,18 @@ Aleksei: Besides being the founder, what do you do in the church?
 
 
 :: AskPast
-Aleksei: What did you do before founding the Churhc of Light?
+Aleksei: What did you do before founding the Church of Light?
 [[Continue|AnswerPast]]
 
 
 :: AskPin
-itemReq-- noPin
+itemReq-- NOPIN
 Aleksei: Could I have a church pin?
 [[Continue|GivePin]]
 
 
 :: AnswerGlowingWater
-Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
+Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nurture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
 [[Continue|AnswerGlowingWater2]]
 [[Other Questions|DoQuestions]]
 
@@ -85,20 +85,21 @@ Senton: The Church of Light was founded with the discovery of the glowing water 
 
 
 :: AnswerJob
-Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occassionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
+Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occasionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
 [[Why?|WhyRecognized]]
 [[Other Questions|DoQuestions]]
 
 
 :: AnswerPast
 Senton: It doesn't matter who I was, but who I am. It is too long of a story to tell today.
-[[I heard you used to be conman...|AskConman]]
+[[I heard rumors...|AskRumors]]
 [[Other Questions|DoQuestions]]
 
 
 :: GivePin
-itemGain-- Pin
-happyUp-- Senton
+itemGain-- PIN
+itemRem-- NOPIN
+happyUp-- MASONSENTON
 Senton: Of course. *hands pin to Aleksei*
 [[Ask Questions|DoQuestions]]
 [[Leave|Good-bye]]
@@ -107,6 +108,12 @@ Senton: Of course. *hands pin to Aleksei*
 :: AnswerGlowingWater2
 Senton: Personally, I don't think it tastes any different, but it does make me feel livelier. You should try it some time.
 [[Other Questions|DoQuestions]]
+
+
+:: SmugglingAttempt2
+itemReq-- GLOWINGBOTTLE
+Aleksei: I'm not here to report on your church, I'm here to find out about the water. I know you get a shipment from one of the families. They make your wine glow for you. I just want to know how.
+[[Continue|SmugglingAttemptSuceed]]
 
 
 :: NoImplication
@@ -120,40 +127,9 @@ Aleksei: Why do you want to be recognized?
 [[Contine|AnswerRecognized]]
 
 
-:: AskConman
-ItemReq-- SentonPastInfo
-Aleksei: A friend of mine mentioned he used to work with someone who looked just like you. Naturally, I am curious that this description of a conman fits that of an evasive church leader I know.
-[[Continue|AnswerConman]]
-
-
 :: SmugglingAttempt1
 Aleksei: I'm not here to report on your church, I'm here to find out about the water. If the mafia is involved I need to know.
 [[Continue|SmugglingAttemptFail]]
-
-
-:: SmugglingAttempt2
-itemReq-- glowingWine
-Aleksei: I'm not here to report on your church, I'm here to find out about the water. I know you get a shipment on Thursday from one of the families. They make your wine glow for you. I just want to know how.
-[[Continue|SmugglingAttemptSuceed]]
-
-
-:: AnswerRecognized
-Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
-[[Other Questions|DoQuestions]]
-
-
-:: AnswerConman
-Senton: And naturally, I am curious where you heard this information. I am an honest man. But please. Perhaps we could discuss this in private at my office.
-[[Very Well.|AcceptPostpone]]
-[[Okay, but honest?|ScoffAtHonest]]
-[[You will run off|Accuse]]
-
-
-:: SmugglingAttemptFail
-happyDown-- Senton
-Senton: Families?  You mean to imply the mafia? We get our wine through legitimate means, thank you. Is there anything else you would like to ask?
-[[Yes|MoreQuestions]]
-[[No|Good-bye]]
 
 
 :: SmugglingAttemptSuceed
@@ -161,9 +137,65 @@ Senton: I see. Very well then. I cannot confirm or deny anything here. Come visi
 [[Good-bye|Good-bye]]
 
 
+:: AnswerRecognized
+Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
+[[Other Questions|DoQuestions]]
+
+
+:: SmugglingAttemptFail
+happyDwn-- MASONSENTON
+Senton: The mafia? We get our wine through legitimate means, thank you. Is there anything else you would like to ask?
+[[Yes|MoreQuestions]]
+[[No|Good-bye]]
+
+
+:: AskRumors
+ItemReq-- KSENTONRUMORS
+Aleksei: I heard a few rumors about you...
+[[Mafia boss|AskMafia]]
+[[Conman|AskConman]]
+[[Speakeasy Owner|AskSpeakeasy]]
+
+
+:: AskSpeakeasy
+Aleksei: I heard you owned a gay speakeasy in New York City.
+[[Continue|AnswerSpeakeasy]]
+
+
+:: AskConman
+Aleksei: I heard you used to be a conman.
+[[Continue|AnswerConman]]
+
+
+:: AskMafia
+Aleksei: I heard you used to run a mafia family in Boston.
+[[Continue|AnswerMafia]]
+
+
+:: AnswerSpeakeasy
+Senton: Where did you hear that? I would not be ashamed to have run such an establishment, but you must be mistaken.
+[[Another rumor|AskRumors]]
+[[Yes|MoreQuestions]]
+[[No|Good-bye]]
+
+
+:: AnswerConman
+Senton: A conman? I'm an honest man. But all of these rumors has me curious. Perhaps we could discuss this in private at my office?
+[[Very Well.|AcceptPostpone]]
+[[Okay, but honest?|ScoffAtHonest]]
+[[You will run off|Accuse]]
+
+
+:: AnswerMafia
+Senton: I've never been to Boston in my life. I was born and raised in New York and I like it that way.
+[[Another rumor|AskRumors]]
+[[Yes|MoreQuestions]]
+[[No|Good-bye]]
+
+
 :: AcceptPostpone
-happyUp-- Senton
-Aleksei: Very well than. I trust you will be there.
+happyUp-- MASONSENTON
+Aleksei: Very well then. I trust you will be there.
 [[Continue|AnswerAccept]]
 
 
@@ -173,9 +205,14 @@ Aleksei: Honest man? Ha! Very well then. You better be there.
 
 
 :: Accuse
-happyDown-- Senton
-Aleksei: If you are indeed a con-man, you would know the game is up and take off.
+happyDwn-- MASONSENTON
+Aleksei: If you are a conman, you would know the game is up and take off.
 [[Continue|AnswerAccuse]]
+
+
+:: AnswerAccuse
+Senton: And you cannot hold me here. A bit of trust is in order, perhaps. You're a reporter. You want to know about the glowing water? I'll tell you all I know about the water and answer your other questions. At my office.
+[[Fair.|FairEnough]]
 
 
 :: AnswerAccept
@@ -184,9 +221,9 @@ Senton: Of course.
 [[No more questions|DoneQuestions]]
 
 
-:: AnswerAccuse
-Senton: And you cannot hold me here. A bit of trust is in order, perhaps. You're a reported. You want to know about the glowing water? I'll tell you all I know about the water and answer your other questions. At my office.
-[[Okay.|AcceptPostpone]]
+:: FairEnough
+Aleksei: Fair enough. I will see you there.
+[[Continue|AnswerAccept]]
 
 
 :: DoneQuestions
@@ -196,5 +233,3 @@ Aleksei: I don't have any more questions.
 
 :: Good-bye
 Aleksei: Farewell.
-
-

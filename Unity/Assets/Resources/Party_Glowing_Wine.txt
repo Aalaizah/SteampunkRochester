@@ -1,7 +1,7 @@
 ﻿:: 0
-This glass of wine appears to be glowing faintly. It's also slightly blue-ish.
-[[Leave|Leave]]
+This bottle of wine appears to be glowing faintly. It's also slightly blue-ish.
+[[Leave]]
 
 
 :: Leave
-You decide to leave well enough alone.
+You leave.
