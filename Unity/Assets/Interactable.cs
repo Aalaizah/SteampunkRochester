@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
 {
 	public static Interactable KEYMASTER;
 	public SpriteRenderer avatarSpriteRenderer{get;protected set;}
-	private SpriteRenderer spriteRenderer;
+	public SpriteRenderer spriteRenderer;
     public Sprite idleSprite;
     public Sprite hoverSprite;
     public Sprite activeSprite;
@@ -59,6 +59,10 @@ public class Interactable : MonoBehaviour
 			avatarSpriteRenderer = parent.GetComponent<SpriteRenderer>();
 		}
     }
+
+	void Update()
+	{
+	}
 
 	//when the mouse hovers
     void OnMouseOver()
