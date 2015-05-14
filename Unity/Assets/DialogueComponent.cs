@@ -204,7 +204,7 @@ public class DialogueComponent : MonoBehaviour {
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition.y = 0;
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(140));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(Screen.height/4 - 25));
 				
 				GUILayout.Label(message);
 				
@@ -256,14 +256,14 @@ public class DialogueComponent : MonoBehaviour {
 				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4) + 15, Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(140));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(Screen.height/4 - 25));
 				
 				GUILayout.Label(message);
 				
 				GUILayout.EndScrollView();
 				GUILayout.EndArea();
 
-				if(GUI.Button(new Rect(rectangle.width - 125,Screen.height - (Screen.height/3),100,50),"Continue"))
+				if(GUI.Button(new Rect(rectangle.width - 150,Screen.height - (Screen.height/3) - 50,150,75),"Continue"))
 				{
 					Progress();
 					scrollPosition.y = 0;
