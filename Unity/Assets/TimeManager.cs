@@ -67,6 +67,12 @@ public class TimeManager:MonoBehaviour{
 			hours++;
 			minutes-=60;
 		}
+		//so we can move backwards
+		while(minutes < 0)
+		{
+			hours--;
+			minutes+=60;
+		}
 		if(hours >= 24)
 		{
 			hours = 0;
@@ -128,11 +134,11 @@ public class TimeManager:MonoBehaviour{
 			else
 			{
 				//finally update the interactable
-				updateInteractable(thing);
+				internalUpdateInteractable(thing);
 			}
 		}
 	}
-	void updateInteractable(Interactable thing)
+	void internalUpdateInteractable(Interactable thing)
 	{
 		//this can be utilized but isnt yet
 		if(thing.disableReactionToTime)
@@ -161,6 +167,12 @@ public class TimeManager:MonoBehaviour{
 				parentT.gameObject.SetActive(active);
 			}
 		}
+	}
+	public void UpdateInteractable(Interactable thing)
+	{
+		if(!interactables.Contains(thing))
+			interactables.Add(thing);
+		internalUpdateInteractable(thing);
 	}
 	//returns the time of day, can be changed to get the numbers if necessary
 	public string getTime()

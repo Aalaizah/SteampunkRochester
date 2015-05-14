@@ -15,11 +15,11 @@ public class TimePasser : MonoBehaviour {
 
 	public void Forward()
 	{
-		time.passTime(-60);
+		time.passTime(60);
 	}
 
 	public void Backward()
 	{
-		time.passTime(60);
+		time.passTime(-60);
 	}
 }
