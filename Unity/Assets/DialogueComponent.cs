@@ -253,21 +253,21 @@ public class DialogueComponent : MonoBehaviour {
 			//if it is not a choice, show what is being said
 			else
 			{
-				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
+				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4) + 15, Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(140));
 				
 				GUILayout.Label(message);
 				
-				if(GUI.Button(new Rect(rectangle.width - 125,scrollPosition.y + 5,100,50),"Progress"))
+				GUILayout.EndScrollView();
+				GUILayout.EndArea();
+
+				if(GUI.Button(new Rect(rectangle.width - 125,Screen.height - (Screen.height/3),100,50),"Continue"))
 				{
 					Progress();
 					scrollPosition.y = 0;
 				}
-				
-				GUILayout.EndScrollView();
-				GUILayout.EndArea();
 			}
 
 			GUI.skin = normal;
