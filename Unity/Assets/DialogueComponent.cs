@@ -197,6 +197,10 @@ public class DialogueComponent : MonoBehaviour {
 			
 			//GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
 			GUI.skin = backgroundUI;
+
+			//Background
+			GUI.Box (new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width, Screen.height / 4),String.Empty);
+
 			//if there is a choice currently
 			if (choice)
 			{
