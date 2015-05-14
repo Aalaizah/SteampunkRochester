@@ -18,7 +18,7 @@ Aleksei: *follows silently upstairs*
 
 
 :: RudeFollow
-happyDown-- Senton
+happyDwn-- Senton
 Aleksei: I'm here for work, not for a housecall.
 [[Continue|Let'sBegin]]
 
