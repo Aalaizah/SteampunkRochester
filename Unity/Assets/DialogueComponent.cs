@@ -312,7 +312,10 @@ public class DialogueComponent : MonoBehaviour {
 		emotionManager.resetBooleans();
 		message += "\n";
 
-		message += twineImporter.TwineData.Current.Speaker[0] + ":";
+		if(twineImporter.TwineData.Current.Speaker.Count >0)
+		{
+			message += twineImporter.TwineData.Current.Speaker[0] + ":";
+		}
 		//actually build the message
 		foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
 		{

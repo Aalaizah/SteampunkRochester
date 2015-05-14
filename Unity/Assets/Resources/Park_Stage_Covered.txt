@@ -1,18 +1,18 @@
 ﻿:: 0
 The wooden stage has been covered with a cloth.
-[[Examine]]
+[[Examine|Examine]]
 [[Leave]]
 
 
 :: Examine
 It definitely looks a bit more refined with that cloth on it.
-[[Check Under]]
-[[Leave]]
+[[Check|Check Under]]
+[[Leave|Leave]]
 
 
 :: Check Under
 It's very dark under the cloth, and there's nothing but a few spider webs.
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: Leave
