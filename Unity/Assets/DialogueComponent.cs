@@ -329,7 +329,10 @@ public class DialogueComponent : MonoBehaviour {
 		//If this is the first time you are parsing the message 
 		if(message == "")
 		{
-			message += twineImporter.TwineData.Current.Speaker[0] + ":";
+			if(Interactable.KEYMASTER.isPerson)
+			{
+				message += twineImporter.TwineData.Current.Speaker[0] + ":";
+			}
 			//actually build the message
 			foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
 			{
@@ -340,8 +343,12 @@ public class DialogueComponent : MonoBehaviour {
 		{ 
 			//Append the message to the top to make the most recent text on the top
 			string bigString = "";
-			
-			bigString += twineImporter.TwineData.Current.Speaker[0] + ":";
+
+			if(Interactable.KEYMASTER.isPerson)
+			{
+				bigString += twineImporter.TwineData.Current.Speaker[0] + ":";
+			}
+
 			foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
 			{
 				bigString += letter;

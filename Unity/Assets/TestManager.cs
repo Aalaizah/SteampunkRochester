@@ -11,7 +11,7 @@ public class TestManager : MonoBehaviour {
 	//EmotionManager eM;
 	TimeManager tM;
 	//Inventory inv;
-	string currentLevel;
+	public static string currentLevel;
 	static string currLvl;
 	static bool finalLoaded = false;
 	public GUISkin normal;
