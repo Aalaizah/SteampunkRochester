@@ -40,7 +40,8 @@ public class Interactable : MonoBehaviour
     //string speaker = "";
 
     void Start()
-    {
+	{
+
 		if(isFinalEditor)
 		{
 			if(TimeManager.ending1Flag)
@@ -61,6 +62,7 @@ public class Interactable : MonoBehaviour
 
 		inventory = ObjectFinder.FindOrCreateComponent<Inventory>();
 		timeManager = ObjectFinder.FindOrCreateComponent<TimeManager>();
+		timeManager.UpdateInteractable(this);
 		emotionManager = ObjectFinder.FindOrCreateComponent<EmotionManager>();
 		spriteRenderer.sprite = null;
 
