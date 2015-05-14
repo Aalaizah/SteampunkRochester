@@ -77,6 +77,8 @@ public class TestManager : MonoBehaviour {
 				}
 			}
 			else{
+				r.x = Screen.width/2 - r.width/2;
+				r.y = r.height/3;
 				if(GUI.Button(r,"Leave conversation"))
 				{
 					GameObject.Find("DialogueScreen(Clone)").GetComponent<DialogueComponent>().OnDialogueCompelete();

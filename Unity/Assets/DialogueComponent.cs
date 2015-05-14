@@ -25,6 +25,7 @@ public class DialogueComponent : MonoBehaviour {
 	public GameObject nameText;
 	ScrollCamBhv scrollingCamera;
 	ScrollCamCtrl scrollingCam;
+	bool showChoices = false;
 
 	void Start()
 	{
@@ -228,43 +229,53 @@ public class DialogueComponent : MonoBehaviour {
 				
 				GUILayout.EndScrollView();
 				GUILayout.EndArea();
-				
-				//for every choice node, create a button for them
-				for (int i = 0; i < choicesLinksList.Count; i++)
+
+				if(showChoices)
 				{
-					float choiceAreaHeight = (float)Screen.height * .5f;
-					
-					float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
-					float x = Screen.width * (2/3) + Screen.width/4;
-					float y = (float)(Screen.height * .25) + (choiceHeight * (i));
-
-					currentNode = choicesLinksList[i];
-					twineImporter.TwineData.NextNode(currentNode);
-					if(twineImporter.TwineData.Current.ContentData == "")
+					//for every choice node, create a button for them
+					for (int i = 0; i < choicesLinksList.Count; i++)
 					{
-						toDisplay = choicesTitles[i];
-					}
-					else{
-						toDisplay = choicesList[i];
-					}
-					//if there is only one available choice, scale the button appropriately
-					if(choicesLinksList.Count == 1)
-					{
-						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
-
+						float choiceAreaHeight = (float)Screen.height * .5f;
 						
-						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
+						float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
+						float x = Screen.width * (2/3) + Screen.width/4;
+						float y = (float)(Screen.height * .25) + (choiceHeight * (i));
+
+						currentNode = choicesLinksList[i];
+						twineImporter.TwineData.NextNode(currentNode);
+						if(twineImporter.TwineData.Current.ContentData == "")
 						{
-							OnChoiceClick(i);
+							toDisplay = choicesTitles[i];
+						}
+						else{
+							toDisplay = choicesList[i];
+						}
+						//if there is only one available choice, scale the button appropriately
+						if(choicesLinksList.Count == 1)
+						{
+							//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
+
+							
+							if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
+							{
+								OnChoiceClick(i);
+							}
+						}
+						//otherwise, scale per how many options
+						else
+						{
+							if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
+							{
+								OnChoiceClick(i);
+							}
 						}
 					}
-					//otherwise, scale per how many options
-					else
+				}
+				else
+				{
+					if(GUI.Button(new Rect(rectangle.width - 150,Screen.height - (Screen.height/3) - 50,150,75),"Continue"))
 					{
-						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
-						{
-							OnChoiceClick(i);
-						}
+						showChoices = true;
 					}
 				}
 			}
@@ -285,6 +296,7 @@ public class DialogueComponent : MonoBehaviour {
 				{
 					Progress();
 					scrollPosition.y = 0;
+					showChoices = false;
 				}
 			}
 
