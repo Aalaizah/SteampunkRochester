@@ -2,6 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Interactables are attached to core prefabs
+/// Core prefabs should always be a child of another object
+/// The parent should have a sprite renderer
+/// </summary>
+
 public class Interactable : MonoBehaviour
 {
 	public static Interactable KEYMASTER;
@@ -20,6 +26,12 @@ public class Interactable : MonoBehaviour
     TwineImporter Twine;
     public bool taken = false;
 	public bool isFinalEditor = false;
+	public bool appearsDuringMorning = true;
+	public bool appearsDuringDay = true;
+	public bool appearsDuringNight = true;
+	//control time of day changing active state, checked for but not utilized by anything yet
+	public bool disableReactionToTime{get; protected set;}
+	//bool lastActiveState;
 	Inventory inventory;
 	TimeManager timeManager;
 	EmotionManager emotionManager;
@@ -96,13 +108,6 @@ public class Interactable : MonoBehaviour
 			var dialogue = Resources.Load<GameObject>("Prefabs/DialogueScreen");
 			Instantiate(dialogue);
         }
-		
-		//if this is a person and you haven't already talked to them, move time forward an hour
-		if(isPerson && !hasAlreadyTalked)
-		{
-			timeManager.passTime(60);
-			hasAlreadyTalked = true;
-		}
     }
 	//after the click finishes
     void OnMouseUp()
