@@ -88,20 +88,20 @@ Aleksei: I politely decline. But thank you for the offer.
 
 
 :: Pin
-itemGain-- Pin
+itemGain-- PIN
 Senton: If you do, here is a pin, as a reminder of your experience. I encourage you to return to us. And that way, the congregation knows you have talked to me.
 [[Ask Questions?|AskQuestions]]
 [[Good-bye|Good-bye]]
 
 
 :: JoinIn
-happyUp-- Senton
+happyUp-- MASONSENTON
 Aleksei: I may join in later.
 [[Continue|Pin]]
 
 
 :: NoJoinRude
-happyDown-- Senton
+happyDwn-- MASONSENTON
 Aleksei: No, I don't like exercising.
 [[Ask Questions?|AskQuestions]]
 [[Good-bye|Good-bye]]
@@ -109,18 +109,18 @@ Aleksei: No, I don't like exercising.
 
 :: AskQuestions
 Aleksei: Would you mind if I asked you some questions?
-[[Continue(if not unhappy)|DoQuestions]]
-[[Continue(if unhappy)|NoQuestions]]
+[[Continue|DoQuestions]]
+[[Continue|NoQuestions]]
 
 
 :: NoQuestions
-happyReq-- Senton : -1
+happyReq-- MASONSENTON : -1
 Senton: Perhaps another day. I have other matters to attend to right now. Good-day, sir.
 [[Good-bye|Good-bye]]
 
 
 :: DoQuestions
-happyReq-- Senton : 0
+happyReq-- MASONSENTON : 0
 Senton: What would you like to know?
 [[Glowing Water?|AskGlowingWater]]
 [[Church of Light?|AskCoLAgain]]
@@ -182,5 +182,3 @@ Aleksei: I don't have any more questions.
 
 :: Good-bye
 Aleksei: Farewell.
-
-

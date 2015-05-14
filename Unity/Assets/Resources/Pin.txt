@@ -1,9 +1,8 @@
 ﻿:: 0
-This pin looks like a stylized sun.
-[[please|Leave]]
+itemGain-- KFAKEPIN
+This pin looks like a stylized medical cross and sun.
+[[Leave]]
 
 
 :: Leave
-
-
-
+You leave.

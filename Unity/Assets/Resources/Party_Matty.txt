@@ -3,33 +3,23 @@ Matty: Aleksei! So glad you could make it, darling.
 [[Hello|Hi]]
 [[Thanks|Thank]]
 
+
 :: Hi
-Aleksei: Hello, Matty. It's been a while.
-[[Converse|SmallTalk]]
+Aleksei: Hello, Matty! I apologize for being unable to stay for the party, but I wanted to come by and say hello!
 [[Questions|Questions]]
 
 
 :: Thank
-Aleksei: Thanks for inviting me, Matty. I'm surprised to see so many people in one place!
-[[Converse|SmallTalk]]
+Aleksei: Thanks for inviting me, Matty. I wish I could stay instead of dropping by early but it’s been awhile since we last talked.
 [[Questions|Questions]]
-
-
-:: SmallTalk
-Converse
-[[How are you?|AskYou]]
-[[Your brother|AskBrother]]
-[[Fun story|TellStory]]
-[[Questions|Questions]]
-[[Goodbye|Leave]]
 
 
 :: Questions
-Questions
-[[Who's here?|Who]]
+Aleksei: What should I ask about?
+[[How are you?|AskYou]]
+[[Who's invited?|Who]]
 [[Purpose of party|Why]]
 [[The drink|Drink]]
-[[Converse|SmallTalk]]
 [[Goodbye|Leave]]
 
 
@@ -38,65 +28,50 @@ Aleksei: How are you, Matty? What have you been up to?
 [[Continue|MattyLife]]
 
 
-:: AskBrother
-Aleksei: How's your brother? I haven't seen him in quite some time.
-[[Continue|Gregor]]
-
-
-:: TellStory
-Aleksei: You would never believe what I saw the other day, Matty.
-[[Continue|DoTell]]
-
-
 :: Who
-Aleksei: Who are all of these people, Matty? It feels like this place is more packed than the World's Fair!
+Aleksei: Who did you invite, Matty?
 [[Continue|NewFriends]]
 
 
 :: Why
-Aleksei: So what led you to throw this roaring party?
+Aleksei: So what led you to organize a party tonight?
 [[Continue|Reason]]
 
 
 :: Drink
-Aleksei: There seems to be something curious about that giggle water, Matty. It almost looks as if it's glowing!
+Aleksei: There seems to be something curious about the water, Matty. It almost looks as if it's glowing!
 [[Continue|TheRage]]
 
 
 :: MattyLife
-Matty: Oh well my life has just been going fabulously! I've met such a wonderful group of new companions. We have tea every morning and they've been teaching me new exercises and introducing me to oh so many things! They are really just a joy to be around.
-[[Matty's friends|ContinueMatty]]
-[[Your work|ContinueAleksei]]
-
-
-:: Gregor
-Matty: Oh, Gregor? Busy as always. He can't seem to sit still! He's always traveling with those comrades of his, providing protection. It sounds like a fabulous life; he gets to see so much!
-[[Continue|Comrades]]
-
-
-:: DoTell
-Matty: I just love your stories, Aleksei. Do tell.
-[[Continue|TheStory]]
+Matty: Oh well life is fabulous! I've met such a wonderful group of new companions. We have tea every morning and they've been introducing me to a new healthy lifestyle! They are really a joy to be around.
+[[Matty's friends|Matty'sFriends]]
+[[Your work|YourWork]]
 
 
 :: NewFriends
-Matty: Oh well these are my new friends, Aleksei! They're all so welcoming and have fabulous tales. Perhaps they'll lead you to your next story? They're not snooty like those suffragettes or scary like those shadier mafia folk; they'll tell you their tales for days!
+Matty: Oh well, my new friends mostly, Aleksei! They're all so welcoming and have fabulous tales. I was hoping they would lead you to your next story? They're not snooty like those suffragettes I used to converse with.
 [[Continue|ThanksInvite]]
 
 
 :: Reason
-Matty: Well you know I just love parties, darling. I was overdue for throwing my own! Of course, having all of these new friends meant that I had a great reason to invite all of these people over and enjoy their company.
-[[Continue|Money]]
+Matty: I just love parties! With all of my new friends, I had a great reason enjoy their company.
+[[Continue|Rumors]]
 
 
 :: TheRage
-Matty: Oh it's all the rage now, darling. I was actually just introduced to it! You're not just imagining, it really is glowing! It's just a natural little bit of water from the canal you add to it and there it goes, shining like the sun!
+Matty: Oh it's all the rage now, darling. I was actually just introduced to it! It's a little bit of natural glowing water from the canal, and it shines like the sun!
 [[Continue|Odd]]
 
 
-:: TheStory
-Aleksei: Well I was walking down West Main Street, on my way to Hots and Potatoes for breakfast. Before I knew it, something zoomed right passed me, nearly blowing my hat off! I whipped around to see what it was, and imagine my surprise when I saw a large man skating around... on steam-powered roller skates!
-[[Continue|GoChaseYourself]]
+:: Matty'sFriends
+Aleksei: That's wonderful, Matty. Where did you meet these new friends?
+[[Continue|WhereMeet]]
+
+
+:: YourWork
+Matty: How about you, Aleksei, darling? Have your investigations resulted in any fabulous escapades?
+[[Continue|NextBigThing]]
 
 
 :: ThanksInvite
@@ -104,115 +79,70 @@ Aleksei: Well then I must thank you for inviting me.
 [[Converse|OfCourse]]
 
 
-:: Money
-Aleksei: That makes sense. Although I do see money being passed around and checks being written... what's going on with that?
-[[Continue|Charity]]
-
-
-:: ContinueMatty
-Aleksei: That's wonderful, Matty. Where did you meet?
-[[Continue|WhereMeet]]
-
-
-:: Comrades
-Aleksei: Comrades, hmm?
-[[Continue|NewVocab]]
+:: Rumors
+Aleksei: Being a journalist, I love meeting new people and I'm always one for chatter, Matty. Have you heard any rumors lately?
+[[Continue|LearnRumor]]
 
 
 :: Odd
-Aleksei: How odd! I'll have to look into it.
-[[Continue|Questions]]
+Aleksei: How odd. I'll have to look into it.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
 
 
-:: ContinueAleksei
-Matty: How about you, Aleksei darling? Any fabulous escapades you've been investigating into?
-[[Continue|NextBigThing]]
+:: WhereMeet
+happyUp-- MATTY
+Matty: Well, I was strolling through the park and they were having a little gathering and having such a fabulous time that I just had to approach them and join. So happy that I did, because they're just so very kind.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
 
 
-:: Leave
-Aleksei: I think I'm going to blouse, Matty. I had quite the long day. But you do throw a marvelous party. Thank you for having me.
-Matty: Of course, Aleksei. It's always wonderful catching up. We'll have to go out for tea soon.
-Aleksei: I'd like that very much. Enjoy the rest of your night. Neither fur nor feather!
-
-
-:: NewVocab
-Matty: *Laughs* Oh Aleksei, what can I say. I'm trying out some new vocabulary, and I thought that one would be particularly amusing for you!
-[[Continue|SmallTalk]]
-
-
-:: GoChaseYourself
-Matty: Steam-powered roller skates?! Go chase yourself, Aleksei! I don't believe you for a second.
-[[Continue|Truth]]
+:: NextBigThing
+Aleksei: I'm in between stories. I'm looking for the next big thing; that Pulitzer Prize is calling to me, Matty. I just have to figure out how to get there.
+[[Continue|AlekseiWriting]]
 
 
 :: OfCourse
 Matty: Of course, Aleksei. It's always good to have you here.
-[[Continue|Questions]]
-
-
-:: Charity
-Matty: Oh it's simple. These friends do a lot of charity work to help out our city. Getting everybody together and talking tends to lead to people sharing ideas and helping each other out with their endeavors.
-[[Continue|ForWhat]]
-
-
-:: WhereMeet
-Matty: Well, I was on a stroll through the park and they were having a little gathering and looked like they were having such a fabulous time that I just had to approach them and join. So happy that I did, because they're just so very kind.
-[[Continue|SmallTalk]]
-
-
-:: NextBigThing
-Aleksei: I'm in between stories, sadly. I'm trying to look for the next big thing, front page news! I very much enjoy my job, but small filler pieces will get me nowhere. That Pulitzer Prize is calling to me, Matty. I just have to figure out how to get there. But I will! Like we say back home, "without effort you won't pull a fish out of the pond".
-[[Continue|AlekseiWriting]]
-
-
-:: ForWhat
-Aleksei: What kind of things are they raising money for?
-[[Continue|ThisandThat]]
-
-
-:: Truth
-Aleksei: Oh but it's true! Would I lie to you? I saw it right before my very eyes. I could hardly believe it myself.
-[[Continue|Believe]]
-
-
-:: AlekseiWriting
-Matty: And I'm sure you will. You're just a gem! Your writing always gets me on the edge of my seat.
-[[Continue|AlekseiThank]]
-
-
-:: Believe
-Matty: You always see the most outrageous things, Aleksei, but I must believe you. Surely I'll be walking down Park Ave next week and see these steam skates all over! That's always how it goes with your stories.
-[[Continue|SmallTalk]]
-
-
-:: ThisandThat
-Matty: Oh, I don't know. This and that. Health, nutrition, something to do with the canal water. I'm sure you've heard the peculiar rumors.
-[[Rumors?|Rumors]]
-[[Continue|Questions]]
-
-
-:: AlekseiThank
-Aleksei: Thanks, Matty.
-[[Continue|SmallTalk]]
-
-
-:: Rumors
-Aleksei: You always know your onions, Matty. I'm not sure I've heard these rumors yet.
-[[Continue|LearnRumor]]
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
 
 
 :: LearnRumor
-Matty: Oh, I do always seem to be on top of things don't I? I'll get you in the know. There's been a lot of talk about the canal water... most nights it seems to be completely lit, as if it was full of lanterns or fireflies! We are actually planning to take a boat and go on a cruise down the canal one night; it's going to be absolutely gorgeous.
+Matty: There's been a lot of talk about the canal water... most nights is completely lit, as if it was full of lanterns! My friends and I are actually planning to take a boat and cruise down the canal one night; it's going to be absolutely gorgeous.
 [[Continue|Safety]]
 
 
+:: AlekseiWriting
+Matty: And I'm sure you will. You're just a gem! Your writing always puts me on the edge of my seat.
+[[Thanks|AlekseiThank]]
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
 :: Safety
-Aleksei: Are you sure that's safe? The water seems a little iffy to me.
+Aleksei: Are you sure that's safe? Any water like that seems a little contaminated to me.
 [[Continue|SafetoDrink]]
 
 
+:: AlekseiThank
+happyUp-- MATTY
+Aleksei: Thanks, Matty.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
 :: SafetoDrink
-Matty: Oh, Aleksei. The water is perfectly safe. My friends are very knowledgable in health and safety. It's even perfectly fine to drink!
-[[Continue|Questions]]
+Matty: Oh, Aleksei. The water is perfectly safe. My friends are very knowledgeable in health and safety, especially concerning the canal water. It's even perfectly fine to drink too!
+[[Drink Canal water?|TheRage]]
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
 
 
+:: Leave
+Aleksei: I'm going to leave now, Matty. I have work to do in the morning. Enjoy your party!
+[[Continue|Leave2]]
+
+
+:: Leave2
+Matty: Of course, Aleksei. It's always wonderful catching up. We'll have to go out for tea soon.

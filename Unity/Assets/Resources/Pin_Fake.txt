@@ -1,15 +1,15 @@
 ﻿:: 0
-It's a pin stylied after the sun.
-[[Please|Examine]]
-[[Would you kindly|Leave]]
+It's a pin stylied after a medical cross and sun.
+[[Examine]]
+[[Leave]]
 
 
 :: Examine
-itemReq-- Pin
-itemGain-- KnowledgeFakePin
+itemReq-- PIN
+itemGain-- KFAKEPIN
 On a closer look, there is something off about this pin. It's not quite the same as the one that Senton gave Aleksei.
-[[GO|Leave]]
+[[Leave]]
 
 
 :: Leave
-You decide to leave.
+You leave.

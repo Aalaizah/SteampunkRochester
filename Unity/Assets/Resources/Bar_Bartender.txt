@@ -5,6 +5,7 @@ Bartender: *nods* What can I do ya for?
 [[Know any rumors?|AskRumors]]
 [[Leave|Leave]]
 
+
 :: AskHowAre
 Aleksei: How you doing today?
 [[Continue|AnswerHowAre]]
@@ -29,7 +30,7 @@ Bartender: I'm busy. You gonna buy a drink or not?
 
 
 :: AnswerRumors
-happyReq-- Bartender : 1
+happyReq-- BARTENDER : 1
 Bartender: *frowns* Do I look like a newspaper? 
 [[My apologies...|Apologize]]
 [[I just thought...|IThought]]
@@ -37,7 +38,7 @@ Bartender: *frowns* Do I look like a newspaper?
 
 
 :: ReceiveDrink
-itemGain-- alcohol
+itemGain-- ALCOHOL
 Bartender: Coming right up.
 [[Thanks|TipBartender]]
 [[How are you?|AskHowAre]]
@@ -46,7 +47,7 @@ Bartender: Coming right up.
 
 
 :: TipBartender
-happyUp-- Bartender
+happyUp-- BARTENDER
 Aleksei: *places change in tip jar*
 [[How are you?|AskHowAre]]
 [[Know any rumors?|AskRumors]]
@@ -66,13 +67,13 @@ Aleksei: I thought, since you run a speakeasy, you talk to lots of people-
 
 
 :: Yes?
-happyDown-- Bartender
+happyDwn-- BARTENDER
 Aleksei: Maybe keep better track of your patrons.
 [[Continue|ThoughtWrong1]]
 
 
 :: AnswerRumorsHappy
-happyReq-- Bartender : 2
+happyReq-- BARTENDER : 2
 Bartender: Look, chap. I don't know any rumors, but I do know that theres a guy who comes in on Mondays or some nights and he's full of 'em. Maybe come back then and talk to him.
 [[Thank you.|Thank You]]
 
