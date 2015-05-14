@@ -17,6 +17,7 @@ public class Interactable : MonoBehaviour
 	public bool isPerson;
 	public bool hasAlreadyTalked = false;
     private bool readTwine;
+	public string itemToGain;
     TwineImporter Twine;
     public bool taken = false;
 	public bool isFinalEditor = false;
