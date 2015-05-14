@@ -23,9 +23,15 @@ public class DialogueComponent : MonoBehaviour {
 	public GUISkin backgroundUI;
 	public GUISkin normal;
 	public GameObject nameText;
+	ScrollCamBhv scrollingCamera;
+	ScrollCamCtrl scrollingCam;
 
 	void Start()
 	{
+		scrollingCamera = GameObject.Find("Scrolling Camera").GetComponent<ScrollCamBhv>();
+		scrollingCam = GameObject.Find("Scrolling Camera").GetComponent<ScrollCamCtrl>();
+		scrollingCamera.enabled = false;
+		scrollingCam.enabled = false;
 		choicesLinksList = new List<string> ();
 		choicesList = new List<string> ();
 		choicesTitles = new List<string>();
@@ -142,6 +148,8 @@ public class DialogueComponent : MonoBehaviour {
 		}
 		backgroundInteractables.Clear();
 		Interactable.KEYMASTER.selected = false;
+		scrollingCamera.enabled = true;
+		scrollingCam.enabled = true;
 		//RELEASE THE KEYMASTER now others can hold the power
 		Interactable.KEYMASTER = null;
 		Destroy(this.gameObject);
