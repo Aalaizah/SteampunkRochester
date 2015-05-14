@@ -39,17 +39,26 @@ public class DialogueComponent : MonoBehaviour {
 		inventory = ObjectFinder.FindOrCreateComponent<Inventory>();
 		timeManager = ObjectFinder.FindOrCreateComponent<TimeManager>();
 		emotionManager = ObjectFinder.FindOrCreateComponent<EmotionManager>();
-		//set the interactable image to our Keymaster
-		interactableImage.sprite = Interactable.KEYMASTER.avatarSpriteRenderer.sprite;
+		//set the interactable image to our KEYMASTER
+		//We want to core parents image (avatar) if there is one
+		if(Interactable.KEYMASTER.avatarSpriteRenderer != null)
+		{
+			//set to the avatar parent
+			interactableImage.sprite = Interactable.KEYMASTER.avatarSpriteRenderer.sprite;
+		}
 		//hide all interactables (de-activate)
 		backgroundInteractables = new List<Interactable>();
 		var interactables = GameObject.FindObjectsOfType<Interactable>();
 		foreach(Interactable inter in interactables)
 		{
-			var parent = inter.transform.parent.gameObject;
-			if(inter != null && inter != this  && parent.activeSelf)
+			//find the root gameobject of the interactable
+			var root = inter.gameObject;
+			//If the core has a parent that must be the root! right?
+			if(inter.transform.parent != null)
+				root = inter.transform.parent.gameObject;
+			if(inter != null && inter != this  && root.activeSelf)
 			{
-				inter.transform.parent.gameObject.SetActive(false);
+				root.SetActive(false);
 				backgroundInteractables.Add(inter);
 			}
 		}
@@ -132,7 +141,7 @@ public class DialogueComponent : MonoBehaviour {
 	public void OnDialogueCompelete()
 	{
 		//if this is a person and you haven't already talked to them, move time forward an hour
-		if(Interactable.KEYMASTER.isPerson)
+		if(Interactable.KEYMASTER.isPerson && !Interactable.KEYMASTER.hasAlreadyTalked)
 		{
 			timeManager.passTime(60);
 			Interactable.KEYMASTER.hasAlreadyTalked = true;
@@ -160,7 +169,6 @@ public class DialogueComponent : MonoBehaviour {
 	
 	void Update()
 	{
-		//Debug.Log(twineImporter.TwineData.Current.EmotnUp);
 		nameText = GameObject.Find ("Name");
 		if(nameText){
 			

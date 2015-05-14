@@ -24,11 +24,17 @@ public class TwineImporter : MonoBehaviour {
 
 	public void ReadTwineData(string path)
 	{
-		string temp;
+		string temp = string.Empty;
 		string[] file;
 		string[] split = {"::"};
-		
-		temp = Resources.Load(path, typeof(TextAsset)).ToString();
+
+		try
+		{
+			temp = Resources.Load(path, typeof(TextAsset)).ToString();
+		}catch
+		{
+			Debug.Log("TwineImporter: I could not load the twine file" + path + "!");
+		}
 		
 		try
 		{
