@@ -45,38 +45,41 @@ public class TestManager : MonoBehaviour {
 		r.x += r.width;
 		r.y += r.height;
 		GUI.skin = normal;
-		if(Interactable.KEYMASTER == null)
+		if(!finalLoaded)
 		{
-			r = new Rect(Screen.width/1.5f,0,Screen.width/7.5f, Screen.height/8);
-			if(GUI.Button(r, "Leave"))
+			if(Interactable.KEYMASTER == null)
 			{
-				if(GameObject.Find("DialogueScreen(Clone)"))
+				r = new Rect(Screen.width/1.5f,0,Screen.width/7.5f, Screen.height/8);
+				if(GUI.Button(r, "Leave"))
 				{
-					Object.Destroy(GameObject.Find("DialogueScreen(Clone)"));
-				}
-				//Debug.Log(currentLevel);
-				if(currentLevel == "Party_Night")
-				{
-					currLvl = "";
-					//Destory current level
-					Object.Destroy(transform.parent.gameObject);
-					
-					//load editor office
-					Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
-			
-				}
-				//otherwise, go back to map screen.
-				else{
-					Object.Destroy(transform.parent.gameObject);
-					MarkerBhv.m_map.SetActive(true);
-					MarkerBhv.mapUI.SetActive(true);
+					if(GameObject.Find("DialogueScreen(Clone)"))
+					{
+						Object.Destroy(GameObject.Find("DialogueScreen(Clone)"));
+					}
+					//Debug.Log(currentLevel);
+					if(currentLevel == "Party_Night")
+					{
+						currLvl = "";
+						//Destory current level
+						Object.Destroy(transform.parent.gameObject);
+						
+						//load editor office
+						Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Day") as GameObject);
+				
+					}
+					//otherwise, go back to map screen.
+					else{
+						Object.Destroy(transform.parent.gameObject);
+						MarkerBhv.m_map.SetActive(true);
+						MarkerBhv.mapUI.SetActive(true);
+					}
 				}
 			}
-		}
-		else{
-			if(GUI.Button(r,"Leave conversation"))
-			{
-				GameObject.Find("DialogueScreen(Clone)").GetComponent<DialogueComponent>().OnDialogueCompelete();
+			else{
+				if(GUI.Button(r,"Leave conversation"))
+				{
+					GameObject.Find("DialogueScreen(Clone)").GetComponent<DialogueComponent>().OnDialogueCompelete();
+				}
 			}
 		}
 	}

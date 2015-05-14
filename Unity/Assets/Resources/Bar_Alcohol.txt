@@ -1,6 +1,6 @@
 ﻿:: 0
 It's an alcoholic beverage. Smells sort of...fruity?
-[[Leave]]
+[[Leave|Leave]]
 
 
 :: Leave
