@@ -72,6 +72,7 @@ public class TestManager : MonoBehaviour {
 						Object.Destroy(transform.parent.gameObject);
 						MarkerBhv.m_map.SetActive(true);
 						MarkerBhv.mapUI.SetActive(true);
+						currentLevel = "Map";
 					}
 				}
 			}
