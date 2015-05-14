@@ -192,7 +192,7 @@ public class DialogueComponent : MonoBehaviour {
 				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
-				scrollPosition.y = Mathf.Infinity;
+				scrollPosition.y = 0;
 				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
 				
 				GUILayout.Box(message);
@@ -269,7 +269,7 @@ public class DialogueComponent : MonoBehaviour {
 				if(GUI.Button(new Rect(rectangle.width - 125,scrollPosition.y + 5,100,50),"Progress"))
 				{
 					Progress();
-					scrollPosition.y = Mathf.Infinity;
+					scrollPosition.y = 0;
 				}
 				
 				GUILayout.EndScrollView();
@@ -320,23 +320,38 @@ public class DialogueComponent : MonoBehaviour {
 	}
 	
 	
-	//build the dialog to be shown
+	//build the dialogue to be shown
 	void createMessage()
 	{
 		//reset the emotion manager's booleans for the next node
 		emotionManager.resetBooleans();
-		message += "\n";
-
-		if(twineImporter.TwineData.Current.Speaker.Count >0)
+		
+		//If this is the first time you are parsing the message 
+		if(message == "")
 		{
 			message += twineImporter.TwineData.Current.Speaker[0] + ":";
+			//actually build the message
+			foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
+			{
+				message += letter;
+			}
 		}
-		//actually build the message
-		foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
-		{
-			message += letter;
+		else
+		{ 
+			//Append the message to the top to make the most recent text on the top
+			string bigString = "";
+			
+			bigString += twineImporter.TwineData.Current.Speaker[0] + ":";
+			foreach (char letter in twineImporter.TwineData.Current.ContentData.ToString())
+			{
+				bigString += letter;
+			}
+			
+			bigString +="\n";
+			bigString += message;
+			
+			message = bigString;
 		}
-		
 		
 		TypeText();
 	}
