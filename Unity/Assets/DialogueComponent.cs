@@ -140,7 +140,7 @@ public class DialogueComponent : MonoBehaviour {
 	
 	void Update()
 	{
-		Debug.Log(twineImporter.TwineData.Current.EmotnUp);
+		//Debug.Log(twineImporter.TwineData.Current.EmotnUp);
 		nameText = GameObject.Find ("Name");
 		if(nameText){
 			
@@ -155,24 +155,8 @@ public class DialogueComponent : MonoBehaviour {
 				twineImporter.ReadTwineFile(Interactable.KEYMASTER.path);
 			}
 		}
-		//adds item if current node calls for it
-		if(twineImporter.TwineData.Current.ItemsGain !=""){
-			inventory.addItem(twineImporter.TwineData.Current.ItemsGain);
-		}
-		//removes item if current node calls for it
-		if(twineImporter.TwineData.Current.ItemRem !=""){
-			inventory.removeItem(twineImporter.TwineData.Current.ItemRem);
-		}
-		//makes a character more unhappy if the current node calls for it
-		if(twineImporter.TwineData.Current.EmotnDwn !=""){
-			Debug.Log("Updating emotions!");
-			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnDwn,false);
-		}
-		//makes a character happier if the current node calls for it
-		if(twineImporter.TwineData.Current.EmotnUp !=""){
-			Debug.Log("Updating emotions!");
-			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnUp,true);
-		}
+		updateInventory();
+		updateEmotions();
 		
 		if(twineImporter.TwineData.Current.EndingFlag != "")
 		{
@@ -301,11 +285,38 @@ public class DialogueComponent : MonoBehaviour {
 		//createMessage();
 		currentNode = choicesList[choiceIndex];
 		twineImporter.TwineData.NextNode(currentNode);
+		updateInventory();
+		updateEmotions();
 		choice = false;
 		choicesLinksList.Clear();
 		choicesList.Clear();
 		choicesTitles.Clear();
 		Progress();
+	}
+
+	void updateInventory()
+	{
+		if(twineImporter.TwineData.Current.ItemsGain !=""){
+			inventory.addItem(twineImporter.TwineData.Current.ItemsGain);
+		}
+		//removes item if current node calls for it
+		if(twineImporter.TwineData.Current.ItemRem !=""){
+			inventory.removeItem(twineImporter.TwineData.Current.ItemRem);
+		}
+	}
+
+	void updateEmotions()
+	{
+		//makes a character more unhappy if the current node calls for it
+		if(twineImporter.TwineData.Current.EmotnDwn !=""){
+			Debug.Log("Updating emotions!");
+			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnDwn,false);
+		}
+		//makes a character happier if the current node calls for it
+		if(twineImporter.TwineData.Current.EmotnUp !=""){
+			Debug.Log("Updating emotions!");
+			emotionManager.updateEmotions(twineImporter.TwineData.Current.EmotnUp,true);
+		}
 	}
 	
 	
