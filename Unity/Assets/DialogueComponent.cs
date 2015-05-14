@@ -188,6 +188,7 @@ public class DialogueComponent : MonoBehaviour {
 		{
 			GUI.skin.box.wordWrap = true;
 			GUI.skin.button.wordWrap = true;
+			GUI.skin.label.wordWrap = true;
 			
 			//GUI.color = new Color(.9098f,.8275f,.0471f,1.0f);
 			GUI.skin = backgroundUI;
@@ -203,9 +204,9 @@ public class DialogueComponent : MonoBehaviour {
 				
 				GUILayout.BeginArea(rectangle);
 				scrollPosition.y = 0;
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(140));
 				
-				GUILayout.Box(message);
+				GUILayout.Label(message);
 				
 				GUILayout.EndScrollView();
 				GUILayout.EndArea();
@@ -242,27 +243,10 @@ public class DialogueComponent : MonoBehaviour {
 					//otherwise, scale per how many options
 					else
 					{
-						//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
-
-						
 						if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 						{
 							OnChoiceClick(i);
 						}
-						
-						
-						/*
-						if (GUI.Button(new Rect(Screen.width/2 - (Screen.width - 10)/2,((Screen.height/2) - (choiceHeight * (i+1))),Screen.width - 10,choiceHeight), toDisplay))
-						{
-							createMessage();
-							currentNode = choicesList[i];
-							Twine.TwineData.NextNode(currentNode);
-							choice = false;
-							choicesLinksList.Clear();
-							choicesList.Clear();
-							choicesTitles.Clear();
-						}
-*/
 					}
 				}
 			}
@@ -272,9 +256,9 @@ public class DialogueComponent : MonoBehaviour {
 				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(150));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(140));
 				
-				GUILayout.Box(message);
+				GUILayout.Label(message);
 				
 				if(GUI.Button(new Rect(rectangle.width - 125,scrollPosition.y + 5,100,50),"Progress"))
 				{
