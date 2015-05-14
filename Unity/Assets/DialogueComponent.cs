@@ -17,6 +17,7 @@ public class DialogueComponent : MonoBehaviour {
 	string message = "";
 	string currentNode = "0";
 	string toDisplay = "";
+	bool isFinalNode;
 	public Image interactableImage;
 	public Vector2 scrollPosition;
 	public GUISkin backgroundUI;
@@ -97,17 +98,26 @@ public class DialogueComponent : MonoBehaviour {
 			else 
 			{
 				createMessage ();
-				//as long as the next node actually exists, move to the next node
-				if (!twineImporter.TwineData.Current.Link[0].Equals( " ")) 
-				{
-					currentNode = twineImporter.TwineData.Current.Link [0];
-					
-				}
 				//if there is no next node, exit the conversation
-				else
+
+				if(isFinalNode)
 				{
 					OnDialogueCompelete();
 				}
+				else{
+					//as long as the next node actually exists, move to the next node
+					if (!twineImporter.TwineData.Current.Link[0].Equals( " ")) 
+					{
+						currentNode = twineImporter.TwineData.Current.Link [0];
+						
+					}
+					else
+					{
+						isFinalNode = true;
+					}
+				}
+
+
 			}
 		}
 	}
