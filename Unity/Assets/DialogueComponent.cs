@@ -222,8 +222,7 @@ public class DialogueComponent : MonoBehaviour {
 				Rect rectangle = new Rect(Screen.width - (Screen.width), 3 * (Screen.height / 4), Screen.width - 10, Screen.height / 4);
 				
 				GUILayout.BeginArea(rectangle);
-				scrollPosition.y = 0;
-				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(Screen.height/4 - 25));
+				scrollPosition = GUILayout.BeginScrollView(scrollPosition,GUILayout.Width(rectangle.width),GUILayout.Height(Screen.height/4 - 15));
 				
 				GUILayout.Label(message);
 				
@@ -236,10 +235,20 @@ public class DialogueComponent : MonoBehaviour {
 					for (int i = 0; i < choicesLinksList.Count; i++)
 					{
 						float choiceAreaHeight = (float)Screen.height * .5f;
-						
-						float choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
+						float choiceHeight = 0;
+						float yInc = i;
+						if(choicesLinksList.Count > 3)
+						{
+							choiceHeight =  choiceAreaHeight / choicesLinksList.Count;
+						}
+						else
+						{
+							choiceHeight = choiceAreaHeight / 5;
+							yInc++;
+						}
+
 						float x = Screen.width * (2/3) + Screen.width/4;
-						float y = (float)(Screen.height * .25) + (choiceHeight * (i));
+						float y = (float)(Screen.height * .25) + (choiceHeight * (yInc));
 
 						currentNode = choicesLinksList[i];
 						twineImporter.TwineData.NextNode(currentNode);
@@ -253,9 +262,6 @@ public class DialogueComponent : MonoBehaviour {
 						//if there is only one available choice, scale the button appropriately
 						if(choicesLinksList.Count == 1)
 						{
-							//GUI.Box (new Rect(Screen.width - (Screen.width - 5),0,Screen.width - 10,Screen.height/4),message);
-
-							
 							if (GUI.Button(new Rect(x,y,Screen.width/2,choiceHeight), toDisplay))
 							{
 								OnChoiceClick(i);
