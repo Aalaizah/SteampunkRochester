@@ -24,8 +24,6 @@ public class MarkerBhv : MonoBehaviour {
 		active = false;
 		m_thumbnail.SetActive(active);
 		m_thumbnailButton.SetActive(active);
-
-		//CHANGE LOCATION TEXT AND LOCATION IMAGE HERE
 	}
 	
 	// Update is called once per frame
@@ -47,6 +45,11 @@ public class MarkerBhv : MonoBehaviour {
 	public void ClickAction()
 	{
 		active = !active;
+
+		foreach(GameObject tackUI in GameObject.FindGameObjectsWithTag("TackUI"))
+		{
+			tackUI.SetActive(false);
+		}
 
 		m_thumbnail.SetActive(active);
 		m_thumbnailButton.SetActive(active);
