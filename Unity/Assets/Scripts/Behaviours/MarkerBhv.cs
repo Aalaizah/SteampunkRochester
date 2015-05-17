@@ -51,6 +51,7 @@ public class MarkerBhv : MonoBehaviour {
 
 		foreach(GameObject tackUI in GameObject.FindGameObjectsWithTag("TackUI"))
 		{
+			tackUI.transform.parent.GetComponent<MarkerBhv>().active = false;
 			tackUI.SetActive(false);
 		}
 
