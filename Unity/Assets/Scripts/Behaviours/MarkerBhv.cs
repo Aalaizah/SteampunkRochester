@@ -30,14 +30,17 @@ public class MarkerBhv : MonoBehaviour {
 	void Update () {
 		if(!initalM_MapInactive){
 			m_map.SetActive(false);
+			m_thumbnail.SetActive(false);
+			m_thumbnailButton.SetActive(false);
 			initalM_MapInactive = true;
 		}
 	}
 
 	public void Travel()
 	{
-		m_map.SetActive (false);
-		mapUI.SetActive(false);
+		active = false;
+		m_map.SetActive (active);
+		mapUI.SetActive(active);
 		timeManager.passTime (30);
 		Instantiate (m_levelToLoad);
 	}
