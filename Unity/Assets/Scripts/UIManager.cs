@@ -63,4 +63,8 @@ public class UIManager : MonoBehaviour {
 	public void Quit(){
 		Application.Quit ();
 	}
+
+	public void mainMenuStart(){
+		//Load Main scene here
+	}
 }
