@@ -138,7 +138,7 @@ public class TimeManager:MonoBehaviour{
 			}
 		}else
 		{
-			//hideWatch();
+			hideWatch();
 		}
 	}
 	void showWatch()
