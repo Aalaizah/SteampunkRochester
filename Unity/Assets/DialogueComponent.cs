@@ -375,6 +375,8 @@ public class DialogueComponent : MonoBehaviour {
 			//Append the message to the top to make the most recent text on the top
 			string bigString = "";
 
+			//bigString +="\n";
+
 			if(Interactable.KEYMASTER.isPerson)
 			{
 				bigString += twineImporter.TwineData.Current.Speaker[0] + ":";
@@ -384,8 +386,7 @@ public class DialogueComponent : MonoBehaviour {
 			{
 				bigString += letter;
 			}
-			
-			bigString +="\n";
+
 			bigString += message;
 			
 			message = bigString;
