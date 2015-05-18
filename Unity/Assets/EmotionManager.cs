@@ -68,6 +68,14 @@ public class EmotionManager : MonoBehaviour {
 		
 		
 	}
+	void triggerEmotionParticle(GameObject particles)
+	{
+		var dialogue = GameObject.Find("DialogueScreen");
+		if(dialogue != null)
+		{
+			//particles.transform.position = 
+		}
+	}
 	
 	//checks if the player has the correct relationship with the NPC
 	public bool hasRequirement(string person, int req){
