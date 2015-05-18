@@ -1,0 +1,166 @@
+﻿:: 0
+Man with dog: Good morning, sir! Wonderful day isn't it?
+[[Hello|Hi]]
+[[Nice Dog|Dog]]
+
+
+:: Hi
+Aleksei: Good morning! I am Aleksei. How are you?
+[[Continue|Name]]
+
+
+:: Dog
+Aleksei: It sure is. Marvelous dog you have there. Is he a Scottish Terrier?
+[[Continue|DogNames]]
+
+
+:: Name
+Tim White: I'm feeling grand! Name's Tim White. And this is Gizmo! Nice to meet you.
+[[Continue|Woof]]
+
+
+:: DogNames
+happyUp-- TIMWHITE
+Tim White: Why yes he is! His name is Gizmo. He's a good boy. By the way, I'm Tim White.
+[[Continue|AlekseiName]]
+
+
+:: Woof
+Gizmo: Woof!
+[[Continue|Continue]]
+
+
+:: AlekseiName
+Aleksei: I am Aleksei. Good to meet you.
+[[Continue|Continue]]
+
+
+:: Continue
+Aleksei: So what do you do, Tim White?
+[[Continue|TimJob]]
+
+
+:: TimJob
+Tim White: I am a professional dog walker...I also am an accountant on the side! Hah! What about you?
+[[I'm a reporter|Reporter]]
+[[I talk to people|Talker]]
+[[I'm a cat person|CatPerson]]
+
+
+:: Reporter
+Aleksei: I'm a reporter. I'm very interested in learning about the Church of Light.
+[[Continue|CoL]]
+
+
+:: Talker
+Aleksei: I enjoy talking to as many people as I can and learn about them and their lives.
+[[Continue|Samesies]]
+
+
+:: CatPerson
+Aleksei: I'm a cat person.
+[[Continue|Meow]]
+
+
+:: Peace
+Aleksei: Actually, no. Perhaps I'll talk to you in the future.
+[[Continue|Byebye]]
+
+
+:: CoL
+Tim White: Well, I am a member of the Church of Light. You could talk to me!
+[[Questions|Questions]]
+[[No, Bye|Peace]]
+
+
+:: Samesies
+itemGain-- BUSINESSCARD
+Tim White: I enjoy talking to people too! Which reminds me, I have a meeting with a client soon. Here's my business card. It was nice talking to you.
+[[Goodbye|Bye]]
+
+
+:: Meow
+Tim White: ...
+[[Continue|Dotdotdot]]
+
+
+:: Byebye
+itemGain-- BUSINESSCARD
+Tim White: Alright. Have a good day! Oh, wait, take my business card!
+
+
+:: Bye
+Aleksei: Thanks for the card. Nice meeting you...and Gizmo.
+[[Continue|Woof2]]
+
+
+:: Dotdotdot
+Aleksei: ...
+[[Continue|Kidding]]
+
+
+:: Questions
+Aleksei: I'd like to ask about...
+[[Church of Light ideals|CoLideals]]
+[[Glowing Water|GlowingWater]]
+[[No more questions|FinishConvo]]
+
+
+:: Woof2
+Gizmo: Woof!
+
+
+:: Kidding
+Aleksei: That was a joke.
+[[Continue|Joking]]
+
+
+:: CoLideals
+Aleksei: So why do you follow the Church of Light?
+[[Continue|CoLAnswerB]]
+
+
+:: GlowingWater
+Aleksei: What are your opinions on the glowing water?
+[[Continue|CoLAnswerC]]
+
+
+:: Joking
+happyDwn-- TIMWHITE
+Tim White: ...AHAHHAAHAHA. Good one, Aleksei! I like you already! So what do you really do?
+[[I'm a reporter|Reporter]]
+[[I talk to people|Talker]]
+
+
+:: CoLAnswerB
+Tim White: I've always been a religious man, but the Church of Light won me over when they saved my dog. So, I converted and started following their teachings. They're remarkably similar to other churches, but more focused on your personal well-being.
+[[Your dog?|DogSaved]]
+[[Ask another question|Questions]]
+[[Goodbye|FinishConvo]]
+
+
+:: CoLAnswerC
+Tim White: Very high, my friend! The Church of Light saved my dog using it and I've been a member ever since.
+[[Ask another question|Questions]]
+[[Saved your dog?|DogSaved]]
+
+
+:: DogSaved
+Aleksei: Your dog? What happened to your dog?
+[[Continue|DogSaved2]]
+
+
+:: DogSaved2
+happyDwn-- TIM WHITE
+Tim White: I don't want to talk about it, it upsets Gizmo when I do.
+[[Continue|Whines]]
+
+
+:: Whines
+Gizmo: *whines*
+[[Goodbye|FinishConvo]]
+
+
+:: FinishConvo
+Aleksei: I have no more to ask of you, friend. Maybe I'll see you later!
+[[Continue|Byebye]]

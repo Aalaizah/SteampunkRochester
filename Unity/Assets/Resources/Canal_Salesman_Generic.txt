@@ -1,0 +1,231 @@
+﻿:: 0
+Foreman: Howdy valued customer! How can I interest you once again today!?
+[[Ask About Church of Light|Aleksei - Light Info 1]]
+[[Ask About Mafia|Aleksei - Mafia Info 1]]
+[[Ask About Glowing Water|Aleksei - Good Info 1]]
+[[Bye For Now|Aleksei - Happy Ending]]
+[[This Is A Fake Pin|Aleksei - 1.1]]
+
+
+:: Aleksei - Mafia Info 1
+Aleksei: What you know about the mafia?
+[[Continue|Salesman - Mafia Info 1]]
+
+
+:: Aleksei - Good Info 1
+Aleksei: What you know of glowing water?
+[[Continue|Salesman - Good Info 1]]
+
+
+:: Aleksei - Light Info 1
+Aleksei: What you know about Church of Light?
+[[Continue|Salesman - Light Info 1]]
+
+
+:: Aleksei - 1.1
+itemReq-- KFAKEPIN
+Aleksei: The pin you sold me was fake!
+[[Continue|Salesman - 2]]
+
+
+:: Salesman - Mafia Info 1
+happyReq-- EVELYNFOREMAN : 1
+Foreman: Hey, I'm not offing punks left and right if that's what you're thinking! They're just my water suppliers. Got to get my wares from somebody!
+[[Continue|Aleksei - Mafia Info 2]]
+
+
+:: Salesman - Good Info 1
+Foreman: I know that people are willing to pay an arm and a leg! Kids, adults, Church of Light, they can't get enough of the stuff!
+[[Continue|Aleksei - Good Info 2]]
+
+
+:: Salesman - Light Info 1
+Foreman: Why they're my best customers! Talk to any one of them and you'll get the same response, that Evelyn Foreman has the one and only best products on the market!
+[[Continue|Aleksei - Light Info 2]]
+
+
+:: Salesman - 2
+Foreman: Pardon?
+[[Continue|Aleksei - 2]]
+
+
+:: Aleksei - Mafia Info 2
+Aleksei: There are two mafias. Which one is supplying you?
+[[Continue|Salesman - Mafia Info 2]]
+
+
+:: Aleksei - Good Info 2
+Aleksei: Church of Light?
+[[Continue|Salesman - Good Info 2]]
+
+
+:: Aleksei - Light Info 2
+Aleksei: I'm sure they will.
+[[Continue|0]]
+[[Bye For Now|Aleksei - Happy Ending]]
+
+
+:: Aleksei - 2
+Aleksei: The pin you sold me was fake!
+[[Continue|Salesman - 3]]
+
+
+:: Salesman - Mafia Info 2
+Foreman: Why both of them! You didn't here this from me, but the Mercurios and the Ziccardis are a tighter knit than you think! It's all a ploy to keep the citizens afraid of gang wars while they steal all the resources from under their noses!
+[[Continue|Aleksei - Mafia Info 3]]
+
+
+:: Salesman - Good Info 2
+Foreman: Yep yep yep! Can't say I blame them, this stuff sure is pretty, and who doesn't like pretty things!? And I have the top quality pretty things on the market! Speaking of which, can I interest you in some-
+[[Continue|Aleksei - Good Info 3]]
+
+
+:: Salesman - 3
+Foreman: Okay, okay, you caught me, it's not real. But as long as it looks genuine that's fine right? No has to know! You were satesfied by the quality right? And it is fine quality, genuine or not!
+[[No|Aleksei - 3.1]]
+[[HELL NO!!!|Aleksei - 3.3]]
+
+
+:: Aleksei - Mafia Info 3
+Aleksei: And I can trust this information?
+[[Continue|Salesman - Mafia Info 3]]
+
+
+:: Aleksei - Good Info 3
+Aleksei: Is quite alright. What do they want with water?
+[[Continue|Salesman - Good Info 3]]
+
+
+:: Aleksei - 3.3
+Aleksei: It is very nice pin. But you still sold me a a fake.
+[[Continue|Salesman - 4]]
+
+
+:: Aleksei - 3.1
+Aleksei: I do not tolerate lying.
+[[Continue|Salesman - 4]]
+
+
+:: Salesman - Mafia Info 3
+Foreman: I told you my name was "Honest John" didn't I!?
+[[Continue|Aleksei - Mafia Info 4]]
+
+
+:: Salesman - Good Info 3
+Foreman: Haven't the foggiest idea, no sir I do not! But word on the street is that they worship God with the stuff! Well that and the fact that I've seen those guys around drinking my goods and using them as fishbowl crowns, love the idea, should sell those myself!
+[[Continue|Salesman - Good Info 3.2]]
+
+
+:: Salesman - 4
+Foreman: See!? That's all that mat- wait...what?
+[[Continue|Salesman - 5]]
+
+
+:: Aleksei - Mafia Info 4
+Aleksei: You said your name was Evelyn Foreman.
+[[Continue|Salesman - Mafia Info 4]]
+
+
+:: Salesman - Good Info 3.2
+Foreman: If you want to know what they are doing with my water, you're better off asking them yourself!
+[[Continue|Aleksei - Good Info 4]]
+
+
+:: Salesman - 5
+Foreman: Okay okay okay...shit. Um...don't panic, Evelyn, you've been in situations like this before. You know how to deal with angry customers. You had your old partner then, yeah, but you can handle it now.
+[[Continue|Salesman 5.1]]
+
+
+
+:: Salesman - Mafia Info 4
+Foreman: ...
+[[Continue|Salesman - Mafia Info 5]]
+
+
+:: Aleksei - Good Info 4
+Aleksei: I'll look into it.
+[[Continue|0]]
+[[Bye For Now|Aleksei - Happy Ending]]
+
+
+:: Salesman 5.1
+itemGain-- KCONMAN
+Foreman: so, good buddy, did I ever tell of the time my old partner and I scammed some suffragettes? They were working in factory and doing a thing but no one cares what it was, it was such a long time ago, maybe before they had the vote. No one cares about them anymore, I know I don't, right?
+[[Agree|Aleksei - 5.2]]
+[[Disagree|Aleksei - 5.1]]
+[[Who?|Aleksei - 5.3]]
+
+
+:: Salesman - Mafia Info 5
+Foreman: Did I?
+[[Continue|0]]
+[[Bye For Now|Aleksei - Happy Ending]]
+
+
+:: Aleksei - 5.1
+Aleksei: No.
+[[Continue|Salesman - 6]]
+
+
+:: Aleksei - 5.2
+Aleksei: Sure, I guess.
+[[Continue|Salesman - 6]]
+
+
+:: Aleksei - 5.3
+Aleksei: Who?
+[[Continue|Salesman - 6]]
+
+
+:: Salesman - 6
+Foreman: Well, my old partner, he's the face of a generic bystander, but damn was he quick on his feet. Best grifter this side of the east coast. You'll never find a more dishonest son of a bitch. Even I wouldn't trust him as far as I could throw him, but that's mostly because he was heavy. Anyways, one of them ladies needed a prosthetic pinky, so we tried to sell them a replica made of cheap copper.
+[[Continue|Salesman - 6.1]]
+
+
+:: Aleksei - Happy Ending
+Aleksei: Thank you for your time.
+[[Continue|Salesman - Happy Ending]]
+
+
+:: Salesman - 6.1
+Foreman: Long story short, I learned that you always aim for the bridge of the nose when headbutting someone, and that tigers make good distractions for getaways as long as you have chicken strips.
+[[What Was His Name?|Aleksei - 6.1]]
+[[I Need A Pin|Aleksei - 6.2]]
+
+
+:: Salesman - Happy Ending
+Foreman: Come back anytime, I've always got the goods as long as you show me the goods!
+
+
+:: Aleksei - 6.1
+Aleksei: What?
+[[Continue|Salesman - name]]
+
+
+:: Aleksei - 6.2
+Aleksei: Tigers?
+[[Continue|Salesman - 7.1]]
+
+
+:: Salesman - name
+Foreman: My old partner was crazy. Called him Winchester since he never gave out his real name.
+[[Continue|Salesman - end]]
+
+
+:: Salesman - 7.1
+Foreman: Yep. Tigers.
+[[Continue|Salesman - end]]
+
+
+:: Salesman - end
+Foreman: Look, I'd like to help you, I really would. But I simply can't give out refunds like candy, even though you still have to pay for candy.
+[[It's Alright|Aleksei - nice]]
+[[This Better Be The Truth|Aleksei - threaten]]
+
+
+:: Aleksei - nice
+Aleksei: It's alright, I...understand. But you owe me a favor.
+
+
+:: Aleksei - threaten
+Aleksei: You better not be lying. You're already on thin ice with me. I will report you to the authorities. Remember, you owe me.

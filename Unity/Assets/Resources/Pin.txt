@@ -1,0 +1,8 @@
+﻿:: 0
+itemGain-- KFAKEPIN
+This pin looks like a stylized medical cross and sun.
+[[Leave|Leave]]
+
+
+:: Leave
+You leave.

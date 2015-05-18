@@ -1,0 +1,41 @@
+:: 0
+Narrator: This is a thing. Click to continue.
+[[Test|1]]
+
+:: 1
+Narrator: Yep, definitely a thing.
+[[Test|2]]
+
+:: 2
+Narrator: Do you want to pick up the item?
+[[Test|7]]
+[[Test|8]]
+
+:: 3
+itemReq-- BlackBox
+Narrator: You took the black box but it is still here....
+[[Test|9]]
+
+:: 9
+Narrator: Do you really want two items?
+[[Test|4]] 
+[[Test|5]]
+
+:: 4
+Narrator: Yes
+[[Test|6]]
+
+:: 5
+Narrator: No
+[[Test|6]]
+
+:: 6
+Narrator: Yes, no. Either way you aren't getting two items. 
+
+:: 7
+itemGain-- BlackBox
+Narrator: Yes
+[[Test|3]]
+
+:: 8
+Narrator: No

@@ -1,0 +1,20 @@
+﻿:: 0
+Some empty and broken bottles.
+[[Examine|Examine]]
+[[Leave|Leave]]
+
+
+:: Examine
+You take a closer look at the bottles. Most of them are broken, but there is one unbroken bottle.
+[[Take|Take Empty Bottle]]
+[[Leave|Leave]]
+
+
+:: Take Empty Bottle
+itemGain-- BOTTLEEMPTY
+Aleksei picks up the unbroken bottle.
+[[Leave|Leave]]
+
+
+:: Leave
+You leave.

@@ -1,0 +1,30 @@
+﻿:: 0
+The water in the canal is blue and glowing.
+[[Examine|Examine]]
+[[Try to Take|TakeNoBottle]]
+[[Take|TakeWithBottle]]
+[[Leave|Leave]]
+
+
+:: TakeWithBottle
+itemReq-- BOTTLEEMPTY
+itemGain-- BOTTLEGLOWINGWATER
+itemRem-- BOTTLEEMPTY
+You scoop up some glowing water in the empty bottle.
+[[Leave|Leave]]
+
+
+:: Examine
+The glow is both soothing and alien. It does seem to smell better than the regular canal water, but the source of the glow is impossible to tell.
+[[Try to Take|TakeNoBottle]]
+[[Take|TakeWithBottle]]
+[[Leave|Leave]]
+
+
+:: TakeNoBottle
+You don't think carrying around dirty glowing canal water in your bare hands makes any sense.
+[[Leave|Leave]]
+
+
+:: Leave
+You leave.

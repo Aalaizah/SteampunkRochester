@@ -1,0 +1,304 @@
+﻿:: 0
+endingFlag-- 1
+Senton: Ah, Aleksei! It's a pleasure to see you here, good sir! If you would accompany me up to my study?
+[[Pleasure|PoliteFollow]]
+[[...|SilentFollow]]
+[[Sure it is|RudeFollow]]
+
+
+:: PoliteFollow
+happyUp-- MASONSENTON
+Aleksei: A pleasure to see you again as well. You have a marvelous house. When you said office...
+[[Continue|HomeNotOffice]]
+
+
+:: SilentFollow
+Aleksei: *follows silently upstairs*
+[[Continue|Let'sBegin]]
+
+
+:: RudeFollow
+happyDwn-- Senton
+Aleksei: I'm here for work, not for a housecall.
+[[Continue|Let'sBegin]]
+
+
+:: ExamineBottle2
+The inside label text is still below the wine level.
+[[Offer Wine|AskPourTwo]]
+[[Continue|Let'sBegin]]
+
+
+:: HomeNotOffice
+Senton: Yes, thank you. Small, but lovely little place. Here we are!
+[[Continue|OfferWine]]
+[[Continue|Let'sBegin]]
+
+
+:: PourWine2
+itemGain-- GLOWINGBOTTLE
+Aleksei: If you like purple.
+[[Examine bottle again|ExamineBottle2]]
+[[Offer Wine|AskPourTwo]]
+[[Continue|Let'sBegin]]
+
+
+:: PourWine
+itemGain-- GLOWINGBOTTLE
+Senton: You might say that.
+[[Examine bottle again|ExamineBottle2]]
+[[Offer Wine|AskPourTwo]]
+[[Continue|Let'sBegin]]
+
+
+:: AskPourTwo
+Aleksei: Would you care for a glass yourself?
+[[Continue|AnswerPourTwo]]
+
+
+:: AnswerPourTwo
+happyUp-- MASONSENTON
+Senton: Yes. Thank you kindly. 
+[[Continue|PourTwo]]
+
+
+:: PourTwo
+Aleksei *pours a second glass and hands to Senton*
+[[Examine bottle|ExamineBottleAgain]]
+[[Converse|Let'sBegin]]
+
+
+:: OfferWine
+happyReq-- MASONSENTON : 2
+Senton: Would you care for some refreshment? There is some wine on the counter there.
+[[Thank you|GetDrink]]
+[[No thank you|Let'sBegin]]
+
+
+:: GetDrink
+Aleksei: Is this locally made?
+[[Examine glowing bottle|ExamineBottle]]
+[[Pour wine|PourWine]]
+
+
+:: ExamineBottle
+The bottle's bordered label is very plane; it simply says "Red Wine." Somethign else seems to be written on the inside, but it's hard to see through the dark bottle and dark liquid.
+[[Continue|DiscussBottle]]
+
+
+:: DiscussBottle
+Senton: Lovely color, isn't it? The water makes it an almost purple or red violet.
+[[It's light purple.|LightishPurple]]
+[[Pour wine|PourWine2]]
+
+
+:: ExamineBottleAgain
+itemGain-- KSHIPMENTS
+itemRem-- KNOSHIPMENT
+With enough wine poured out of it, the inside of the label can be read clearly. "Scheduled for: Thursday"
+[[Converse|Let'sBegin]]
+
+
+:: Let'sBegin
+Senton: *both sit down in the study* Now, the last time we spoke, you had some interesting questions for me, about the mafia and conmen.
+[[Mafia shipments|AskMafia]]
+[[Are you a conman?|AskConman]]
+
+
+:: LightishPurple
+Aleksei: It's not quite purple. Lightish purple, maybe? Yes.
+[[Pour wine|PourWine]]
+
+
+:: AskConman
+Aleksei: I'm not sure how you fit into all of this Senton. 
+[[You seem like a nice guy|NiceGuy]]
+[[You are very suspiscious|SuspisciousGuy]]
+
+
+:: AskMafia
+Aleksei: At the park, you said the glowing wine you bought was from the mafia. What can you tell me about where you get the wine? Does the mafia make it?
+[[Continue|AnswerMafia]]
+
+
+:: SuspisciousGuy
+Aleksei: There's something off about you and your Church of Light. There's a lot of off color rumors floating around.
+[[Continue|Rumors]]
+
+
+:: Rumors
+Aleksei: And most of them suggest that your past has a lot more color to it than you suggest. 
+[[I met someone|OldFriend]]
+[[Continue|NotConcerned]]
+
+
+:: NiceGuy
+Aleksei: You have been nothing but civil, but at the same time, I have heard a lot of rumors about who you used to be. 
+[[Continue|Rumors]]
+
+
+:: AnswerMafia
+Senton: Yes. I trust you can be decrete. We purchase from both mafia families. They approached me about the deal and of course, I was interested.
+[[Buy from both?|AskBuyBoth]]
+[[Are you crazy|AskBuyBothCrazy]]
+
+
+:: OldFriend
+itemReq-- KCONMAN
+Aleksei: Now, I mean no alarm, but I also met someone I am convinced is an old aquaintence of yours. 
+[[Continue|SentonReply]]
+
+
+:: AskBuyBoth
+Aleksei: Buying from two rival families does not seem a wise choice.
+[[Continue|AnswerBuyBoth]]
+
+
+:: AskBuyBothCrazy
+Aleksei: Are you mad? Buying from two rival families?
+[[Continue|AnswerBuyBoth]]
+
+
+:: SentonReply
+Senton: An old friend of mine, huh? Do tell.
+[[Continue|NotConcerned]]
+
+
+:: AnswerBuyBoth
+Senton: I do have underworld contacts. I know what I am doing. Is there anything else? I'm not sure I can tell you much. Talk to the Zicardi's or Mercurios if you want to know more. Just be discrete.
+[[How is the wine made|AskWineMade]]
+[[Shipments?|AskShipments]]
+[[About your past...|AskConman]]
+
+
+:: NotConcerned
+Aleksei: You don't seem concerned about being found out...
+[[Continue|PleaseContinue]]
+
+
+:: AskShipments
+itemReq-- KNOSHIPMENT
+Aleksei: When are the shipments made? And where?
+[[Continue|AnswerShipments]]
+
+
+:: AskWineMade
+Aleksei: Do you know anything about how they make the wine?
+[[Continue|AnswerWineMade]]
+
+
+:: PleaseContinue
+Senton: I would hate to interupt your planned reveal. Please continue.
+[[Okay then...|RevealSenton]]
+[[No, tell me|WhyNotConcerned]]
+
+
+:: AnswerShipments
+Senton: There's one on Sundays. I don't remember when the other is. It's been a long time since I managed shipping.
+[[How is wine made|AskWineMade]]
+[[About your past...|AskConman]]
+
+
+:: AnswerWineMade
+Senton: If it's not made like normal wine, I have have hardly any idea. I appreciate the daily glass; it's good for you, but I don't know. It works.
+[[Shipments?|AskShipments]]
+[[About your past...|AskConman]]
+
+
+:: WhyNotConcerned
+Aleksei: Please, I would prefer not to make a fool of myself. What I am not understand here?
+[[Continue|ExplainPast]]
+
+
+:: RevealSenton
+Aleksei: Well alright. It stems from the rumors some citizens are sharing about you. When I confronted you, you seemed very intent on talking to me when I mentioned "conman."
+[[Continue|RevealSentonFriend]]
+[[Continue|RevealSenton3]]
+
+
+:: RevealSentonFriend
+itemReq-- KCONMAN
+Aleksei: And as for your friend, Evelyn Foreman, he is currently a down-on-his-luck salesman trying to profit off of your church.
+[[Continue|RevealSenton2]]
+
+
+:: ExplainPast
+Senton: I am not concerned you know the truth because you have no way to prove it.
+[[Continue|ExplainPast2]]
+
+
+:: RevealSenton2
+Aleksei: When I confronted him about this and his source for purified glowing water, he mentioned an old conman partner he had. He described him exactly like you.
+[[Continue|RevealSenton3]]
+
+
+:: ExplainPast2
+Senton: Believe I caused the glowing water if you wish. I'm a protected figure in this community, good sir. Besides, even if I did do it, where do you think I got the man power? Where would anyone get the man power? Or the supplies to even tint the canal blue for one day of the year? Who's making the most money off of this? Certainly not me! What kind of conman would I be, making less money than the mafia?
+[[A good one.|GoodConman]]
+[[A bad one.|BadConman]]
+
+
+:: RevealSenton3
+Aleksei: It has to be you. You're a conman. Did you set up the glowing water for your plan? How?
+[[Continue|AnswerReveal]]
+
+
+:: GoodConman
+happyUp-- MASONSENTON
+Aleksei: Perhaps that is exactly the place a good conman would want to be; less suspect than those making more. 
+[[Continue|Dismissal]]
+
+
+:: BadConman
+happyUp-- MASONSENTON
+Aleksei: It doesn't make you a very good or profitable one. 
+[[Continue|Dismissal]]
+
+
+:: AnswerReveal
+Senton: I don't need to admit anything to you. You're looking for a good story and sometimes the best stories are a struggle. You don't have any proof. The ramblings of random citizens are no grounds for anything.
+[[I might have no proof...|IDontKnowYou]]
+[[What about the water?|AboutWater]]
+
+
+:: Dismissal
+Senton: Whatever you think, I have a right to privacy. And right now, the press is unwelcome in it. Find out from someone else who dumped-- made your water glow.
+[[Good-bye|Leave]]
+[[What did you say?|Dumped]]
+
+
+:: IDontKnowYou
+Aleksei: It occurs to me I don't know you very well. I have just done a lot of listening to rumors. Please, tell me about yourself.
+[[Continue|ExplainSelf]]
+
+
+:: AboutWater
+Aleksei: Did you orchestrate the glowing water?
+[[Continue|AnswerWater]]
+
+
+:: Dumped
+happyDwn-- MASONSENTON
+Aleksei: Wait, what do you mean by dumped? You know what was put in the canal? By you or someone else?
+[[Continue|HoldOn]]
+
+
+:: ExplainSelf
+happyDwn-- MASONSENTON
+Senton: I am a man very invested in taking care of one's body. I also spent a great deal of time socializing with people and taking their money. But what I did is of little consequence.
+[[Continue|ExplainPast]]
+
+
+:: AnswerWater
+happyDwn-- MASONSENTON
+Senton: Dear sir, no, I'm not going to tell you if I did! The mafia are the ones making money off of poor innocent folks such as myself and the Church. Let me explain.
+[[Continue|ExplainPast]]
+
+
+:: HoldOn
+Senton: Nothing. I don't know anything. I only suspect chemical waste but it's not my concern. I'm just the innocent man running a church. Good-bye, Aleksei.
+[[Good-bye|Leave]]
+
+
+:: Leave
+Aleksei: Good-day, sir.

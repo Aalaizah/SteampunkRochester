@@ -1,0 +1,28 @@
+﻿:: 0
+The water in the canal is very murky.
+[[Examine|Examine]]
+[[Try to Take|TakeNoBottle]]
+[[Take|TakeWithBottle]]
+[[Leave|Leave]]
+
+
+:: TakeWithBottle
+itemReq-- BOTTLEEMPTY
+itemGain-- BOTTLEWATER
+You scoop up some water in the empty bottle.
+[[Leave|Leave]]
+
+
+:: Examine
+There doesn't seem to be anything in the water, but it is too dark and dirty to see very deep. Who knows what has settled on the bottom.
+[[Try to Take|TakeNoBottle]]
+[[Take|TakeWithBottle]]
+[[Leave|Leave]]
+
+
+:: TakeNoBottle
+You don't think carrying around dirty canal water in your bare hands is safe.
+[[Leave|Leave]]
+
+:: Leave
+You leave.

@@ -1,0 +1,209 @@
+﻿:: 0
+Man in bar: Hey, I remember you from somewhere. Get over here and join me for a drink. Who were you again?
+[[Remember|InitializeConvoRemember]]
+[[Approach|InitializeConvo]]
+
+
+:: InitializeConvoRemember
+itemReq-- BUSINESSCARD
+Alekei: Tim White! We met at the park. You gave me your business card. I'm Aleksei, the reporter. How's Gizmo?
+[[Continue|RememberCont]] 
+
+
+
+
+:: InitializeConvo
+Aleksei: I'm Aleksei, a reporter. And you are?
+[[Continue|ConvoCont]]
+
+
+:: RememberCont
+Tim White: Gizmo's great! He's at home resting right now. Those walks sure do tire him out, but they're great for him! Are you going to join me for a drink, friend?
+[[Have Drink|FirstDrink]]
+[[Say No|NoDrink]]
+
+
+:: ConvoCont
+itemGain-- BUSINESSCARD
+???: The name is Tim. Tim White. Join me for a drink, will you?
+[[Have Drink|FirstDrink]]
+[[Say No|NoDrink]]
+
+
+:: FirstDrink
+Aleksei: Certainly.
+[[Give Alcohol|BuyDrink]]
+[[Have No Alcohol|NoGiveDrink]]
+
+
+:: NoDrink
+Aleksei: No thanks. Maybe another time?
+[[Continue|Definitely]]
+
+
+:: Definitely
+Tim White: Of course, friend. You're a busy man! When you have time, I'm sure you'll be able to find me. You have my card.
+
+
+:: BuyDrink
+itemReq-- ALCOHOL
+happyUp-- TIMWHITE
+Aleksei: Here's a drink.
+[[Continue|AskQuestions]]
+
+
+:: NoGiveDrink
+Aleksei: I don't have any alcohol right now.
+[[Continue|AskQuestions]]
+
+
+:: AskQuestions
+Aleksei: So I would like to talk to you about...
+[[Your job|AskJob]]
+[[Gizmo|AskDog]]
+[[Your family|AskFamily]]
+[[Church of Light Leader|AskChurch]]
+[[Leave|Leave]]
+
+
+:: AskJob
+Tim White: I'm an accountant at the Cunningham Carriage Factory. A fairly good one at that. I've been keeping an eye on records for years!
+[[Continue|AskJob2]]
+
+
+:: AskDog
+happyReq-- TIMWHITE : 1
+Aleksei: You never told me what happened to your dog, Gizmo.
+[[Continue|AskDog2]]
+
+
+:: AskFamily
+happyReq-- TIMWHITE : 2
+Aleksei: So, Tim. What's your family like?
+[[Continue|AskFamily2]]
+
+
+:: AskChurch
+happyReq-- TIMWHITE : 3
+Aleksei: What can you tell me about the founder of the Church of Light?
+[[Continue|AskChurch2]]
+
+
+:: AskJob2
+Aleksei: So you like your job, I assume? You seem to speak of it very fondly.
+[[Change Topic|AskQuestions]]
+[[Goodbye|Leave]]
+
+
+:: AskDog2
+Tim White: Gizmo! My poor Gizmo...I can't even...he was run over...
+[[Continue|AskDog3]]
+
+
+:: AskFamily2
+Tim White: Not good. But you're my friend, and I'd love somebody to talk to.
+[[Continue|AskFamily3]]
+
+
+:: AskChurch2
+Tim White: That man has a mysterious past, but he's such a nice guy.
+[[Continue|AskChurch3]]
+
+
+:: AskDog3
+Aleksei: He was hit by a car?
+[[Continue|AskDog4]]
+
+
+:: AskFamily3
+Aleksei: I'm here for you. What is it?
+[[Continue|AskFamily4]]
+
+
+:: AskChurch3
+Aleksei: What do you mean "mysterious past?"
+[[Continue|AskChurch4]]
+
+
+:: AskDog4
+Tim White: No, worse! A man flew past me in these steam-powered roller skates, and hit my poor Gizmo! It was TRAGIC!
+[[Continue|AskDog5]]
+
+
+:: AskFamily4
+Tim White: I had a beautiful wife and two wonderfully smart and perfect children. But my wife wasn't happy. Says I wasn't exciting enough. She left, took the kids, and left me alone.
+[[Continue|AskFamily5]]
+
+
+:: AskChurch4
+Tim White: If you promise not to tell anyone...I heard that the Church of Light leader, Mason Senton, used to run a speakeasy in New York City. Or maybe it was the mafia. Cons? Maybe he was a con artist. And maybe it wasn't New York...maybe New...Boston? Albuquerque? New England?
+[[New Hampshire?|NewHampshire]]
+[[Continue|AskChurch5]]
+
+
+
+:: AskDog5
+Aleksei: *glances nervously around bar*
+[[Continue|AskDog6]]
+
+
+:: AskFamily5
+Aleksei: I'm very sorry to hear that, Tim. That's rough. But I believe it will get better. We have a saying back home: "there'll be a party on our street too."
+
+[[Continue|AskFamily6]]
+
+
+:: NewHampshire
+Alexei: Perhaps New Hampshire?
+[[Continue|ThatsRight]]
+
+
+:: AskDog6
+Tim White: He was lying there in the street, poor little Gizmo! Not even a year old! Who could do such a horrible thing?! *sobs*
+[[Continue|AskDog7]]
+
+
+:: AskFamily6
+Tim White: Haha, yes there will be! And Gizmo will be joining us!
+[[Continue|AskFamily7]]
+
+
+:: ThatsRight
+happyUp-- TIMWHITE
+Tim White: YES! New Hampshire!! That was definitely it.
+[[Continue|AskChurch5]]
+
+
+:: AskDog7
+endingFlag-- 2
+Tim White: Thankfully, this man came up to me, and said he could save my dog. So he brought Gizmo and I to his home.  When we got there, he applied some home remedies, and let Gizmo drink some glowing water which he learned the healing properties of from the Church of Light. A day later, Gizmo was running around like his normal self. It was MAGIC!
+[[Continue|AskDog8]]
+
+
+:: AskFamily7
+Aleksei: That he will be, Tim.
+
+[[Change Topic|AskQuestions]]
+[[Goodbye|Leave]]
+
+
+:: AskChurch5
+itemGain-- KSENTONRUMORS
+Aleksei: Thank you, Tim. I promise I won't tell anyone.
+[[Change Topic|AskQuestions]]
+[[Goodbye|Leave]]
+
+
+:: AskDog8
+Tim White: And so that's why I converted to the Church of Light. I felt like they were looking out for me and Gizmo, something I never really felt from my old church.
+[[Continue|AskDog9]]
+
+
+:: AskDog9
+Aleksei: That's...that's amazing. Yes, amazing.
+[[Change Topic|AskQuestions]]
+[[Goodbye|Leave]]
+
+
+:: Leave
+Aleksei: Thank you for your time, Mr. White.

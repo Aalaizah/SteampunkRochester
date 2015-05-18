@@ -1,0 +1,36 @@
+:: 0
+Editor: It's about damn time. Do you finally have a story for me, Aleksei?
+[[Yes|YesMan]]
+[[No|NoMan]]
+
+
+
+:: NoMan
+Aleksei: No sir, I do not.
+[[Continue|GetBackToWork]]
+
+
+:: YesMan
+Aleksei: Yes, I've found you a story. It took a while to find the leads, but I finally have it.
+[[Continue|GiveItToMe]]
+
+
+:: GetBackToWork
+Editor: THEN GET BACK OUT THERE AND FIND ME ONE! I NEED IT YESTERDAY!
+[[Goodbye|Goodbye]]
+
+
+:: GiveItToMe
+Editor: Well, give me the rundown on it. We kinda need this to blow fish out of the water...sales haven't been good recently...
+[[Truth About Senton|SentonStory]]
+
+:: SentonStory
+Aleksei: I found that the Church of Light leader, Mason Senton, has been manipulating the church's members for his own gain. He may have actually had something to do with it's spread in the first place, but I can't confirm that without more investigation. He used to work as a conman down by the canal, but appparently moved on to bigger fish.
+[[Continue|SentonStoryContinued]]
+
+:: SentonStoryContinued
+Editor: *looks at you with a mildy excited look, as if he's trying to hide it but failed*
+[[Continue|SentonStoryEnd]]
+
+:: SentonStoryEnd
+Editor: Hmm, was hoping for a story like that. Type it up, and I'll proof it before we send it out tomorrow.

@@ -1,0 +1,72 @@
+﻿:: 0
+Editor: Get in here, you lazy bums! I didn't give my sweat and blood for nine years to get promoted to Editor to let a communist, a woman, and a bloody Irishman earn a free lunch on my watch!
+[[Sassy reply|SassyReply]]
+[[Not a Communist|NotCommunist]]
+[[Silence(continue)|Assignments]]
+
+
+:: NotCommunist
+Aleksei: I am not a communist. I have never been a communist. Stop saying I'm a communist...
+[[Continue|EditorIgnores]]
+
+
+
+:: SassyReply
+Aleksei: Is this not the land of the free? I thought that applied to our lunches.
+[[Continue|EditorIrate]]
+
+
+
+:: EditorIrate
+Editor: You're lucky I don't can you right here, Ruskie. It's only because I need someone more...refined than the others here.
+[[Continue|KeiranSophieGlare]]
+
+
+:: EditorIgnores
+Editor: I don't care what you say, Aleksei. Ruskies are to Communism what ducks are to birds - ducks are always birds, but not all birds are ducks.
+[[Continue|Assignments]]
+
+
+:: KeiranSophieGlare
+*Keiran and Sophie glare at him*
+[[Continue|EditorFumbles]]
+
+
+:: EditorFumbles
+Editor: ...Who have their own special talents that I need the use of.
+[[Continue|Assignments]]
+
+
+:: Assignments
+Editor: Look. Because I am a compassionate and caring man-
+[[Continue|KeiranInterrupt]]
+
+
+:: KeiranInterrupt
+Keiran: *snorts* You sure about that?
+[[Continue|Assignments2]]
+
+
+:: Assignments2
+Editor: *scowls* As I was saying, I'm a kind and caring person, and I've suddenly found an assignment for the three of you to work on. Together.
+[[Continue|SophieInterrupt]]
+
+
+:: SophieInterrupt
+Sophie: The three of us? Together? I don't need these two... *stops herself* ...to assist me. I can do this on my own.
+[[Be offended|BeOffended]]
+[[Continue|Assignment3]]
+
+
+:: BeOffended
+Aleksei: Your insinuation of my incompetence hurts.
+[[Continue|Assignment3]]
+
+
+:: Assignment3
+Editor: This story is going to require several sources, sources it would be impossible for just one of you to interview all of. I assume you all have heard about the glowing water? You're all...competent journalists. I want to know what caused it. 
+[[Continue|TalkToYourPeople]]
+
+
+:: TalkToYourPeople
+Editor: Talk to your people to find some leads. You, Fluffy, you're good with the fancy pants people - see if you can pull something from them. Sophie, everyone here knows you're a woman, so go talk to them suffra-whatchamacallits. And Kieran...go dig up some of those bodies you and your old Ziccardi chums buried.

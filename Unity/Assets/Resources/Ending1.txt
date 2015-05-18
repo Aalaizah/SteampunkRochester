@@ -1,0 +1,39 @@
+:: 0
+Editor: It's about damn time. Do you finally have a story for me, Aleksei?
+[[Yes|YesMan]]
+[[No|NoMan]]
+
+
+:: NoMan
+Aleksei: No sir, I do not.
+[[Continue|GetBackToWork]]
+
+
+:: YesMan
+Aleksei: Yes, I've found you a story. It took a while to find the leads, but I finally have it.
+[[Continue|GiveItToMe]]
+
+
+:: GetBackToWork
+Editor: THEN GET BACK OUT THERE AND FIND ME ONE! I NEED IT YESTERDAY!
+[[Goodbye|Goodbye]]
+
+
+:: GiveItToMe
+Editor: Well, give me the rundown on it. We kinda need this to blow fish out of the water...sales haven't been good recently...
+[[The Miracle Of The Glowing Water|DogStory]]
+
+
+:: Goodbye
+Fluffy: Dah, I will go get story for you. Goodbye.
+
+:: DogStory
+Aleksei: So, from talking to a man in a bar, I found out that the glowing water has healing properties. The man's dog was mortally wounded, but the water healed it completely within a day. Turns out the Church of Light isn't so crazy after all. Maybe I'll become a member...
+[[Continue|DogStoryContinued]]
+
+:: DogStoryContinued
+Editor: *looks at you with a confused look on his face, then gives a deep, exhausted sigh*
+[[Continue|DogStoryEnd]]
+
+:: DogStoryEnd
+Editor: ...well, I guess that's what we're printing now, not enough time to find anything better...

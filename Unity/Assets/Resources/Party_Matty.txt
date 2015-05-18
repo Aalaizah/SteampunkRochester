@@ -1,0 +1,148 @@
+﻿:: 0
+Matty: Aleksei! So glad you could make it, darling.
+[[Hello|Hi]]
+[[Thanks|Thank]]
+
+
+:: Hi
+Aleksei: Hello, Matty! I apologize for being unable to stay for the party, but I wanted to come by and say hello!
+[[Questions|Questions]]
+
+
+:: Thank
+Aleksei: Thanks for inviting me, Matty. I wish I could stay instead of dropping by early but it’s been awhile since we last talked.
+[[Questions|Questions]]
+
+
+:: Questions
+Aleksei: What should I ask about?
+[[How are you?|AskYou]]
+[[Who's invited?|Who]]
+[[Purpose of party|Why]]
+[[The drink|Drink]]
+[[Goodbye|Leave]]
+
+
+:: AskYou
+Aleksei: How are you, Matty? What have you been up to?
+[[Continue|MattyLife]]
+
+
+:: Who
+Aleksei: Who did you invite, Matty?
+[[Continue|NewFriends]]
+
+
+:: Why
+Aleksei: So what led you to organize a party tonight?
+[[Continue|Reason]]
+
+
+:: Drink
+Aleksei: There seems to be something curious about the water, Matty. It almost looks as if it's glowing!
+[[Continue|TheRage]]
+
+
+:: MattyLife
+Matty: Oh well life is fabulous! I've met such a wonderful group of new companions. We have tea every morning and they've been introducing me to a new healthy lifestyle! They are really a joy to be around.
+[[Matty's friends|Matty'sFriends]]
+[[Your work|YourWork]]
+
+
+:: NewFriends
+Matty: Oh well, my new friends mostly, Aleksei! They're all so welcoming and have fabulous tales. I was hoping they would lead you to your next story? They're not snooty like those suffragettes I used to converse with.
+[[Continue|ThanksInvite]]
+
+
+:: Reason
+Matty: I just love parties! With all of my new friends, I had a great reason enjoy their company.
+[[Continue|Rumors]]
+
+
+:: TheRage
+Matty: Oh it's all the rage now, darling. I was actually just introduced to it! It's a little bit of natural glowing water from the canal, and it shines like the sun!
+[[Continue|Odd]]
+
+
+:: Matty'sFriends
+Aleksei: That's wonderful, Matty. Where did you meet these new friends?
+[[Continue|WhereMeet]]
+
+
+:: YourWork
+Matty: How about you, Aleksei, darling? Have your investigations resulted in any fabulous escapades?
+[[Continue|NextBigThing]]
+
+
+:: ThanksInvite
+Aleksei: Well then I must thank you for inviting me.
+[[Converse|OfCourse]]
+
+
+:: Rumors
+Aleksei: Being a journalist, I love meeting new people and I'm always one for chatter, Matty. Have you heard any rumors lately?
+[[Continue|LearnRumor]]
+
+
+:: Odd
+Aleksei: How odd. I'll have to look into it.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: WhereMeet
+happyUp-- MATTY
+Matty: Well, I was strolling through the park and they were having a little gathering and having such a fabulous time that I just had to approach them and join. So happy that I did, because they're just so very kind.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: NextBigThing
+Aleksei: I'm in between stories. I'm looking for the next big thing; that Pulitzer Prize is calling to me, Matty. I just have to figure out how to get there.
+[[Continue|AlekseiWriting]]
+
+
+:: OfCourse
+Matty: Of course, Aleksei. It's always good to have you here.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: LearnRumor
+Matty: There's been a lot of talk about the canal water... most nights is completely lit, as if it was full of lanterns! My friends and I are actually planning to take a boat and cruise down the canal one night; it's going to be absolutely gorgeous.
+[[Continue|Safety]]
+
+
+:: AlekseiWriting
+Matty: And I'm sure you will. You're just a gem! Your writing always puts me on the edge of my seat.
+[[Thanks|AlekseiThank]]
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: Safety
+Aleksei: Are you sure that's safe? Any water like that seems a little contaminated to me.
+[[Continue|SafetoDrink]]
+
+
+:: AlekseiThank
+happyUp-- MATTY
+Aleksei: Thanks, Matty.
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: SafetoDrink
+Matty: Oh, Aleksei. The water is perfectly safe. My friends are very knowledgeable in health and safety, especially concerning the canal water. It's even perfectly fine to drink too!
+[[Drink Canal water?|TheRage]]
+[[Ask Another Question|Questions]]
+[[Goodbye|Leave]]
+
+
+:: Leave
+Aleksei: I'm going to leave now, Matty. I have work to do in the morning. Enjoy your party!
+[[Continue|Leave2]]
+
+
+:: Leave2
+Matty: Of course, Aleksei. It's always wonderful catching up. We'll have to go out for tea soon.
