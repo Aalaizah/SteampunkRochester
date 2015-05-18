@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour {
 	public GameObject PauseUIPrefab;
 	public GameObject InventoryUIPrefab;
 	public GUISkin skin;
+	public GameObject creditsPrefab;
 	GameObject mapUI;
+	GameObject[] menuButtons;
 
 	// Use this for initialization
 	void Start () {
@@ -64,7 +66,33 @@ public class UIManager : MonoBehaviour {
 		Application.Quit ();
 	}
 
-	public void mainMenuStart(){
+	public void Credits(){
+
+		if(menuButtons == null)
+		{
+			menuButtons = GameObject.FindGameObjectsWithTag("MenuUI");
+		}
+		
+		for(int i = 0; i < menuButtons.Length; i++)
+		{
+			menuButtons[i].SetActive(false);
+		}
+
+		creditsPrefab.SetActive (true);
+	}
+
+	public void CreditReturn()
+	{
+		creditsPrefab.SetActive (false);
+
+		for(int i = 0; i < menuButtons.Length; i++)
+		{
+			menuButtons[i].SetActive(true);
+		}
+	}
+
+	public void MainMenuStart(){
 		//Load Main scene here
+	
 	}
 }

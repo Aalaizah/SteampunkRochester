@@ -243,7 +243,7 @@ public class DialogueComponent : MonoBehaviour {
 						}
 						else
 						{
-							choiceHeight = choiceAreaHeight / 5;
+							choiceHeight = choiceAreaHeight / 4;
 							yInc++;
 						}
 
