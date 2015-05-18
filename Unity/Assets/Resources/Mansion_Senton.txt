@@ -1,6 +1,6 @@
 ﻿:: 0
 endingFlag-- 1
-Senton: Ah, Aleksei! It's a pleasure to see you here, good sir! If you would accompany me up to my study? (this conversation won't open until the player gets info on Senton's past and might be a one time thing)
+Senton: Ah, Aleksei! It's a pleasure to see you here, good sir! If you would accompany me up to my study?
 [[Pleasure|PoliteFollow]]
 [[...|SilentFollow]]
 [[Sure it is|RudeFollow]]
@@ -233,7 +233,7 @@ Aleksei: When I confronted him about this and his source for purified glowing wa
 
 
 :: ExplainPast2
-Senton: Believe I caused the glowng water if you wish. I'm a protected figure in this community, good sir. Besides, even if I did do it, where do you think I got the man power? Where would anyone get the man power? Or the supplies to even tint the canal blue for one day of the year? Who's making the most money off of this? Certainly not me! What kind of conman would I be, making less money than the mafia?
+Senton: Believe I caused the glowing water if you wish. I'm a protected figure in this community, good sir. Besides, even if I did do it, where do you think I got the man power? Where would anyone get the man power? Or the supplies to even tint the canal blue for one day of the year? Who's making the most money off of this? Certainly not me! What kind of conman would I be, making less money than the mafia?
 [[A good one.|GoodConman]]
 [[A bad one.|BadConman]]
 
