@@ -150,7 +150,7 @@ Senton: The mafia? We get our wine through legitimate means, thank you. Is there
 
 
 :: AskRumors
-ItemReq-- KSENTONRUMORS
+itemReq-- KSENTONRUMORS
 Aleksei: I heard a few rumors about you...
 [[Mafia boss|AskMafia]]
 [[Conman|AskConman]]
