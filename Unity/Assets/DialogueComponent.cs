@@ -142,7 +142,7 @@ public class DialogueComponent : MonoBehaviour {
 	public void OnDialogueCompelete()
 	{
 		//if this is a person and you haven't already talked to them, move time forward an hour
-		if(Interactable.KEYMASTER.isPerson && !Interactable.KEYMASTER.hasAlreadyTalked)
+		if(Interactable.KEYMASTER.isPerson)
 		{
 			timeManager.passTime(60);
 			Interactable.KEYMASTER.hasAlreadyTalked = true;
