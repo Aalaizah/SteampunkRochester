@@ -13,8 +13,9 @@ public class TestManager : MonoBehaviour {
 	//Inventory inv;
 	public static string currentLevel;
 	static string currLvl;
-	static bool finalLoaded = false;
+	public static bool finalLoaded = false;
 	public GUISkin normal;
+	bool disabledCanvas = false;
 	// Use this for initialization
 	void Start () {
 		/*GameObject testInteractable = new GameObject("BlackBox");
@@ -94,6 +95,11 @@ public class TestManager : MonoBehaviour {
 			Object.Destroy(transform.parent.gameObject);
 			Instantiate(Resources.Load("Prefabs/locations/Editor_Office_Final")as GameObject);
 			finalLoaded = true;
+		}
+		if(finalLoaded && !disabledCanvas)
+		{
+			GameObject.Find("Canvas").SetActive(false);
+			disabledCanvas = true;
 		}
 		//Debug.Log (test.selected);
 		/*foreach(Interactable test in interactables)

@@ -162,6 +162,12 @@ public class DialogueComponent : MonoBehaviour {
 		Interactable.KEYMASTER.spriteRenderer.sprite = null;
 		scrollingCamera.enabled = true;
 		scrollingCam.enabled = true;
+
+		if(TestManager.finalLoaded)
+		{
+			System.Threading.Thread.Sleep(2000);
+			Application.LoadLevel("MainMenu");
+		}
 		//RELEASE THE KEYMASTER now others can hold the power
 		Interactable.KEYMASTER = null;
 		Destroy(this.gameObject);

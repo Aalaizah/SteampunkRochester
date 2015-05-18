@@ -37,6 +37,6 @@ public class MainMenuManager : MonoBehaviour {
 	
 	public void MainMenuStart(){
 		//Load Main scene here
-		
+		Application.LoadLevel("MapScene");
 	}
 }
