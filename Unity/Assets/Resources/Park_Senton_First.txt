@@ -1,5 +1,5 @@
 ﻿:: 0
-Priest: Hello there.
+Man: Hello there.
 [[Hello|Hi]]
 [[Who are you?|AskWho]]
 [[What is going on here?|AskHere]]
@@ -10,19 +10,29 @@ Aleksei: Good day.
 [[Continue|AnswerHi]]
 
 
+:: AnswerHi
+Man: How may I be of service to you?
+[[Who are you?|AskWho]]
+[[What is going on here?|AskHere]]
+
+
 :: AskWho
 Aleksei: Who are you?
 [[Continue|AnswerWho]]
 
 
-:: AnswerHi
-Priest: How may I be of service to you?
-[[Who are you?|AskWho]]
-[[What is going on here?|AskHere]]
+:: AskHere
+Aleksei: What is happening here?
+[[Continue|AnswerHere]]
+
+
+:: AnswerHere
+Man: This is our daily church gathering. We worship through exercise and nutrition the way others do through song. I am Mason Senton, the founder. Many call me a Priest, which isn't true.
+[[The Church?|AskCoL]]
 
 
 :: AnswerWho
-Priest: I am Mason Senton. I am the founder of this Church and the chief representative of this congregation.
+Man: I am Mason Senton. I founded this Church and am the chief representative of this congregation.
 [[The Church?|AskCoL]]
 [[How old is the church?|AskCoLAge]]
 
@@ -32,30 +42,15 @@ Aleksei: You mean the Church of Light? What exactly do you worship?
 [[Continue|AnswerCoL]]
 
 
-:: AskHere
-Aleksei: What is happening here?
-[[Continue|AnswerHere]]
-
-
-:: AskCoLAge
-Aleksei: You're the founder? The church can't be very old then.
-[[Continue|AnswerCoLAge]]
-
-
 :: AnswerCoL
 Senton: We're Protestant. We serve and praise the Trinity through holistic well-being and humanitarian work. 
-[[Convert me?|Convert?]]
+[[Not convert me?|Convert?]]
 [[How old is the church?|AskCoLAge]]
 
 
-:: AnswerHere
-Priest: This is our daily church gathering. We worship through exercise and nutrition the way others do through song. I am Mason Senton, the founder. Many call be a Priest, which isn't true.
-[[The Church?|AskCoL]]
-
-
-:: AnswerCoLAge
-Senton: The Church of Light is as old as the glowing water here, yet people seem to believe it has always been here, even before we could see it.
-[[Continue|AnswerColAge2]]
+:: AskCoLAge
+Aleksei: If you're the founder, the church can't be very old.
+[[Continue|AnswerCoLAge]]
 
 
 :: Convert?
@@ -63,35 +58,27 @@ Aleksei: You're not going to convert me?
 [[Continue|AnswerConvert]]
 
 
-:: AnswerColAge2
-Senton: The Church of Light is new, but our ideas of nutrition and exercise are not. The glowing element of the water simply helps us achieve our goals. 
-[[Continue|AnswerConvert2]]
+:: AnswerCoLAge
+Senton: The Church of Light is only as old as the glowing water, yet I have been trying to found a holistic religion for many years.
+[[Continue|AnswerColAge2]]
 
 
 :: AnswerConvert
-Senton: No, I won't. I don't like it when people force religion on others. However, I would encourage you to consider your physical well-being hand in hand with your spiritual.
+Senton: No, I would not. I do not force religion on others. However, I would encourage you to consider your physical well-being hand in hand with your spiritual.
+[[Continue|AnswerConvert2]]
+
+
+:: AnswerColAge2
+Senton: The Church of Light is new, but nutrition and exercise are not. The glowing element of the water simply helps us achieve our goals.
 [[Continue|AnswerConvert2]]
 
 
 :: AnswerConvert2
-Senton: Joining the Church of Light is more about looking after yourself to honor God. Feel free to join the exercising. 
+Senton: Our church is more about looking after yourself and cleansing your body to honor God. We give out pins to any and all who worship with us. Feel free to join the exercising.
 [[Certainly|JoinIn]]
 [[I might later|JoinIn]]
 [[No, thank you|NoJoin]]
 [[I hate exercising.|NoJoinRude]]
-
-
-:: NoJoin
-Aleksei: I politely decline. But thank you for the offer.
-[[Ask Questions?|AskQuestions]]
-[[Good-bye|Good-bye]]
-
-
-:: Pin
-itemGain-- PIN
-Senton: If you do, here is a pin, as a reminder of your experience. I encourage you to return to us. And that way, the congregation knows you have talked to me.
-[[Ask Questions?|AskQuestions]]
-[[Good-bye|Good-bye]]
 
 
 :: JoinIn
@@ -100,9 +87,22 @@ Aleksei: I may join in later.
 [[Continue|Pin]]
 
 
+:: NoJoin
+Aleksei: I decline for now. But thank you for the offer.
+[[Ask Questions?|AskQuestions]]
+[[Good-bye|Good-bye]]
+
+
 :: NoJoinRude
 happyDwn-- MASONSENTON
 Aleksei: No, I don't like exercising.
+[[Ask Questions?|AskQuestions]]
+[[Good-bye|Good-bye]]
+
+
+:: Pin
+itemGain-- PIN
+Senton: If you do, here is a pin, as a reminder of your experience. I encourage you to return to us. And that way, the congregation knows you have talked to me.
 [[Ask Questions?|AskQuestions]]
 [[Good-bye|Good-bye]]
 
@@ -128,11 +128,6 @@ Senton: What would you like to know?
 [[No more questions|DoneQuestions]]
 
 
-:: AskGlowingWater
-Aleksei: What do you believe in regards to the glowing water?
-[[Continue|AnswerGlowingWater]]
-
-
 :: AskCoLAgain
 Aleksei: Can you tell me again about the Church of Light and what you believe?
 [[Continue|AnswerCoLAgain]]
@@ -143,26 +138,35 @@ Aleksei: Besides being the founder, what do you do in the church?
 [[Continue|AnswerJob]]
 
 
-:: AnswerGlowingWater
-Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
-[[Continue|AnswerGlowingWater2]]
-[[Other Questions|DoQuestions]]
+:: AskGlowingWater
+Aleksei: What do you believe in regards to the glowing water?
+[[Continue|AnswerGlowingWater]]
 
 
 :: AnswerCoLAgain
-Senton: The Church of Light was founded with the discovery of the glowing water a short while ago. We're a very small protestant group seeking to become a real church
+Senton: The Church of Light was founded with the discovery of the glowing water a short while ago. We're a very small protestant group who believe in purifying our entire selves in service to God.
 [[Other Questions|DoQuestions]]
+[[No more questions|DoneQuestions]]
 
 
 :: AnswerJob
-Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occassionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
+Senton: I try to keep an eye on everything and make sure things stay organized. I occasionally  give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distinct religion and church.
 [[Why?|WhyRecognized]]
 [[Other Questions|DoQuestions]]
+[[No more questions|DoneQuestions]]
+
+
+:: AnswerGlowingWater
+Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nurture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
+[[Continue|AnswerGlowingWater2]]
+[[Other Questions|DoQuestions]]
+[[No more questions|DoneQuestions]]
 
 
 :: AnswerGlowingWater2
 Senton: Personally, I don't think it tastes any different, but it does make me feel livelier. You should try it some time.
 [[Other Questions|DoQuestions]]
+[[No more questions|DoneQuestions]]
 
 
 :: WhyRecognized
@@ -171,8 +175,9 @@ Aleksei: Why do you want to be recognized?
 
 
 :: AnswerRecognized
-Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
+Senton: Why, to make sure that people know we are serious about our beliefs and to ensure those of the same thought can find us. It can be expensive advertising in the papers. And churches are tax exempt, which would ease a lot of the financial strain.
 [[Other Questions|DoQuestions]]
+[[No more questions|DoneQuestions]]
 
 
 :: DoneQuestions
@@ -182,3 +187,5 @@ Aleksei: I don't have any more questions.
 
 :: Good-bye
 Aleksei: Farewell.
+
+

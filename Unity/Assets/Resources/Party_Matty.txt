@@ -44,18 +44,18 @@ Aleksei: There seems to be something curious about the water, Matty. It almost l
 
 
 :: MattyLife
-Matty: Oh well life is fabulous! I've met such a wonderful group of new companions. We have tea every morning and they've been introducing me to a new healthy lifestyle! They are really a joy to be around.
+Matty: Oh well life is fabulous! I have met such a wonderful group of new companions. We have tea every morning and they've been introducing me to a new healthy lifestyle! They are all so welcoming, have fabulous tales and they are not snooty like the suffragettes I converse with.
 [[Matty's friends|Matty'sFriends]]
 [[Your work|YourWork]]
 
 
 :: NewFriends
-Matty: Oh well, my new friends mostly, Aleksei! They're all so welcoming and have fabulous tales. I was hoping they would lead you to your next story? They're not snooty like those suffragettes I used to converse with.
+Matty: Oh well, my new friends mostly, Aleksei! I was hoping they might lead you to your next story?
 [[Continue|ThanksInvite]]
 
 
 :: Reason
-Matty: I just love parties! With all of my new friends, I had a great reason enjoy their company.
+Matty: I just love parties! And I love enjoying the company of good friends.
 [[Continue|Rumors]]
 
 
@@ -103,13 +103,13 @@ Aleksei: I'm in between stories. I'm looking for the next big thing; that Pulitz
 
 
 :: OfCourse
-Matty: Of course, Aleksei. It's always good to have you here.
+Matty: Of course, Aleksei. It's always good to see you..
 [[Ask Another Question|Questions]]
 [[Goodbye|Leave]]
 
 
 :: LearnRumor
-Matty: There's been a lot of talk about the canal water... most nights is completely lit, as if it was full of lanterns! My friends and I are actually planning to take a boat and cruise down the canal one night; it's going to be absolutely gorgeous.
+Matty: There has been a lot of talk about the canal water... most nights it is completely lit, as if it was full of lanterns! My friends and I are actually planning to take a boat and cruise down the canal one night; it's going to be absolutely gorgeous.
 [[Continue|Safety]]
 
 
@@ -133,7 +133,7 @@ Aleksei: Thanks, Matty.
 
 
 :: SafetoDrink
-Matty: Oh, Aleksei. The water is perfectly safe. My friends are very knowledgeable in health and safety, especially concerning the canal water. It's even perfectly fine to drink too!
+Matty: Oh, Aleksei. The water is perfectly safe. My friends are very knowledgeable in health and safety, especially concerning the canal water.
 [[Drink Canal water?|TheRage]]
 [[Ask Another Question|Questions]]
 [[Goodbye|Leave]]
@@ -146,3 +146,5 @@ Aleksei: I'm going to leave now, Matty. I have work to do in the morning. Enjoy 
 
 :: Leave2
 Matty: Of course, Aleksei. It's always wonderful catching up. We'll have to go out for tea soon.
+
+

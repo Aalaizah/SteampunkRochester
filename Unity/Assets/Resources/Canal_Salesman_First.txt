@@ -94,7 +94,7 @@ Aleksei: What you know of glowing water?
 
 
 :: Salesman - 5
-Foreman: Great! I also have some cool knicknacks that I know you'll just love. So what'll it be, valued customer!?
+Foreman: Great! I also have some cool knick knacks that I know you'll just love. So what'll it be, valued customer!?
 [[Buy Glowing Water|Salesman - Purchase Water]]
 [[Buy Church of Light Pin|Salesman - Purchase Pin]]
 [[Ask For Info|Aleksei - Bad Info 1]]
@@ -108,14 +108,14 @@ Foreman: Okay, I do believe I said information like that was for paying customer
 :: Salesman - Purchase Water
 Foreman: Hehehe...thank you! What else can I do for you!?
 [[Buy Glowing Water|Salesman - Purchase Water]]
-[[Buy "CoL" Pin|Salesman - Purchase Pin]]
+[[Buy CoL Pin|Salesman - Purchase Pin]]
 [[Ask For Info|Question Hub]]
 
 
 :: Salesman - Purchase Pin
 Foreman: Hehehe...thank you! What else can I do for you!?
 [[Buy Glowing Water|Salesman - Purchase Water]]
-[[Buy "CoL" Pin|Salesman - Purchase Pin]]
+[[Buy CoL Pin|Salesman - Purchase Pin]]
 [[Ask For Info|Question Hub]]
 
 
@@ -179,7 +179,7 @@ Aleksei: I'm sure they will.
 
 
 :: Salesman - Mafia Info 2
-Foreman: Why both of them! You didn't here this from me, but the Mercurios and the Ziccardis are a tighter knit than you think! It's all a ploy to keep the citizens afraid of gang wars while they steal all the resources from under their noses!
+Foreman: Now that is some doubly sensitive information, friend. Suffice to know that the mafia can get you almost anything you need. If you make a deal with them, keep the details to yourself.
 [[Continue|Aleksei - Mafia Info 3]]
 
 
@@ -194,7 +194,7 @@ Aleksei: And I can trust this information?
 
 
 :: Aleksei - Good Info 3
-Aleksei: Is quite alright. What do they want with water?
+Aleksei: Is quite alright. What do they want with the water?
 [[Continue|Salesman - Good Info 3]]
 
 
@@ -209,7 +209,7 @@ Foreman: Haven't the foggiest idea, no sir I do not! But word on the street is t
 
 
 :: Aleksei - Mafia Info 4
-Aleksei: You said your name was Evelyn Foreman.
+Aleksei: You said your name was Evelyn.
 [[Continue|Salesman - Mafia Info 4]]
 
 
@@ -242,3 +242,5 @@ Aleksei: Thank you for your time.
 
 :: Salesman - Happy Ending
 Foreman: Come back anytime, I've always got the goods as long as you show me the goods!
+
+

@@ -1,0 +1,75 @@
+﻿:: 0
+Editor: It's about damn time. Do you finally have a story for me, Aleksei?
+[[Yes|YesMan]]
+[[No|NoMan]]
+
+
+
+:: NoMan
+Aleksei: No sir, I do not.
+[[Continue|GetBackToWork]]
+
+
+:: YesMan
+Aleksei: Yes, I've found you a story. It took a while to find the leads, but I finally have it.
+[[Continue|GiveItToMe]]
+
+
+:: GetBackToWork
+Editor: THEN GET BACK OUT THERE AND FIND ME ONE! I NEED IT YESTERDAY!
+[[Goodbye|Goodbye]]
+
+
+:: GiveItToMe
+Editor: Well, give me the rundown on it. We kinda need this to blow the lid off this city...sales haven't been good recently...
+[[Truth About Senton|SentonStory]]
+[[The Miracle Of The Glowing Water|DogStory]]
+[[Nothing Special|DefaultStory]]
+
+
+:: Goodbye
+Fluffy: Dah, I will go get story for you. Goodbye.
+
+
+:: DefaultStory
+Aleksei: It's kind of disappointing, but there is nothing special about that water. Apparently it just glows naturally. I don't know why the Church of Light is so obsessed with it, but there's nothing to their claims of its "magic properties."
+[[Continue|DefaultStoryContinued]]
+
+
+:: DogStory
+Aleksei: So, from talking to a man in a bar, I found out that the glowing water has healing properties. The man's dog was wounded, but the water healed it I’m not so sure of the effects of the water, but the members use it to heal ailments and it works! Turns out the Church of Light isn't so crazy after all. Maybe I'll become a member...
+[[Continue|DogStoryContinued]]
+
+
+:: SentonStory
+Aleksei: I found that the Church of Light leader, Mason Senton, has been manipulating the church's members for his own gain. He may have actually had something to do with it's spread in the first place, but I can't confirm that without more investigation. He used to work as a con-man, and apparently moved on to bigger fish.
+[[Continue|SentonStoryContinued]]
+
+
+:: DefaultStoryContinued
+Editor: *looks at you with a bored look on his face, as if he heard the same story before*
+[[Continue|DefaultStoryEnd]]
+
+
+:: DogStoryContinued
+Editor: *looks at you with a confused look on his face, then gives a deep, exhausted sigh*
+[[Continue|DogStoryEnd]]
+
+
+:: SentonStoryContinued
+Editor: *looks at you with a mildly excited look, as if he's trying to hide it but failed*
+[[Continue|SentonStoryEnd]]
+
+
+:: DefaultStoryEnd
+Editor: That's...not very exciting. But, a story is a story. Write it up and I'll look over your draft tomorrow.
+
+
+:: DogStoryEnd
+Editor: ...well, I guess that's what we're printing now, not enough time to find anything better...
+
+
+:: SentonStoryEnd
+Editor: Hmm, was hoping for a story like that. Type it up, and I'll proof it before we send it out tomorrow.
+
+
