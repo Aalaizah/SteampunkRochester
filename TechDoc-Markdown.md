@@ -111,6 +111,10 @@ The TimeUI, also referred to as Watch, uses panels there is one Watch placed in 
 
 TimeManager handles all the logic for the TimeUI, whenever time passes it will show the watch and start a countdown before hiding it again. The alpha of the watch is updated as the countdown progress to create a wavering fade effect (mostly through Mathf.Sin(...)).
 
-#Map UI
+##Map UI
 
+The Map UI as stated earlier uses Unity's 4.6.1 canvas system to render all UI elements to the screen. The markers on the map are button objects that when clicked bring up an info window that details the area. Each marker has a marker behavior script that helps dictate what level is to be loaded. To hook up a new marker is fairly simple. Just change the button's image to the pin and its highlighted sprite to the highlighted sprite you desire. Then throw on a marker behavior script, give it a level to load in the Unity editor. Then you must take the marker button you just created, and drag the button from the hierarchy into the button's onClick() event handler and then set the button's onClick() event to the marker behavior script's method called ClickAction(). This user interface also uses the color of the camera background to help convey the time of day, as well as having a panel in the bottom right that is updated by the TimeManager. Lastly we have the pause button that puts the game into a paused state, when in reality it is simply disabling the map UI an enabling the pause UI. 
 
+##Pause UI
+
+The pause UI is simply a prefab object that allows for a few basic interactions with the game. The user can resume, which destroys the pause UI and reactivates the map UI. The user can go to the inventory page to see what they have collected throughout their journeys in Steampunk Rochester. Lastly we have the quit button, which exits the game. All these buttons are on the prefab, and work via the UI Manager.
