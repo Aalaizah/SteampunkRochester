@@ -18,8 +18,8 @@ Aleksei: *follows silently upstairs*
 
 
 :: RudeFollow
-happyDwn-- Senton
-Aleksei: I'm here for work, not for a housecall.
+happyDown-- Senton
+Aleksei: I'm here for work, not for a house call.
 [[Continue|Let'sBegin]]
 
 
@@ -82,7 +82,7 @@ Aleksei: Is this locally made?
 
 
 :: ExamineBottle
-The bottle's bordered label is very plane; it simply says "Red Wine." Somethign else seems to be written on the inside, but it's hard to see through the dark bottle and dark liquid.
+The bottle's bordered label is very plane; it simply says "Red Wine." Something else seems to be written on the inside, but it's hard to see through the dark bottle and dark liquid.
 [[Continue|DiscussBottle]]
 
 
@@ -122,7 +122,7 @@ Aleksei: At the park, you said the glowing wine you bought was from the mafia. W
 
 
 :: SuspisciousGuy
-Aleksei: There's something off about you and your Church of Light. There's a lot of off color rumors floating around.
+Aleksei: There's something off about you and your Church of Light. There's a lot of colorful rumors floating around.
 [[Continue|Rumors]]
 
 
@@ -138,15 +138,25 @@ Aleksei: You have been nothing but civil, but at the same time, I have heard a l
 
 
 :: AnswerMafia
-Senton: Yes. I trust you can be decrete. We purchase from both mafia families. They approached me about the deal and of course, I was interested.
-[[Buy from both?|AskBuyBoth]]
-[[Are you crazy|AskBuyBothCrazy]]
+Senton: Yes. I trust you can be discrete. We purchase from both mafia families. Yes, churches are still allowed to purchase wine, but we're having trouble getting that recognition because we are new and because we need our wine made with some of the glowing water.
+[[Continue|AnswerMafia2]]
 
 
 :: OldFriend
 itemReq-- KCONMAN
 Aleksei: Now, I mean no alarm, but I also met someone I am convinced is an old aquaintence of yours. 
 [[Continue|SentonReply]]
+
+
+:: AnswerMafia2
+Senton: I was approached by both mafia families about them producing the type of wine we needed. And I agreed to both.
+[[Buy from both?|AskBuyBoth]]
+[[Are you crazy|AskBuyBothCrazy]]
+
+
+:: SentonReply
+Senton: An old friend of mine, huh? Do tell.
+[[Continue|NotConcerned]]
 
 
 :: AskBuyBoth
@@ -159,9 +169,9 @@ Aleksei: Are you mad? Buying from two rival families?
 [[Continue|AnswerBuyBoth]]
 
 
-:: SentonReply
-Senton: An old friend of mine, huh? Do tell.
-[[Continue|NotConcerned]]
+:: NotConcerned
+Aleksei: You don't seem concerned about being found out...
+[[Continue|PleaseContinue]]
 
 
 :: AnswerBuyBoth
@@ -171,9 +181,10 @@ Senton: I do have underworld contacts. I know what I am doing. Is there anything
 [[About your past...|AskConman]]
 
 
-:: NotConcerned
-Aleksei: You don't seem concerned about being found out...
-[[Continue|PleaseContinue]]
+:: PleaseContinue
+Senton: I would hate to interupt your planned reveal. Please continue.
+[[Okay then...|RevealSenton]]
+[[No, tell me|WhyNotConcerned]]
 
 
 :: AskShipments
@@ -185,24 +196,6 @@ Aleksei: When are the shipments made? And where?
 :: AskWineMade
 Aleksei: Do you know anything about how they make the wine?
 [[Continue|AnswerWineMade]]
-
-
-:: PleaseContinue
-Senton: I would hate to interupt your planned reveal. Please continue.
-[[Okay then...|RevealSenton]]
-[[No, tell me|WhyNotConcerned]]
-
-
-:: AnswerShipments
-Senton: There's one on Sundays. I don't remember when the other is. It's been a long time since I managed shipping.
-[[How is wine made|AskWineMade]]
-[[About your past...|AskConman]]
-
-
-:: AnswerWineMade
-Senton: If it's not made like normal wine, I have have hardly any idea. I appreciate the daily glass; it's good for you, but I don't know. It works.
-[[Shipments?|AskShipments]]
-[[About your past...|AskConman]]
 
 
 :: WhyNotConcerned
@@ -222,6 +215,18 @@ Aleksei: And as for your friend, Evelyn Foreman, he is currently a down-on-his-l
 [[Continue|RevealSenton2]]
 
 
+:: AnswerShipments
+Senton: There's one on Sundays. I don't remember when the other is. It's been a long time since I managed shipping.
+[[How is wine made|AskWineMade]]
+[[About your past...|AskConman]]
+
+
+:: AnswerWineMade
+Senton: If it's not made like normal wine, I have have hardly any idea. I appreciate the daily glass; it's good for you, but I don't know. It works.
+[[Shipments?|AskShipments]]
+[[About your past...|AskConman]]
+
+
 :: ExplainPast
 Senton: I am not concerned you know the truth because you have no way to prove it.
 [[Continue|ExplainPast2]]
@@ -233,7 +238,7 @@ Aleksei: When I confronted him about this and his source for purified glowing wa
 
 
 :: ExplainPast2
-Senton: Believe I caused the glowing water if you wish. I'm a protected figure in this community, good sir. Besides, even if I did do it, where do you think I got the man power? Where would anyone get the man power? Or the supplies to even tint the canal blue for one day of the year? Who's making the most money off of this? Certainly not me! What kind of conman would I be, making less money than the mafia?
+Senton: Believe I caused the glowing water if you wish. I'm a protected figure in this community, good sir. Besides, even if I did do it, where do you think I got the manpower? Where would anyone get the man power? Or the supplies to even tint the canal blue for one day of the year? Who's making the most money off of this? Certainly not me! What kind of con-man would I be, making less money than the mafia?
 [[A good one.|GoodConman]]
 [[A bad one.|BadConman]]
 
@@ -245,7 +250,7 @@ Aleksei: It has to be you. You're a conman. Did you set up the glowing water for
 
 :: GoodConman
 happyUp-- MASONSENTON
-Aleksei: Perhaps that is exactly the place a good conman would want to be; less suspect than those making more. 
+Aleksei: Perhaps that is exactly the place a good con-man would want to be; less suspect than those making more. 
 [[Continue|Dismissal]]
 
 
@@ -302,3 +307,5 @@ Senton: Nothing. I don't know anything. I only suspect chemical waste but it's n
 
 :: Leave
 Aleksei: Good-day, sir.
+
+

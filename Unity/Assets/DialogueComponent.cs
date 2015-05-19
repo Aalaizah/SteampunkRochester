@@ -381,7 +381,7 @@ public class DialogueComponent : MonoBehaviour {
 			//Append the message to the top to make the most recent text on the top
 			string bigString = "";
 
-			//bigString +="\n";
+			bigString +="\n";
 
 			if(Interactable.KEYMASTER.isPerson)
 			{

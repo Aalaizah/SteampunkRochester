@@ -17,23 +17,23 @@ Aleksei: Is this not the land of the free? I thought that applied to our lunches
 
 
 
-:: EditorIrate
-Editor: You're lucky I don't can you right here, Ruskie. It's only because I need someone more...refined than the others here.
-[[Continue|KeiranSophieGlare]]
-
-
 :: EditorIgnores
 Editor: I don't care what you say, Aleksei. Ruskies are to Communism what ducks are to birds - ducks are always birds, but not all birds are ducks.
 [[Continue|Assignments]]
 
 
+:: EditorIrate
+Editor: You're lucky I don't can you right here, Ruskie. It's only because I need someone more...refined than the others here.
+[[Continue|KeiranSophieGlare]]
+
+
 :: KeiranSophieGlare
-Narrator: Keiran and Sophie glare at him
+*Keiran and Sophie glare at him*
 [[Continue|EditorFumbles]]
 
 
 :: EditorFumbles
-Editor: ...Who have their own special talents that I need the use of.
+Editor: And they have special talents that I need the use of too.
 [[Continue|Assignments]]
 
 
@@ -59,14 +59,16 @@ Sophie: The three of us? Together? I don't need these two... *stops herself* ...
 
 
 :: BeOffended
-Aleksei: Your insinuation of my incompetence hurts.
+Aleksei: I am more than competent  on my own.
 [[Continue|Assignment3]]
 
 
 :: Assignment3
-Editor: This story is going to require several sources, sources it would be impossible for just one of you to interview all of. I assume you all have heard about the glowing water? You're all...competent journalists. I want to know what caused it. 
+Editor: This story is going to require several sources; sources it would be impossible for just one of you to interview all of. I assume you all have heard about the glowing water? You're all...competent journalists. I want to know what caused it. 
 [[Continue|TalkToYourPeople]]
 
 
 :: TalkToYourPeople
-Editor: Talk to your people to find some leads. You, Fluffy, you're good with the fancy pants people - see if you can pull something from them. Sophie, everyone here knows you're a woman, so go talk to them suffra-whatchamacallits. And Kieran...go dig up some of those bodies you and your old Ziccardi chums buried.
+Editor: Talk to your people to find some leads. Aleksei, you're good with the fancy pants people - see if you can pull something from them. Sophie, everyone here knows you're a woman, so go talk to them suffra-whatchamacallits. And Kieran...go dig up some of those bodies you and your old Ziccardi chums buried.
+
+

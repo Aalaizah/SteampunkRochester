@@ -1,12 +1,12 @@
 ﻿:: 0
-Man in bar: Hey, I remember you from somewhere. Get over here and join me for a drink. Who were you again?
+Man: Hey, I remember you from somewhere. Get over here and join me for a drink. Who were you again?
 [[Remember|InitializeConvoRemember]]
 [[Approach|InitializeConvo]]
 
 
 :: InitializeConvoRemember
 itemReq-- BUSINESSCARD
-Alekei: Tim White! We met at the park. You gave me your business card. I'm Aleksei, the reporter. How's Gizmo?
+Alekei: Tim! We met at the park. You gave me your business card. I'm Aleksei, the reporter. How's Gizmo?
 [[Continue|RememberCont]] 
 
 
@@ -25,7 +25,7 @@ Tim White: Gizmo's great! He's at home resting right now. Those walks sure do ti
 
 :: ConvoCont
 itemGain-- BUSINESSCARD
-???: The name is Tim. Tim White. Join me for a drink, will you?
+Man: The name is Tim. Tim White. Join me for a drink, will you?
 [[Have Drink|FirstDrink]]
 [[Say No|NoDrink]]
 
@@ -96,7 +96,7 @@ Aleksei: So you like your job, I assume? You seem to speak of it very fondly.
 
 
 :: AskDog2
-Tim White: Gizmo! My poor Gizmo...I can't even...he was run over...
+Tim White: Gizmo! My poor Gizmo...I can't even...he was hit by a...
 [[Continue|AskDog3]]
 
 
@@ -176,7 +176,7 @@ Tim White: YES! New Hampshire!! That was definitely it.
 
 :: AskDog7
 endingFlag-- 2
-Tim White: Thankfully, this man came up to me, and said he could save my dog. So he brought Gizmo and I to his home.  When we got there, he applied some home remedies, and let Gizmo drink some glowing water which he learned the healing properties of from the Church of Light. A day later, Gizmo was running around like his normal self. It was MAGIC!
+Tim White: Thankfully, this man came up to me, and said he could save my dog. So he brought Gizmo and I to his home.  When we got there, he applied some home remedies, and let Gizmo drink some glowing water which he learned the healing properties of from the Church of Light. A few days later, Gizmo was running around like his normal self. It was MAGIC!
 [[Continue|AskDog8]]
 
 
@@ -207,3 +207,5 @@ Aleksei: That's...that's amazing. Yes, amazing.
 
 :: Leave
 Aleksei: Thank you for your time, Mr. White.
+
+

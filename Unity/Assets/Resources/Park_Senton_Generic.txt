@@ -14,11 +14,6 @@ Senton: How may I be of service to you?
 [[I have some questions|AskQuestions]]
 
 
-:: MoreQuestions
-Aleksei: Yes, I do have some more questions.
-[[Continue|DoQuestions]]
-
-
 :: AskQuestions
 Aleksei: Would you mind if I asked you some questions?
 [[Continue|DoQuestions]]
@@ -35,14 +30,14 @@ Senton: What would you like to know?
 [[No more questions|DoneQuestions]]
 
 
-:: AskGlowingWater
-Aleksei: What do you believe in regards to the glowing water?
-[[Continue|AnswerGlowingWater]]
-
-
 :: AskWine
 Aleksei: What can you tell me about the alcohol you have for church gatherings?
 [[Continue|AnswerWine]]
+
+
+:: AskGlowingWater
+Aleksei: What do you believe in regards to the glowing water?
+[[Continue|AnswerGlowingWater]]
 
 
 :: AskCoLAgain
@@ -55,39 +50,48 @@ Aleksei: Besides being the founder, what do you do in the church?
 [[Continue|AnswerJob]]
 
 
-:: AskPast
-Aleksei: What did you do before founding the Church of Light?
-[[Continue|AnswerPast]]
-
-
 :: AskPin
 itemReq-- NOPIN
 Aleksei: Could I have a church pin?
 [[Continue|GivePin]]
 
 
-:: AnswerGlowingWater
-Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nurture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
-[[Continue|AnswerGlowingWater2]]
-[[Other Questions|DoQuestions]]
+:: AskPast
+Aleksei: What did you do before founding the Church of Light?
+[[Continue|AnswerPast]]
 
 
 :: AnswerWine
-Senton: It is for church gatherings only. What are you implying?
+Senton: It is for church gatherings. Wine is the blood of Jesus Christ, and very holy in our services. What are you implying?
 [[Smuggling|SmugglingAttempt1]]
 [[Show Evidence|SmugglingAttempt2]]
 [[Nothing|NoImplication]]
 
 
+:: AnswerGlowingWater
+Senton: The glowing water in the canal is somehow better than normal water. We believe it was an act of God, to help us nuture our bodies in service to Him. Our wine is made with the glowing water, and we support any uses of the water.
+[[Continue|AnswerGlowingWater2]]
+[[Other Questions|DoQuestions]]
+
+
 :: AnswerCoLAgain
 Senton: The Church of Light was founded with the discovery of the glowing water a short while ago. We're a very small protestant group seeking to become a real church.
 [[Other Questions|DoQuestions]]
+[[No More Questions|DoneQuestions]]
 
 
 :: AnswerJob
-Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occasionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
+Senton: As the founder, I try to keep an eye on everything and make sure things stay organized. I occassionally give sermons on good nutritional practices too, though I am currently caught up with ensuring we are a recognized as a distint and existing religion and church.
 [[Why?|WhyRecognized]]
 [[Other Questions|DoQuestions]]
+
+
+:: GivePin
+itemGain-- PIN
+happyUp-- MASONSENTON
+Senton: Of course. *hands pin to Aleksei*
+[[Ask Questions|DoQuestions]]
+[[Leave|Good-bye]]
 
 
 :: AnswerPast
@@ -96,24 +100,15 @@ Senton: It doesn't matter who I was, but who I am. It is too long of a story to 
 [[Other Questions|DoQuestions]]
 
 
-:: GivePin
-itemGain-- PIN
-itemRem-- NOPIN
-happyUp-- MASONSENTON
-Senton: Of course. *hands pin to Aleksei*
-[[Ask Questions|DoQuestions]]
-[[Leave|Good-bye]]
-
-
-:: AnswerGlowingWater2
-Senton: Personally, I don't think it tastes any different, but it does make me feel livelier. You should try it some time.
-[[Other Questions|DoQuestions]]
-
-
 :: SmugglingAttempt2
 itemReq-- GLOWINGBOTTLE
-Aleksei: I'm not here to report on your church, I'm here to find out about the water. I know you get a shipment from one of the families. They make your wine glow for you. I just want to know how.
+Aleksei: I'm not here to report on your church, I'm here to find out about the water. I know you get a shipment on Thursday from one of the families. They make your wine glow for you. I just want to know how.
 [[Continue|SmugglingAttemptSuceed]]
+
+
+:: SmugglingAttempt1
+Aleksei: I'm not here to report on your church, I'm here to find out about the water. If the mafia is involved I need to know.
+[[Continue|SmugglingAttemptFail]]
 
 
 :: NoImplication
@@ -122,39 +117,41 @@ Aleksei: I'm not implying anything.
 [[Farwell|DoneQuestions]]
 
 
+:: AnswerGlowingWater2
+Senton: Personally, I don't think it tastes any different, but it does make me feel livelier. You should try it some time.
+[[Other Questions|DoQuestions]]
+[[No More Questions|DoneQuestions]]
+
+
 :: WhyRecognized
 Aleksei: Why do you want to be recognized?
 [[Contine|AnswerRecognized]]
 
 
-:: SmugglingAttempt1
-Aleksei: I'm not here to report on your church, I'm here to find out about the water. If the mafia is involved I need to know.
-[[Continue|SmugglingAttemptFail]]
+:: AskRumors
+ItemReq-- KSENTONRUMORS
+Aleksei: I heard a few rumors about you...
+[[Mafia boss|AskMafia]]
+[[Conman|AskConman]]
+[[Speakeasy Owner|AskSpeakeasy]]
 
 
 :: SmugglingAttemptSuceed
-Senton: I see. Very well then. I cannot confirm or deny anything here. Come visit me in my office in private some time. Wear your pin. Farewell.
+Senton: Very well then. I cannot confirm or deny anything here. Come visit me in my office in private some time. Wear a pin. Farewell.
 [[Good-bye|Good-bye]]
+
+
+:: SmugglingAttemptFail
+happyDwn-- MASONSENTON
+Senton: The mafia? We acquire our wine through legitimate means, blessed by an official. Is there anything else you would like to ask?
+[[Yes|MoreQuestions]]
+[[No|Good-bye]]
 
 
 :: AnswerRecognized
 Senton: Why, to make sure that people know we are serious about our beliefs and to make sure those of the same thought can find us easier. It's expensive work to make advertisements in all the papers now. Churches are tax exempt, however.
 [[Other Questions|DoQuestions]]
-
-
-:: SmugglingAttemptFail
-happyDwn-- MASONSENTON
-Senton: The mafia? We get our wine through legitimate means, thank you. Is there anything else you would like to ask?
-[[Yes|MoreQuestions]]
-[[No|Good-bye]]
-
-
-:: AskRumors
-itemReq-- KSENTONRUMORS
-Aleksei: I heard a few rumors about you...
-[[Mafia boss|AskMafia]]
-[[Conman|AskConman]]
-[[Speakeasy Owner|AskSpeakeasy]]
+[[No More Questions|DoneQuestions]]
 
 
 :: AskSpeakeasy
@@ -162,14 +159,14 @@ Aleksei: I heard you owned a gay speakeasy in New York City.
 [[Continue|AnswerSpeakeasy]]
 
 
-:: AskConman
-Aleksei: I heard you used to be a conman.
-[[Continue|AnswerConman]]
-
-
 :: AskMafia
 Aleksei: I heard you used to run a mafia family in Boston.
 [[Continue|AnswerMafia]]
+
+
+:: AskConman
+Aleksei: I heard you used to be a conman.
+[[Continue|AnswerConman]]
 
 
 :: AnswerSpeakeasy
@@ -179,6 +176,18 @@ Senton: Where did you hear that? I would not be ashamed to have run such an esta
 [[No|Good-bye]]
 
 
+:: AnswerMafia
+Senton: I've never been to Boston in my life. I was born and raised in New York and I like it that way.
+[[Another rumor|AskRumors]]
+[[Yes|MoreQuestions]]
+[[No|Good-bye]]
+
+
+:: MoreQuestions
+Aleksei: Yes, I do have some more questions.
+[[Continue|DoQuestions]]
+
+
 :: AnswerConman
 Senton: A conman? I'm an honest man. But all of these rumors has me curious. Perhaps we could discuss this in private at my office?
 [[Very Well.|AcceptPostpone]]
@@ -186,11 +195,9 @@ Senton: A conman? I'm an honest man. But all of these rumors has me curious. Per
 [[You will run off|Accuse]]
 
 
-:: AnswerMafia
-Senton: I've never been to Boston in my life. I was born and raised in New York and I like it that way.
-[[Another rumor|AskRumors]]
-[[Yes|MoreQuestions]]
-[[No|Good-bye]]
+:: DoneQuestions
+Aleksei: I don't have any more questions.
+[[Continue|Good-bye]]
 
 
 :: AcceptPostpone
@@ -210,9 +217,18 @@ Aleksei: If you are a conman, you would know the game is up and take off.
 [[Continue|AnswerAccuse]]
 
 
+:: Good-bye
+Aleksei: Farewell.
+
+
 :: AnswerAccuse
 Senton: And you cannot hold me here. A bit of trust is in order, perhaps. You're a reporter. You want to know about the glowing water? I'll tell you all I know about the water and answer your other questions. At my office.
 [[Fair.|FairEnough]]
+
+
+:: FairEnough
+Aleksei: Fair enough. I will see you there.
+[[Continue|AnswerAccept]]
 
 
 :: AnswerAccept
@@ -221,15 +237,3 @@ Senton: Of course.
 [[No more questions|DoneQuestions]]
 
 
-:: FairEnough
-Aleksei: Fair enough. I will see you there.
-[[Continue|AnswerAccept]]
-
-
-:: DoneQuestions
-Aleksei: I don't have any more questions.
-[[Continue|Good-bye]]
-
-
-:: Good-bye
-Aleksei: Farewell.

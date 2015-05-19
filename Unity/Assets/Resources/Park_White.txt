@@ -36,7 +36,7 @@ Aleksei: I am Aleksei. Good to meet you.
 
 
 :: Continue
-Aleksei: So what do you do, Tim White?
+Aleksei: So what do you do, Tim?
 [[Continue|TimJob]]
 
 
@@ -63,7 +63,7 @@ Aleksei: I'm a cat person.
 
 
 :: Peace
-Aleksei: Actually, no. Perhaps I'll talk to you in the future.
+Aleksei: Actually, not right now. Perhaps I'll talk to you in the future.
 [[Continue|Byebye]]
 
 
@@ -133,14 +133,14 @@ Tim White: ...AHAHHAAHAHA. Good one, Aleksei! I like you already! So what do you
 
 
 :: CoLAnswerB
-Tim White: I've always been a religious man, but the Church of Light won me over when they saved my dog. So, I converted and started following their teachings. They're remarkably similar to other churches, but more focused on your personal well-being.
+Tim White: I've always been a religious man, but the Church of Light won me over when they saved my dog. So, I converted. They're remarkably similar to other churches.
 [[Your dog?|DogSaved]]
 [[Ask another question|Questions]]
 [[Goodbye|FinishConvo]]
 
 
 :: CoLAnswerC
-Tim White: Very high, my friend! The Church of Light saved my dog using it and I've been a member ever since.
+Tim White: Very high, my friend! The Church of Light saved my dog with it.
 [[Ask another question|Questions]]
 [[Saved your dog?|DogSaved]]
 
@@ -164,3 +164,5 @@ Gizmo: *whines*
 :: FinishConvo
 Aleksei: I have no more to ask of you, friend. Maybe I'll see you later!
 [[Continue|Byebye]]
+
+
